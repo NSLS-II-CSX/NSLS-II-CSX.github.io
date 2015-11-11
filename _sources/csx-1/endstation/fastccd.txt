@@ -4,7 +4,7 @@ Fast CCD Detector
 Specifications
 --------------
 
-*   Pixel Size: 30um x 30 um
+*   Pixel Size: 30 |mu| unicode:: 0x00B5 um x 30 um
 *   Active Area: 960 pixels x 960 pixels
 *   The center, black stripe is artificial (over scan function)
 *   192 independent outputs (480 rows x 10 columns)
