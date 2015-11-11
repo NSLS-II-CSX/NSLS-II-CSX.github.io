@@ -1,4 +1,5 @@
 Fast CCD Detector
 =================
 
-
+.. figure:: fcric.png
+   :alt: LBNL FCRIC Circuit
