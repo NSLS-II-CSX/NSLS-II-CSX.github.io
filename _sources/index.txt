@@ -16,7 +16,7 @@ Contents:
 
 Downloads
 =========
-See :download:`this example script <pdf-download/NSLS-IICSXBeamlineDocs.pdf>`.
+here is a pdf file : `pdf <doc/mypdf.pdf>`_
 
 Indices and tables
 ==================
