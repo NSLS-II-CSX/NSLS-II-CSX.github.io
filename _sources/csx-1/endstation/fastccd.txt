@@ -14,7 +14,8 @@ Specifications
 *   Digitization time: 2 us at 120 Hz
 *   100 Hz maximum data collection
 
-.. |micron| unicode:: 0x00B5 m
+.. |micron| unicode:: 0x00B5
+    :rtrim:
 
 .. figure:: fcric.png
    :alt: LBNL FCRIC Circuit
