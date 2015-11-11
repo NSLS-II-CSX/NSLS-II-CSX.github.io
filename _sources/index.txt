@@ -16,7 +16,7 @@ Contents:
 
 Downloads
 =========
-here is a pdf file : `pdf <doc/mypdf.pdf>`_
+Download the CSX Documentation as a PDF : `pdf <pdf-download/NSLS-IICSXBeamlineDocs.pdf>`_
 
 Indices and tables
 ==================
