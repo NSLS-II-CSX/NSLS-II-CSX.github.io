@@ -40,3 +40,11 @@ Specifications
 
 .. math::
     I_{corr} = (I{meas} * G) - BG
+
+Useful Links
+------------
+
+* `LBNL Fast CCD Site <https://sites.google.com/a/lbl.gov/fast-ccd-camera-systems>`_ 
+* `csxtools python analysis routines <https://github.com/NSLS-II-CSX/csxtools>`_
+* `libcin low level c driver <https://sites.google.com/a/lbl.gov/fast-ccd-camera-systems>`_ 
+* `areaDetector Driver <https://github.com/areaDetector/ADFastCCD>`_
