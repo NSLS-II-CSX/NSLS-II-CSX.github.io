@@ -18,10 +18,10 @@ The analogue CCD signal is digitized by a custom designed fCRIC. Each fCRIC has
 16 analogue inputs and digitizes with 13 bit precision and had 16 bit dynamic
 range. This is accomplished by having 3 gain ranges of 8x, 4x and 1x with an
 auto gain feature. In order to allow negative charge injection. The ADC is
-biased at a value of approximately ``0x1000`` with the exact value dependent on
-the ADC channel. The gain settings are stored in the two most significant bits
-of each ADC reading. The schematic of a single fCRIC chanel is shown in 
-the :ref:`fig_fcric`.
+biased at a value of approximately 4096 (0x1000 in hex) with the exact value
+dependent on the ADC channel. The gain settings are stored in the two most
+significant bits of each ADC reading. The schematic of a single fCRIC chanel is
+shown in the :ref:`fig_fcric`.
 
 .. _fig_fcric:
 
@@ -46,7 +46,14 @@ The specifications of the CCD are summarized below:
 Data Format
 -----------
 
-.. table:: Data Format
+In treating the raw CCD data from the FastCCD there are a few important
+considerations related to the multi-gain behaviour of the fCRIC amplifier and
+digitizer. The raw 16 bit values that are recorded in the data file follow the
+:ref:`data_format` shown below with the two gain bits following the :ref:`gain_setting`. 
+
+.. _data_format:
+
+.. table:: 16 Bit fCRIC Data Format
 
     +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
     | 15| 14| 13| 12| 11| 10| 09| 08| 07| 06| 05| 04| 03| 02| 01| 00| 
@@ -54,7 +61,9 @@ Data Format
     | G1| G0|ERR|D12|D11|D10|D09|D08|D07|D06|D05|D04|D03|D02|D01|D00|
     +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
 
-.. table:: Gain Setting
+.. _gain_setting:
+
+.. table:: fCRIC Gain Setting
 
     == == ==== ==========
     G1 G0 Gain Pre-factor
@@ -63,6 +72,12 @@ Data Format
     1  0  x2   x4
     1  1  x1   x8
     == == ==== ==========
+
+Here the two most significant bits record the
+gain setting for the encoded value. The least significant 13 bits hold the
+measured analogue value. The actual value is therefore related to the measured
+value by.
+
 
 .. math::
     I_{corr} = (I{meas} * G) - BG

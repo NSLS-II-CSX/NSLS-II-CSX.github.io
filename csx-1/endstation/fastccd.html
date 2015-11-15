@@ -149,11 +149,11 @@ exposing half the chip along the column direction.</p>
 16 analogue inputs and digitizes with 13 bit precision and had 16 bit dynamic
 range. This is accomplished by having 3 gain ranges of 8x, 4x and 1x with an
 auto gain feature. In order to allow negative charge injection. The ADC is
-biased at a value of approximately <code class="docutils literal"><span class="pre">0x1000</span></code> with the exact value dependent on
-the ADC channel. The gain settings are stored in the two most significant bits
-of each ADC reading. The schematic of a single fCRIC chanel is shown in
-the <a class="reference internal" href="#fig-fcric"><span>LBNL fCRIC Circuit Diagram</span></a>.</p>
-<div class="figure" id="id1">
+biased at a value of approximately 4096 (0x1000 in hex) with the exact value
+dependent on the ADC channel. The gain settings are stored in the two most
+significant bits of each ADC reading. The schematic of a single fCRIC chanel is
+shown in the <a class="reference internal" href="#fig-fcric"><span>LBNL fCRIC Circuit Diagram</span></a>.</p>
+<div class="figure" id="id2">
 <span id="fig-fcric"></span><img alt="LBNL FCRIC Circuit" src="../../_images/fcric.png" />
 <p class="caption"><span class="caption-text">LBNL fCRIC Circuit Diagram</span></p>
 </div>
@@ -173,8 +173,12 @@ the <a class="reference internal" href="#fig-fcric"><span>LBNL fCRIC Circuit Dia
 </div>
 <div class="section" id="data-format">
 <h2>Data Format<a class="headerlink" href="#data-format" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils" id="id2">
-<caption><span class="caption-text">Data Format</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<p>In treating the raw CCD data from the FastCCD there are a few important
+considerations related to the multi-gain behaviour of the fCRIC amplifier and
+digitizer. The raw 16 bit values that are recorded in the data file follow the
+<a class="reference internal" href="#id1"><span>16 Bit fCRIC Data Format</span></a> shown below with the two gain bits following the <a class="reference internal" href="#gain-setting"><span>fCRIC Gain Setting</span></a>.</p>
+<table border="1" class="docutils" id="id3">
+<span id="id1"></span><caption><span class="caption-text">16 Bit fCRIC Data Format</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="6%" />
 <col width="6%" />
@@ -232,8 +236,8 @@ the <a class="reference internal" href="#fig-fcric"><span>LBNL fCRIC Circuit Dia
 </tr>
 </tbody>
 </table>
-<table border="1" class="docutils" id="id3">
-<caption><span class="caption-text">Gain Setting</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<table border="1" class="docutils" id="id4">
+<span id="gain-setting"></span><caption><span class="caption-text">fCRIC Gain Setting</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="11%" />
 <col width="11%" />
@@ -265,6 +269,10 @@ the <a class="reference internal" href="#fig-fcric"><span>LBNL fCRIC Circuit Dia
 </tr>
 </tbody>
 </table>
+<p>Here the two most significant bits record the
+gain setting for the encoded value. The least significant 13 bits hold the
+measured analogue value. The actual value is therefore related to the measured
+value by.</p>
 <div class="math">
 \[I_{corr} = (I{meas} * G) - BG\]</div>
 </div>
