@@ -84,7 +84,7 @@ value by:
 
 where :math:`A_{\mathrm{corr}}` is the corrected intensity,
 :math:`A_{\mathrm{meas}}` is the measured value by the ADC, :math:`G` is the
-gain of the ADC and :math:`O` is the bias offset
+gain of the ADC and :math:`O` is the bias offset. 
 
 Useful Links
 ------------
@@ -92,10 +92,10 @@ Useful Links
 * `LBNL Fast CCD Site <https://sites.google.com/a/lbl.gov/fast-ccd-camera-systems>`_ 
 * `csxtools python analysis routines <https://github.com/NSLS-II-CSX/csxtools>`_
 * `libcin low level c driver <https://sites.google.com/a/lbl.gov/fast-ccd-camera-systems>`_ 
+* `areaDetector Driver <https://github.com/areaDetector/ADFastCCD>`_
 
 .. |mu| unicode:: 0x00B5
     :rtrim:
 
 .. |e| replace:: e\ :sup:`-`
 
-* `areaDetector Driver <https://github.com/areaDetector/ADFastCCD>`_
