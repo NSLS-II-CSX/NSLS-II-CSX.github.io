@@ -82,7 +82,9 @@ value by:
 
     A_{\mathrm{corr}} = G(A_{\mathrm{meas}}-O)
 
-where :math:`I` is the corrected intensity
+where :math:`A_{\mathrm{corr}}` is the corrected intensity,
+:math:`A_{\mathrm{meas}}` is the measured value by the ADC, :math:`G` is the
+gain of the ADC and :math:`O` is the bias offset
 
 Useful Links
 ------------
