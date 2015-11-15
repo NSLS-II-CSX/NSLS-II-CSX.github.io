@@ -19,7 +19,8 @@ The analogue CCD signal is digitized by a custom designed fCRIC. Each fCRIC has
 range. This is accomplished by having 3 gain ranges of 8x, 4x and 1x with an
 auto gain feature. In order to allow negative charge injection. The ADC is
 biased at a value of approximately ``0x1000`` with the exact value dependent on
-the ADC channel. 
+the ADC channel. The gain settings are stored in the two most significant bits
+of each ADC reading. 
 
 
 Specifications
