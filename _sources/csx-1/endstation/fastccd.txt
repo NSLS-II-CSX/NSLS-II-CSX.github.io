@@ -21,12 +21,13 @@ auto gain feature. In order to allow negative charge injection. The ADC is
 biased at a value of approximately ``0x1000`` with the exact value dependent on
 the ADC channel. The gain settings are stored in the two most significant bits
 of each ADC reading. The schematic of a single fCRIC chanel is shown in Figure
-:ref:`fig_fcric`
+:ref:`fig_fcric`.
 
 .. _fig_fcric:
 
 .. figure:: fcric.png
    :alt: LBNL FCRIC Circuit
+
    LBNL fCRIC Circuit Diagram
 
 The specifications of the CCD are summarized below:
