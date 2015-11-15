@@ -84,6 +84,7 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Fast CCD Detector</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#specifications">Specifications</a></li>
 <li><a class="reference internal" href="#useful-links">Useful Links</a></li>
 </ul>
@@ -133,6 +134,24 @@
       
   <div class="section" id="fast-ccd-detector">
 <h1>Fast CCD Detector<a class="headerlink" href="#fast-ccd-detector" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The FastCCD installed in the endstation at CSX-1 is of the LBNL Fast CCD
+design. The sensor contains 1920 x 960 pixels of 30 µm x 30 µm
+and is arranged into two halves of 960 rows by 960 columns with the columns
+parallel to the long CCD axis. There is one output for each 10 columns (a
+&#8220;super column&#8221;) which results in 192 individual outputs and analogue to digital
+converters (ADC). The CCD camera can either be used in a traditional CCD with
+an x-ray shutter exposing the full chip, or in a framestore (frame transfer)
+mode by covering two quarters of the CCD with a light (x-ray) block effectively
+exposing half the chip along the column direction.</p>
+<p>The analogue CCD signal is digitized by a custom designed fCRIC. Each fCRIC has
+16 analogue inputs and digitizes with 13 bit precision and had 16 bit dynamic
+range. This is accomplished by having 3 gain ranges of 8x, 4x and 1x with an
+auto gain feature. In order to allow negative charge injection. The ADC is
+biased at a value of approximately <code class="docutils literal"><span class="pre">0x1000</span></code> with the exact value dependent on
+the ADC channel.</p>
+</div>
 <div class="section" id="specifications">
 <h2>Specifications<a class="headerlink" href="#specifications" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">

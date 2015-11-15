@@ -1,6 +1,27 @@
 Fast CCD Detector
 =================
 
+Introduction
+------------
+
+The FastCCD installed in the endstation at CSX-1 is of the LBNL Fast CCD
+design. The sensor contains 1920 x 960 pixels of 30 |micron| m x 30 |micron| m
+and is arranged into two halves of 960 rows by 960 columns with the columns
+parallel to the long CCD axis. There is one output for each 10 columns (a
+"super column") which results in 192 individual outputs and analogue to digital
+converters (ADC). The CCD camera can either be used in a traditional CCD with
+an x-ray shutter exposing the full chip, or in a framestore (frame transfer)
+mode by covering two quarters of the CCD with a light (x-ray) block effectively
+exposing half the chip along the column direction. 
+
+The analogue CCD signal is digitized by a custom designed fCRIC. Each fCRIC has
+16 analogue inputs and digitizes with 13 bit precision and had 16 bit dynamic
+range. This is accomplished by having 3 gain ranges of 8x, 4x and 1x with an
+auto gain feature. In order to allow negative charge injection. The ADC is
+biased at a value of approximately ``0x1000`` with the exact value dependent on
+the ADC channel. 
+
+
 Specifications
 --------------
 
