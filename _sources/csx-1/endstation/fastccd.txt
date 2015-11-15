@@ -5,7 +5,7 @@ Introduction
 ------------
 
 The FastCCD installed in the endstation at CSX-1 is of the LBNL Fast CCD
-design. The sensor contains 1920 x 960 pixels of 30 |micron| m x 30 |micron| m
+design. The sensor contains 1920 x 960 pixels of 30 |mu| m x 30 |mu| m
 and is arranged into two halves of 960 rows by 960 columns with the columns
 parallel to the long CCD axis. There is one output for each 10 columns (a
 "super column") which results in 192 individual outputs and analogue to digital
@@ -31,21 +31,21 @@ of each ADC reading. The schematic of a single fCRIC chanel is shown in Figure
 
 The specifications of the CCD are summarized below:
 
-    *   Pixel Size: 30 |micron| m x 30 |micron| m
-    *   Active Area: 1920 pixels (column) x 960 pixels (row)
-    *   192 super columns = 192 outputs (480 rows x 10 columns)
-    *   Back illuminated
-    *   250 |micron| m - 350 |mircon| m thickness 
-    *   Full well : ~900k |e| per pixel
-    *   Sensitivity : 6 |e| / ADU for 8x gain (max gain)
-    *   Pixel readout time: 500 |micron| s
-    *   Digitization time: 2 |micron| s at 120 Hz
-    *   100 Hz maximum data collection
+*   Pixel Size: 30 |mu| m x 30 |mu| m
+*   Active Area: 1920 pixels (column) x 960 pixels (row)
+*   192 super columns = 192 outputs (480 rows x 10 columns)
+*   Back illuminated
+*   250 |mu| m - 350 |mu| m thickness 
+*   Full well : ~900k |e| per pixel
+*   Sensitivity : 6 |e| / ADU for 8x gain (max gain)
+*   Pixel readout time: 500 |mu| s
+*   Digitization time: 2 |mu| s at 120 Hz
+*   100 Hz maximum data collection
 
-.. |micron| unicode:: 0x00B5
+.. |mu| unicode:: 0x00B5
     :rtrim:
 
-.. |e| replace:: e\ :sub:`-`
+.. |e| replace:: e\ :sup:`-`
 
 .. figure:: fcric.png
    :alt: LBNL FCRIC Circuit
