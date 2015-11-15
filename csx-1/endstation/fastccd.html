@@ -272,9 +272,10 @@ digitizer. The raw 16 bit values that are recorded in the data file follow the
 <p>Here the two most significant bits record the
 gain setting for the encoded value. The least significant 13 bits hold the
 measured analogue value. The actual value is therefore related to the measured
-value by.</p>
+value by:</p>
 <div class="math">
-\[I_{corr} = (I{meas} * G) - BG\]</div>
+\[A_{\mathrm{corr}} = G(A_{\mathrm{meas}}-O)\]</div>
+<p>where <span class="math">\(I\)</span> is the corrected intensity</p>
 </div>
 <div class="section" id="useful-links">
 <h2>Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
