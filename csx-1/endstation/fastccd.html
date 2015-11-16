@@ -86,6 +86,7 @@
 <li><a class="reference internal" href="#">Fast CCD Detector</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#data-format">Data Format</a></li>
+<li><a class="reference internal" href="#dark-image-subtraction">Dark Image Subtraction</a></li>
 <li><a class="reference internal" href="#useful-links">Useful Links</a></li>
 </ul>
 </li>
@@ -139,6 +140,7 @@
 <li><a class="reference internal" href="#">Fast CCD Detector</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#data-format">Data Format</a></li>
+<li><a class="reference internal" href="#dark-image-subtraction">Dark Image Subtraction</a></li>
 <li><a class="reference internal" href="#useful-links">Useful Links</a></li>
 </ul>
 </li>
@@ -306,12 +308,39 @@ value by:</p>
 <span class="math">\(A_{\mathrm{meas}}\)</span> is the measured value by the ADC, <span class="math">\(G\)</span> is the
 gain of the ADC and <span class="math">\(O\)</span> is the bias offset.</p>
 </div>
+<div class="section" id="dark-image-subtraction">
+<h2>Dark Image Subtraction<a class="headerlink" href="#dark-image-subtraction" title="Permalink to this headline">¶</a></h2>
+<p>Due to the multi gain nature of the fCRIC it is therefore necessary to take 3
+dark images at different gain settings to obtain the different ADC offsets
+under these modes. As the lower gain settings are not subject to
+considerable contribution due to dark current it is usually justifiable to
+measure only the highest gain dark image repeatedly. Given 3 dark images for
+the different gain settings the images the following python pseudo code can be
+used to correct for dark current and gain:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">subtract_background</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">dark_image</span><span class="p">,</span> <span class="n">gains</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]):</span>
+    <span class="n">gain_mask_8</span> <span class="o">=</span> <span class="p">(</span><span class="n">image</span> <span class="o">&amp;</span> <span class="mh">0xC000</span><span class="p">)</span> <span class="o">==</span> <span class="mh">0xC000</span>
+    <span class="n">gain_mask_4</span> <span class="o">=</span> <span class="p">(</span><span class="n">image</span> <span class="o">&amp;</span> <span class="mh">0xC000</span><span class="p">)</span> <span class="o">==</span> <span class="mh">0x8000</span>
+    <span class="n">gain_mask_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">image</span> <span class="o">&amp;</span> <span class="mh">0xC000</span><span class="p">)</span> <span class="o">==</span> <span class="mh">0x0000</span>
+
+    <span class="n">cor_image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span>
+    <span class="n">cor_imagei</span> <span class="o">-=</span> <span class="n">gain_mask_8</span> <span class="o">*</span> <span class="n">dark_image</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">cor_imagei</span> <span class="o">-=</span> <span class="n">gain_mask_4</span> <span class="o">*</span> <span class="n">dark_image</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">cor_imagei</span> <span class="o">-=</span> <span class="n">gain_mask_1</span> <span class="o">*</span> <span class="n">dark_image</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">gain_image</span> <span class="o">=</span> <span class="p">(</span><span class="n">gain_mask_8</span> <span class="o">*</span> <span class="n">gain</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="p">(</span><span class="n">gain_mask_4</span> <span class="o">*</span> <span class="n">gain</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="p">(</span><span class="n">gain_mask_1</span> <span class="o">*</span> <span class="n">gain</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">cor_image</span> <span class="o">*</span> <span class="n">gain_image</span><span class="p">),</span> <span class="n">gain_image</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="useful-links">
 <h2>Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="https://sites.google.com/a/lbl.gov/fast-ccd-camera-systems">LBNL Fast CCD Site</a></li>
 <li><a class="reference external" href="https://github.com/NSLS-II-CSX/csxtools">csxtools python analysis routines</a></li>
-<li><a class="reference external" href="https://sites.google.com/a/lbl.gov/fast-ccd-camera-systems">libcin low level c driver</a></li>
+<li><a class="reference external" href="https://github.com/NSLS-II-CSX/libcin">libcin low level c driver</a></li>
 <li><a class="reference external" href="https://github.com/areaDetector/ADFastCCD">areaDetector Driver</a></li>
 </ul>
 </div>
