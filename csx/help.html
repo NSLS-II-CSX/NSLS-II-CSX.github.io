@@ -198,6 +198,30 @@ nBASE            | IOC             | USER            |  PORT | EXEC
 /epics/iocs     | zebra           | softioc         |  5011 | /epics/iocs/zebra/st.cmd
 </pre></div>
 </div>
+<p>To connect to the IOC console, telnet to localhost at the port that is shown in
+the table. For example to connect to the <code class="docutils literal"><span class="pre">mc12</span></code> console issue the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-ioc3 ~]$ telnet localhost 5002
+Trying ::1...
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is &#39;^]&#39;.
+@@@ Welcome to procServ (procServ Process Server 2.6.0)
+@@@ Use ^X to kill the child, auto restart is ON, use ^T to toggle auto restart
+@@@ procServ server PID: 10584
+@@@ Server startup directory: /epics/iocs/mc12
+@@@ Child startup directory: /epics/iocs/mc12
+@@@ Child &quot;mc12&quot; started as: /epics/iocs/mc12/st.cmd
+@@@ Child &quot;mc12&quot; PID: 28044
+@@@ procServ server started at: Tue Oct 20 17:35:25 2015
+@@@ Child &quot;mc12&quot; started at: Fri Nov 13 12:49:49 2015
+@@@ 0 user(s) and 0 logger(s) connected (plus you)
+</pre></div>
+</div>
+<p>In order to reboot the IOC, type <code class="docutils literal"><span class="pre">[CTRL]</span> <span class="pre">+</span> <span class="pre">X</span></code>. To leave the console type
+<code class="docutils literal"><span class="pre">[CTRL]</span> <span class="pre">+</span> <span class="pre">]</span></code> and type <code class="docutils literal"><span class="pre">close</span></code> at the <code class="docutils literal"><span class="pre">telnet&gt;</span></code> prompt</p>
+<p>To start all IOCs configured on the system issue the command <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">manage-iocs</span>
+<span class="pre">startall</span></code> and if needed to stop all IOCs issue the command <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">manage-iocs</span>
+<span class="pre">stopall</span></code></p>
 </div>
 <div class="section" id="olog-glassfish-server">
 <h2>OLog Glassfish Server<a class="headerlink" href="#olog-glassfish-server" title="Permalink to this headline">¶</a></h2>

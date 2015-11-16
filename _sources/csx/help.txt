@@ -32,8 +32,31 @@ an example is shown below for ``xf23id1-ioc3``::
     /epics/iocs     | va-bakeout-01   | softioc         |  4001 | /epics/iocs/va-bakeout-01/st.cmd
     /epics/iocs     | zebra           | softioc         |  5011 | /epics/iocs/zebra/st.cmd
 
+To connect to the IOC console, telnet to localhost at the port that is shown in
+the table. For example to connect to the ``mc12`` console issue the command::
 
+    [swilkins@xf23id1-ioc3 ~]$ telnet localhost 5002
+    Trying ::1...
+    Trying 127.0.0.1...
+    Connected to localhost.
+    Escape character is '^]'.
+    @@@ Welcome to procServ (procServ Process Server 2.6.0)
+    @@@ Use ^X to kill the child, auto restart is ON, use ^T to toggle auto restart
+    @@@ procServ server PID: 10584
+    @@@ Server startup directory: /epics/iocs/mc12
+    @@@ Child startup directory: /epics/iocs/mc12
+    @@@ Child "mc12" started as: /epics/iocs/mc12/st.cmd
+    @@@ Child "mc12" PID: 28044
+    @@@ procServ server started at: Tue Oct 20 17:35:25 2015
+    @@@ Child "mc12" started at: Fri Nov 13 12:49:49 2015
+    @@@ 0 user(s) and 0 logger(s) connected (plus you)
 
+In order to reboot the IOC, type ``[CTRL] + X``. To leave the console type
+``[CTRL] + ]`` and type ``close`` at the ``telnet>`` prompt
+
+To start all IOCs configured on the system issue the command ``sudo manage-iocs
+startall`` and if needed to stop all IOCs issue the command ``sudo manage-iocs
+stopall``
 
 OLog Glassfish Server
 ---------------------
