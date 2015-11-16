@@ -63,7 +63,7 @@ OLog Glassfish Server
 
 To reboot the glassfish server on ``xf23id-ca.cs.nsls2.local`` execute::
 
-    swilkins@xf23id-ca:~$su - glassfish
+    swilkins@xf23id-ca:~$sudo su - glassfish
     glassfish@xf23id-ca:~$cd glassfish3/bin/
     glassfish@xf23id-ca:~/glassfish3/bin$ ./asadmin stop-domain domain1
     glassfish@xf23id-ca:~/glassfish3/bin$ ./asadmin stop-domain domain2
