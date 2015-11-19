@@ -8,6 +8,7 @@ Contents:
    
    csx-1/index
    csx/help
+   notebooks/index
 
 Downloads
 =========
