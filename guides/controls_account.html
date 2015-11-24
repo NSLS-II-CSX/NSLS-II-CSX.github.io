@@ -85,8 +85,8 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">UNIX Account Setup</a><ul>
+<li><a class="reference internal" href="#file-permissions">File Permissions</a></li>
 <li><a class="reference internal" href="#bash-shell-setup">Bash Shell Setup</a></li>
-<li><a class="reference internal" href="#groups-and-permissions">Groups and Permissions</a></li>
 </ul>
 </li>
 </ul>
@@ -137,8 +137,8 @@
     </a>
   </li><ul>
 <li><a class="reference internal" href="#">UNIX Account Setup</a><ul>
+<li><a class="reference internal" href="#file-permissions">File Permissions</a></li>
 <li><a class="reference internal" href="#bash-shell-setup">Bash Shell Setup</a></li>
-<li><a class="reference internal" href="#groups-and-permissions">Groups and Permissions</a></li>
 </ul>
 </li>
 </ul>
@@ -160,6 +160,44 @@
       
   <div class="section" id="unix-account-setup">
 <h1>UNIX Account Setup<a class="headerlink" href="#unix-account-setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="file-permissions">
+<h2>File Permissions<a class="headerlink" href="#file-permissions" title="Permalink to this headline">¶</a></h2>
+<p>In a unix system every file (and directory) has an owner, an associated
+group, and a set of permission flags that specify separate read, write,
+and execute permissions for the <em>user</em> (owner), <em>group</em>, and <em>other</em>.
+<em>Other</em> is also sometimes known as <em>world</em> permissions, and applies to
+all users who can login to the system.</p>
+<p>The permission flags can be seen by the <code class="docutils literal"><span class="pre">ls</span> <span class="pre">-l</span></code> command:</p>
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv1 ~/Presentations]$ ls -l
+total 24M
+-rw-rw---- 1 swilkins csx  22M Mar  5  2014 csx.pdf
+-rw-rw---- 1 swilkins csx 1.2M Mar  3  2014 csx.ppt
+drwxrwx--- 2 swilkins csx    6 Nov 24 06:15 other
+</pre></div>
+</div>
+<p>where in the example above the files are read/write permitted for both the user
+(swilkins) and any members of the csx group. Any other users cannot read or
+write the files. Note that the directory <em>other</em> has the execute bit set for only
+the user and group to restrict listing to only the user and members of the csx group.</p>
+<p>UNIX uses the <strong>umask</strong> to define how (new) files permissions are set. This can
+be set on a per-user basis using the <code class="docutils literal"><span class="pre">umask</span></code> command to set the default (allowed)
+permissions. The <code class="docutils literal"><span class="pre">umask</span></code> command uses the <a class="reference external" href="https://en.wikipedia.org/wiki/Chmod">octal representation</a> the same as
+<code class="docutils literal"><span class="pre">chmod</span></code> to define permissions and should have the <em>restricted</em> permissions
+set - i.e. the inverse of what you want the files to be. For example:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">umask </span><span class="m">0227</span>      <span class="c"># allow user rwx group r-x and other r-x      (-rwxr-xr-x)</span>
+<span class="nv">$ </span><span class="nb">umask </span><span class="m">0027</span>      <span class="c"># allow user rwx group r-x and restrict other (-rwxr-x---)</span>
+<span class="nv">$ </span><span class="nb">umask </span><span class="m">0007</span>      <span class="c"># allow group and user rwx and restrict other (-rwxrwx---)</span>
+<span class="nv">$ </span><span class="nb">umask </span><span class="m">0077</span>      <span class="c"># allow only user rwx                         (-rwx------)</span>
+</pre></div>
+</div>
+<p>to set all files to be only read/write/execute by the owner
+the umask would be 077 To set the default permissions to group and
+group read/write and
+restrict permissions to everyone else add the following line to <code class="docutils literal"><span class="pre">.bashrc</span></code></p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">umask </span>0007
+</pre></div>
+</div>
+</div>
 <div class="section" id="bash-shell-setup">
 <h2>Bash Shell Setup<a class="headerlink" href="#bash-shell-setup" title="Permalink to this headline">¶</a></h2>
 <p>The BASH shell is initialized by two main files <code class="docutils literal"><span class="pre">.bashrc</span></code> and <code class="docutils literal"><span class="pre">.bash_profile</span></code>.
@@ -181,27 +219,6 @@ shells:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="k">if</span> <span class="o">[</span> -f ~/.bashrc <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
     <span class="nb">source</span> ~/.bashrc
 <span class="k">fi</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="groups-and-permissions">
-<h2>Groups and Permissions<a class="headerlink" href="#groups-and-permissions" title="Permalink to this headline">¶</a></h2>
-<p>UNIX uses the <strong>umask</strong> to define how (new) files permissions are set. This can
-be set on a per-user basis using the <code class="docutils literal"><span class="pre">umask</span></code> command to set the default (allowed)
-permissions. The <code class="docutils literal"><span class="pre">umask</span></code> command uses the <a class="reference external" href="https://en.wikipedia.org/wiki/Chmod">octal representation</a> the same as
-<code class="docutils literal"><span class="pre">chmod</span></code> to define permissions and should have the <em>restricted</em> permissions
-set - i.e. the inverse of what you want the files to be. For example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">umask </span><span class="m">0227</span>      <span class="c"># allow user rwx group r-x and other r-x      (-rwxr-xr-x)</span>
-<span class="nv">$ </span><span class="nb">umask </span><span class="m">0027</span>      <span class="c"># allow user rwx group r-x and restrict other (-rwxr-x---)</span>
-<span class="nv">$ </span><span class="nb">umask </span><span class="m">0007</span>      <span class="c"># allow group and user rwx and restrict other (-rwxrwx---)</span>
-<span class="nv">$ </span><span class="nb">umask </span><span class="m">0077</span>      <span class="c"># allow only user rwx                         (-rwx------)</span>
-</pre></div>
-</div>
-<p>to set all files to be only read/write/execute by the owner
-the umask would be 077 To set the default permissions to group and
-group read/write and
-restrict permissions to everyone else add the following line to <code class="docutils literal"><span class="pre">.bashrc</span></code></p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">umask </span>0007
 </pre></div>
 </div>
 </div>

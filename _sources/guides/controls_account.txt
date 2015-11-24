@@ -1,6 +1,51 @@
 UNIX Account Setup
 ==================
 
+File Permissions
+----------------
+
+In a unix system every file (and directory) has an owner, an associated
+group, and a set of permission flags that specify separate read, write,
+and execute permissions for the *user* (owner), *group*, and *other*.
+*Other* is also sometimes known as *world* permissions, and applies to
+all users who can login to the system. 
+
+The permission flags can be seen by the ``ls -l`` command::
+
+    [swilkins@xf23id1-srv1 ~/Presentations]$ ls -l
+    total 24M
+    -rw-rw---- 1 swilkins csx  22M Mar  5  2014 csx.pdf
+    -rw-rw---- 1 swilkins csx 1.2M Mar  3  2014 csx.ppt
+    drwxrwx--- 2 swilkins csx    6 Nov 24 06:15 other
+
+where in the example above the files are read/write permitted for both the user
+(swilkins) and any members of the csx group. Any other users cannot read or
+write the files. Note that the directory *other* has the execute bit set for only
+the user and group to restrict listing to only the user and members of the csx group.
+
+UNIX uses the **umask** to define how (new) files permissions are set. This can
+be set on a per-user basis using the ``umask`` command to set the default (allowed) 
+permissions. The ``umask`` command uses the `octal representation`_ the same as
+``chmod`` to define permissions and should have the *restricted* permissions
+set - i.e. the inverse of what you want the files to be. For example: 
+
+.. code-block:: bash
+
+    $ umask 0227      # allow user rwx group r-x and other r-x      (-rwxr-xr-x)
+    $ umask 0027      # allow user rwx group r-x and restrict other (-rwxr-x---)
+    $ umask 0007      # allow group and user rwx and restrict other (-rwxrwx---)
+    $ umask 0077      # allow only user rwx                         (-rwx------)
+
+to set all files to be only read/write/execute by the owner
+the umask would be 077 To set the default permissions to group and
+group read/write and
+restrict permissions to everyone else add the following line to ``.bashrc``
+
+.. code-block:: bash
+
+    umask 0007
+
+
 Bash Shell Setup
 ----------------
 
@@ -27,33 +72,6 @@ shells:
     if [ -f ~/.bashrc ]; then
         source ~/.bashrc
     fi
-
-Groups and Permissions
-----------------------
-
-UNIX uses the **umask** to define how (new) files permissions are set. This can
-be set on a per-user basis using the ``umask`` command to set the default (allowed) 
-permissions. The ``umask`` command uses the `octal representation`_ the same as
-``chmod`` to define permissions and should have the *restricted* permissions
-set - i.e. the inverse of what you want the files to be. For example: 
-
-.. code-block:: bash
-
-    $ umask 0227      # allow user rwx group r-x and other r-x      (-rwxr-xr-x)
-    $ umask 0027      # allow user rwx group r-x and restrict other (-rwxr-x---)
-    $ umask 0007      # allow group and user rwx and restrict other (-rwxrwx---)
-    $ umask 0077      # allow only user rwx                         (-rwx------)
-
-to set all files to be only read/write/execute by the owner
-the umask would be 077 To set the default permissions to group and
-group read/write and
-restrict permissions to everyone else add the following line to ``.bashrc``
-
-.. code-block:: bash
-
-    umask 0007
-
-
 
 
 
