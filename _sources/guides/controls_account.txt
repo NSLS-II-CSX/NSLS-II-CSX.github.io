@@ -1,5 +1,5 @@
-UNIX Account Setup
-==================
+UNIX Primer and Account Setup
+=============================
 
 File Permissions
 ----------------
@@ -7,7 +7,7 @@ File Permissions
 In a unix system every file (and directory) has an owner, an associated
 group, and a set of permission flags that specify separate read, write,
 and execute permissions for the *user* (owner), *group*, and *other*.
-*Other* is also sometimes known as *world* permissions, and applies to
+*other* is also sometimes known as *world* permissions, and applies to
 all users who can login to the system. 
 
 The permission flags can be seen by the ``ls -l`` command::
@@ -28,8 +28,9 @@ directory *other* has the execute bit set for only the user and group to
 restrict listing to only the user and members of the csx group.
 
 To set file permissions, UNIX uses the *octal* representation of file
-permissions, with 4 digits representing the special, user, group and other.
+permissions, with 4 digits representing the special, user, group and other. These permissions are outlined in the table :ref:`octal_table <octal file permissions>`
 
+.. _octal_table:
 .. table:: Octal file permissions for ``chmod`` and ``umask``
 
     =========== ==================================== ==================================================== 
@@ -98,7 +99,7 @@ The following example illustrates the use of the ``umask`` command: ::
     -rw-rw---- 1 swilkins csx 0 Nov 24 06:55 hello_world
     -rw-r--r-- 1 swilkins csx 0 Nov 24 06:58 hello_world_again
 
-To set the umask for every session the command should be added to your
+To set the *umask* for every session the command should be added to your
 ``.bashrc`` file. CSX Team members should add the following to their ``.bashrc``:
 
 .. code-block:: bash

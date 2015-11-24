@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>UNIX Account Setup &mdash; NSLS-II CSX Beamline Docs 0.1 documentation</title>
+    <title>UNIX Primer and Account Setup &mdash; NSLS-II CSX Beamline Docs 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -70,7 +70,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../csx-1/index.html">CSX-1 (23-ID-1) Beamline Doccumentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csx-1/index.html#indices-and-tables">Indices and tables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csx/help.html">HELP!! The %$^$#&#64;% just crashed</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">UNIX Account Setup</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">UNIX Primer and Account Setup</a></li>
 </ul>
 </ul>
 </li>
@@ -84,7 +84,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">UNIX Account Setup</a><ul>
+<li><a class="reference internal" href="#">UNIX Primer and Account Setup</a><ul>
 <li><a class="reference internal" href="#file-permissions">File Permissions</a></li>
 <li><a class="reference internal" href="#bash-shell-setup">Bash Shell Setup</a></li>
 </ul>
@@ -136,7 +136,7 @@
     <a href="../csx/help.html" title="Previous Chapter: HELP!! The %$^$#@% just crashed"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; HELP!! The %$...</span>
     </a>
   </li><ul>
-<li><a class="reference internal" href="#">UNIX Account Setup</a><ul>
+<li><a class="reference internal" href="#">UNIX Primer and Account Setup</a><ul>
 <li><a class="reference internal" href="#file-permissions">File Permissions</a></li>
 <li><a class="reference internal" href="#bash-shell-setup">Bash Shell Setup</a></li>
 </ul>
@@ -158,14 +158,14 @@
       </div>
     <div class="col-md-9">
       
-  <div class="section" id="unix-account-setup">
-<h1>UNIX Account Setup<a class="headerlink" href="#unix-account-setup" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="unix-primer-and-account-setup">
+<h1>UNIX Primer and Account Setup<a class="headerlink" href="#unix-primer-and-account-setup" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="file-permissions">
 <h2>File Permissions<a class="headerlink" href="#file-permissions" title="Permalink to this headline">¶</a></h2>
 <p>In a unix system every file (and directory) has an owner, an associated
 group, and a set of permission flags that specify separate read, write,
 and execute permissions for the <em>user</em> (owner), <em>group</em>, and <em>other</em>.
-<em>Other</em> is also sometimes known as <em>world</em> permissions, and applies to
+<em>other</em> is also sometimes known as <em>world</em> permissions, and applies to
 all users who can login to the system.</p>
 <p>The permission flags can be seen by the <code class="docutils literal"><span class="pre">ls</span> <span class="pre">-l</span></code> command:</p>
 <div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv1 ~/Presentations]$ ls -l
@@ -184,9 +184,9 @@ csx group. Any other users cannot read or write the files. Note that the
 directory <em>other</em> has the execute bit set for only the user and group to
 restrict listing to only the user and members of the csx group.</p>
 <p>To set file permissions, UNIX uses the <em>octal</em> representation of file
-permissions, with 4 digits representing the special, user, group and other.</p>
+permissions, with 4 digits representing the special, user, group and other. These permissions are outlined in the table <span class="xref std std-ref">octal_table</span></p>
 <table border="1" class="docutils" id="id1">
-<caption><span class="caption-text">Octal file permissions for <code class="docutils literal"><span class="pre">chmod</span></code> and <code class="docutils literal"><span class="pre">umask</span></code></span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<span id="octal-table"></span><caption><span class="caption-text">Octal file permissions for <code class="docutils literal"><span class="pre">chmod</span></code> and <code class="docutils literal"><span class="pre">umask</span></code></span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="11%" />
 <col width="36%" />
@@ -284,7 +284,7 @@ total 0
 -rw-r--r-- 1 swilkins csx 0 Nov 24 06:58 hello_world_again
 </pre></div>
 </div>
-<p>To set the umask for every session the command should be added to your
+<p>To set the <em>umask</em> for every session the command should be added to your
 <code class="docutils literal"><span class="pre">.bashrc</span></code> file. CSX Team members should add the following to their <code class="docutils literal"><span class="pre">.bashrc</span></code>:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nb">umask </span>0027
 </pre></div>
