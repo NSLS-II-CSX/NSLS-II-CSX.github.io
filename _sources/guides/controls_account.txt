@@ -15,3 +15,11 @@ executed. This is often a source of confusion. These files are summarized below:
 * `.bash_profile` : This is run by *login* shells. These are shells
   that are started when you login from another host or you login from the text
   terminal on a local machine. 
+
+BASH is also different from other shells in that `.bashrc` and `.bash_profile` are *mutually exclusive* (i.e. only one is run on the shell startup). To get round this problem, most people place teh following in the `.bash_profile` so that the shell is initialized the same way for both *interactive* and *login* shells. 
+
+```
+if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
+fi
+```

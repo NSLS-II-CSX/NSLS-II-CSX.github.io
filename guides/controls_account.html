@@ -85,7 +85,10 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">UNIX Account Setup</a><ul>
-<li><a class="reference internal" href="#bash-shell-setup">Bash Shell Setup</a></li>
+<li><a class="reference internal" href="#bash-shell-setup">Bash Shell Setup</a><ul>
+<li><a class="reference internal" href="#fi">fi</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -136,7 +139,10 @@
     </a>
   </li><ul>
 <li><a class="reference internal" href="#">UNIX Account Setup</a><ul>
-<li><a class="reference internal" href="#bash-shell-setup">Bash Shell Setup</a></li>
+<li><a class="reference internal" href="#bash-shell-setup">Bash Shell Setup</a><ul>
+<li><a class="reference internal" href="#fi">fi</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -171,6 +177,14 @@ system.</li>
 that are started when you login from another host or you login from the text
 terminal on a local machine.</li>
 </ul>
+<p>BASH is also different from other shells in that <cite>.bashrc</cite> and <cite>.bash_profile</cite> are <em>mutually exclusive</em> (i.e. only one is run on the shell startup). To get round this problem, most people place teh following in the <cite>.bash_profile</cite> so that the shell is initialized the same way for both <em>interactive</em> and <em>login</em> shells.</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>`
+if [ -f ~/.bashrc ]; then</p>
+<blockquote>
+<div>source ~/.bashrc</div></blockquote>
+<div class="section" id="fi">
+<h3>fi<a class="headerlink" href="#fi" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 </div>
 
