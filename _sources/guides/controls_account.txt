@@ -28,4 +28,9 @@ shells:
         source ~/.bashrc
     fi
 
+Groups and Permissions
+----------------------
 
+UNIX uses the **umask** to define how (new) files permissions are set. This can
+be set on a per-user basis using the ``umask`` command to set the default
+permissions. The users 
