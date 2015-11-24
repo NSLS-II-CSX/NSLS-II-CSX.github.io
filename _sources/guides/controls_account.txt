@@ -29,8 +29,8 @@ restrict listing to only the user and members of the csx group.
 
 To set file permissions, UNIX uses the *octal* representation of file
 permissions, with 4 digits representing the special, user, group and other.
-These permissions are outlined in the table :ref:`<octal file
-permissions <octal-table>`
+These permissions are outlined in the table :ref:`octal file permissions
+<octal-table>`
 
 .. _octal-table:
 
@@ -68,10 +68,10 @@ the ``-R`` option. For example: ::
 
 UNIX uses the **umask** to define how (new or default) files permissions are
 set. This can be set on a per-user basis using the ``umask`` command to set the
-default (allowed) permissions. The ``umask`` command uses the `octal
-representation`_ the same as ``chmod`` to define permissions and should have
-the *restricted* permissions set - i.e. the inverse of what you want the files
-to be. 
+default (allowed) permissions. The ``umask`` command uses the :ref:`octal
+representation <octal-table>` the same as ``chmod`` to define permissions and
+should have the *restricted* permissions set - i.e. the inverse of what you
+want the files to be. 
 
 .. code-block:: bash
 

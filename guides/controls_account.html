@@ -185,8 +185,7 @@ directory <em>other</em> has the execute bit set for only the user and group to
 restrict listing to only the user and members of the csx group.</p>
 <p>To set file permissions, UNIX uses the <em>octal</em> representation of file
 permissions, with 4 digits representing the special, user, group and other.
-These permissions are outlined in the table <a class="reference internal" href="#octal-table"><span>&lt;octal file
-permissions</span></a></p>
+These permissions are outlined in the table <a class="reference internal" href="#octal-table"><span>octal file permissions</span></a></p>
 <table border="1" class="docutils" id="id1">
 <span id="octal-table"></span><caption><span class="caption-text">Octal file permissions for <code class="docutils literal"><span class="pre">chmod</span></code> and <code class="docutils literal"><span class="pre">umask</span></code></span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -254,10 +253,10 @@ drwx------ 2 swilkins csx    6 Nov 24 06:15 other
 </div>
 <p>UNIX uses the <strong>umask</strong> to define how (new or default) files permissions are
 set. This can be set on a per-user basis using the <code class="docutils literal"><span class="pre">umask</span></code> command to set the
-default (allowed) permissions. The <code class="docutils literal"><span class="pre">umask</span></code> command uses the <a class="reference external" href="https://en.wikipedia.org/wiki/Chmod">octal
-representation</a> the same as <code class="docutils literal"><span class="pre">chmod</span></code> to define permissions and should have
-the <em>restricted</em> permissions set - i.e. the inverse of what you want the files
-to be.</p>
+default (allowed) permissions. The <code class="docutils literal"><span class="pre">umask</span></code> command uses the <a class="reference internal" href="#octal-table"><span>octal
+representation</span></a> the same as <code class="docutils literal"><span class="pre">chmod</span></code> to define permissions and
+should have the <em>restricted</em> permissions set - i.e. the inverse of what you
+want the files to be.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">umask </span><span class="m">0227</span>      <span class="c"># allow user rwx group r-x and other r-x      (-rwxr-xr-x)</span>
 <span class="nv">$ </span><span class="nb">umask </span><span class="m">0027</span>      <span class="c"># allow user rwx group r-x and restrict other (-rwxr-x---)</span>
 <span class="nv">$ </span><span class="nb">umask </span><span class="m">0007</span>      <span class="c"># allow group and user rwx and restrict other (-rwxrwx---)</span>
