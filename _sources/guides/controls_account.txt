@@ -30,18 +30,18 @@ restrict listing to only the user and members of the csx group.
 To set file permissions, UNIX uses the *octal* representation of file
 permissions, with 4 digits representing the special, user, group and other.
 
-=========== ===================================================== =====================
-Octal digit **chmod** Permissions                                 **umask** Permissions
-=========== ===================================================== =====================
-0           any permission may be set
-1           setting of execute permission is prohibited
-2           setting of write permission is prohibited
-3           setting of write and execute permission is prohibited This is also 
-4           setting of read permission is prohibited
-5           setting of read and execute permission is prohibited
-6           setting of read and write permission is prohibited
-7           all permissions are prohibited from being set
-=========== ===================================================== =====================
+=========== ===================== ==================================================== 
+Octal digit ``chmod`` Permissions ``umask`` Permissions                                 
+=========== ===================== ==================================================== 
+0                                 ny permission may be set
+1                                 etting of execute permission is prohibited
+2                                 etting of write permission is prohibited
+3           This is also          etting of write and execute permission is prohibited 
+4                                 etting of read permission is prohibited
+5                                 etting of read and execute permission is prohibited
+6                                 etting of read and write permission is prohibited
+7                                 ll permissions are prohibited from being set
+=========== ===================== ==================================================== 
 
 The file permissions can be changed using the ``chmod`` command with the
 permissions specified in an octal format and can be applied *recursively* using
