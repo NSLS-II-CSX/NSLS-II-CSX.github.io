@@ -213,25 +213,25 @@ to be.</p>
 </pre></div>
 </div>
 <p>The following example illustrates the use of the <code class="docutils literal"><span class="pre">umask</span></code> command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span><span class="nb">umask</span>
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv1 ~/Example]$ umask
 0007
-<span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span>touch hello_world
-<span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span>ls -l
+[swilkins@xf23id1-srv1 ~/Example]$ touch hello_world
+[swilkins@xf23id1-srv1 ~/Example]$ ls -l
 total 0
--rw-rw---- <span class="m">1</span> swilkins csx <span class="m">0</span> Nov <span class="m">24</span> 06:55 hello_world
-<span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span><span class="nb">umask </span>0027
-<span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span>touch goodbye_world
-<span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span>ls -l
+-rw-rw---- 1 swilkins csx 0 Nov 24 06:55 hello_world
+[swilkins@xf23id1-srv1 ~/Example]$ umask 0027
+[swilkins@xf23id1-srv1 ~/Example]$ touch goodbye_world
+[swilkins@xf23id1-srv1 ~/Example]$ ls -l
 total 0
--rw-r----- <span class="m">1</span> swilkins csx <span class="m">0</span> Nov <span class="m">24</span> 06:55 goodbye_world
--rw-rw---- <span class="m">1</span> swilkins csx <span class="m">0</span> Nov <span class="m">24</span> 06:55 hello_world
-<span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span><span class="nb">umask </span>0023
-<span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span>touch hello_world_again
-<span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span>ls -l
+-rw-r----- 1 swilkins csx 0 Nov 24 06:55 goodbye_world
+-rw-rw---- 1 swilkins csx 0 Nov 24 06:55 hello_world
+[swilkins@xf23id1-srv1 ~/Example]$ umask 0023
+[swilkins@xf23id1-srv1 ~/Example]$ touch hello_world_again
+[swilkins@xf23id1-srv1 ~/Example]$ ls -l
 total 0
--rw-r----- <span class="m">1</span> swilkins csx <span class="m">0</span> Nov <span class="m">24</span> 06:55 goodbye_world
--rw-rw---- <span class="m">1</span> swilkins csx <span class="m">0</span> Nov <span class="m">24</span> 06:55 hello_world
--rw-r--r-- <span class="m">1</span> swilkins csx <span class="m">0</span> Nov <span class="m">24</span> 06:58 hello_world_again
+-rw-r----- 1 swilkins csx 0 Nov 24 06:55 goodbye_world
+-rw-rw---- 1 swilkins csx 0 Nov 24 06:55 hello_world
+-rw-r--r-- 1 swilkins csx 0 Nov 24 06:58 hello_world_again
 </pre></div>
 </div>
 <p>To set the umask for every session the command should be added to your

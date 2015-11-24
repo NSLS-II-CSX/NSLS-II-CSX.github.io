@@ -60,9 +60,7 @@ to be.
     $ umask 0007      # allow group and user rwx and restrict other (-rwxrwx---)
     $ umask 0077      # allow only user rwx                         (-rwx------)
 
-The following example illustrates the use of the ``umask`` command:
-
-.. code-block:: bash
+The following example illustrates the use of the ``umask`` command: ::
 
     [swilkins@xf23id1-srv1 ~/Example]$ umask
     0007
