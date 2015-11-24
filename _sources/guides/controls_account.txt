@@ -8,4 +8,10 @@ The BASH shell is initialized by two main files `.bashrc` and `.bash_profile`.
 These are executed by the shell differently depending on how the shell is
 executed. This is often a source of confusion. These files are summarized below:
 
-* `.bashrc` : This is run by *interactive* shells
+* `.bashrc` : This is run by *interactive* shells. These are shells that are connected to a
+  terminal (or pseudo-terminal) such as a `xterm` running under a windowing
+  system.  
+  
+* `.bash_profile` : This is run by *login* shells. These are shells
+  that are started when you login from another host or you login from the text
+  terminal on a local machine. 
