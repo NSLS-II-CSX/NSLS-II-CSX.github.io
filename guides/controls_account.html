@@ -183,23 +183,60 @@ are read/write permitted for both the user (swilkins) and any members of the
 csx group. Any other users cannot read or write the files. Note that the
 directory <em>other</em> has the execute bit set for only the user and group to
 restrict listing to only the user and members of the csx group.</p>
-<p>The file permissions can be changed using the <code class="docutils literal"><span class="pre">chmod</span></code> command.</p>
-<p>UNIX uses the <strong>umask</strong> to define how (new) files permissions are set. This can
-be set on a per-user basis using the <code class="docutils literal"><span class="pre">umask</span></code> command to set the default (allowed)
-permissions. The <code class="docutils literal"><span class="pre">umask</span></code> command uses the <a class="reference external" href="https://en.wikipedia.org/wiki/Chmod">octal representation</a> the same as
-<code class="docutils literal"><span class="pre">chmod</span></code> to define permissions and should have the <em>restricted</em> permissions
-set - i.e. the inverse of what you want the files to be. For example:</p>
+<p>The file permissions can be changed using the <code class="docutils literal"><span class="pre">chmod</span></code> command with the
+permissions specified in an octal format and can be applied <em>recursively</em> using
+the <code class="docutils literal"><span class="pre">-R</span></code> option. For example:</p>
+<div class="highlight-bash"><div class="highlight"><pre>[swilkins@xf23id1-srv1 ~/Presentations]$ ls -l
+total 24M
+-rw-rw---- 1 swilkins csx  22M Mar  5  2014 csx.pdf
+-rw-rw---- 1 swilkins csx 1.2M Mar  3  2014 csx.ppt
+drwxrwx--- 2 swilkins csx    6 Nov 24 06:15 other
+[swilkins@xf23id1-srv1 ~/Presentations]$ chmod 700 other
+[swilkins@xf23id1-srv1 ~/Presentations]$ ls -l
+total 24M
+-rw-rw---- 1 swilkins csx  22M Mar  5  2014 csx.pdf
+-rw-rw---- 1 swilkins csx 1.2M Mar  3  2014 csx.ppt
+drwx------ 2 swilkins csx    6 Nov 24 06:15 other
+[swilkins@xf23id1-srv1 ~/Presentations]$
+</pre></div>
+</div>
+<p>UNIX uses the <strong>umask</strong> to define how (new or default) files permissions are
+set. This can be set on a per-user basis using the <code class="docutils literal"><span class="pre">umask</span></code> command to set the
+default (allowed) permissions. The <code class="docutils literal"><span class="pre">umask</span></code> command uses the <a class="reference external" href="https://en.wikipedia.org/wiki/Chmod">octal
+representation</a> the same as <code class="docutils literal"><span class="pre">chmod</span></code> to define permissions and should have
+the <em>restricted</em> permissions set - i.e. the inverse of what you want the files
+to be.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">umask </span><span class="m">0227</span>      <span class="c"># allow user rwx group r-x and other r-x      (-rwxr-xr-x)</span>
 <span class="nv">$ </span><span class="nb">umask </span><span class="m">0027</span>      <span class="c"># allow user rwx group r-x and restrict other (-rwxr-x---)</span>
 <span class="nv">$ </span><span class="nb">umask </span><span class="m">0007</span>      <span class="c"># allow group and user rwx and restrict other (-rwxrwx---)</span>
 <span class="nv">$ </span><span class="nb">umask </span><span class="m">0077</span>      <span class="c"># allow only user rwx                         (-rwx------)</span>
 </pre></div>
 </div>
-<p>to set all files to be only read/write/execute by the owner
-the umask would be 077 To set the default permissions to group and
-group read/write and
-restrict permissions to everyone else add the following line to <code class="docutils literal"><span class="pre">.bashrc</span></code></p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">umask </span>0007
+<p>The following example illustrates the use of the <code class="docutils literal"><span class="pre">umask</span></code> command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span><span class="nb">umask</span>
+0007
+<span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span>touch hello_world
+<span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span>ls -l
+total 0
+-rw-rw---- <span class="m">1</span> swilkins csx <span class="m">0</span> Nov <span class="m">24</span> 06:55 hello_world
+<span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span><span class="nb">umask </span>0027
+<span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span>touch goodbye_world
+<span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span>ls -l
+total 0
+-rw-r----- <span class="m">1</span> swilkins csx <span class="m">0</span> Nov <span class="m">24</span> 06:55 goodbye_world
+-rw-rw---- <span class="m">1</span> swilkins csx <span class="m">0</span> Nov <span class="m">24</span> 06:55 hello_world
+<span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span><span class="nb">umask </span>0023
+<span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span>touch hello_world_again
+<span class="o">[</span>swilkins@xf23id1-srv1 ~/Example<span class="o">]</span><span class="nv">$ </span>ls -l
+total 0
+-rw-r----- <span class="m">1</span> swilkins csx <span class="m">0</span> Nov <span class="m">24</span> 06:55 goodbye_world
+-rw-rw---- <span class="m">1</span> swilkins csx <span class="m">0</span> Nov <span class="m">24</span> 06:55 hello_world
+-rw-r--r-- <span class="m">1</span> swilkins csx <span class="m">0</span> Nov <span class="m">24</span> 06:58 hello_world_again
+</pre></div>
+</div>
+<p>To set the umask for every session the command should be added to your
+<code class="docutils literal"><span class="pre">.bashrc</span></code> file. CSX Team members should add the following to their <code class="docutils literal"><span class="pre">.bashrc</span></code>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">umask </span>0027
 </pre></div>
 </div>
 </div>

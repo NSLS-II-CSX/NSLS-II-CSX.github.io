@@ -27,13 +27,31 @@ csx group. Any other users cannot read or write the files. Note that the
 directory *other* has the execute bit set for only the user and group to
 restrict listing to only the user and members of the csx group.
 
-The file permissions can be changed using the ``chmod`` command. 
+The file permissions can be changed using the ``chmod`` command with the
+permissions specified in an octal format and can be applied *recursively* using
+the ``-R`` option. For example:
 
-UNIX uses the **umask** to define how (new) files permissions are set. This can
-be set on a per-user basis using the ``umask`` command to set the default (allowed) 
-permissions. The ``umask`` command uses the `octal representation`_ the same as
-``chmod`` to define permissions and should have the *restricted* permissions
-set - i.e. the inverse of what you want the files to be. For example: 
+.. code-block:: bash
+
+    [swilkins@xf23id1-srv1 ~/Presentations]$ ls -l
+    total 24M
+    -rw-rw---- 1 swilkins csx  22M Mar  5  2014 csx.pdf
+    -rw-rw---- 1 swilkins csx 1.2M Mar  3  2014 csx.ppt
+    drwxrwx--- 2 swilkins csx    6 Nov 24 06:15 other
+    [swilkins@xf23id1-srv1 ~/Presentations]$ chmod 700 other
+    [swilkins@xf23id1-srv1 ~/Presentations]$ ls -l
+    total 24M
+    -rw-rw---- 1 swilkins csx  22M Mar  5  2014 csx.pdf
+    -rw-rw---- 1 swilkins csx 1.2M Mar  3  2014 csx.ppt
+    drwx------ 2 swilkins csx    6 Nov 24 06:15 other
+    [swilkins@xf23id1-srv1 ~/Presentations]$
+
+UNIX uses the **umask** to define how (new or default) files permissions are
+set. This can be set on a per-user basis using the ``umask`` command to set the
+default (allowed) permissions. The ``umask`` command uses the `octal
+representation`_ the same as ``chmod`` to define permissions and should have
+the *restricted* permissions set - i.e. the inverse of what you want the files
+to be. 
 
 .. code-block:: bash
 
@@ -42,14 +60,36 @@ set - i.e. the inverse of what you want the files to be. For example:
     $ umask 0007      # allow group and user rwx and restrict other (-rwxrwx---)
     $ umask 0077      # allow only user rwx                         (-rwx------)
 
-to set all files to be only read/write/execute by the owner
-the umask would be 077 To set the default permissions to group and
-group read/write and
-restrict permissions to everyone else add the following line to ``.bashrc``
+The following example illustrates the use of the ``umask`` command:
 
 .. code-block:: bash
 
-    umask 0007
+    [swilkins@xf23id1-srv1 ~/Example]$ umask
+    0007
+    [swilkins@xf23id1-srv1 ~/Example]$ touch hello_world
+    [swilkins@xf23id1-srv1 ~/Example]$ ls -l
+    total 0
+    -rw-rw---- 1 swilkins csx 0 Nov 24 06:55 hello_world
+    [swilkins@xf23id1-srv1 ~/Example]$ umask 0027
+    [swilkins@xf23id1-srv1 ~/Example]$ touch goodbye_world
+    [swilkins@xf23id1-srv1 ~/Example]$ ls -l
+    total 0
+    -rw-r----- 1 swilkins csx 0 Nov 24 06:55 goodbye_world
+    -rw-rw---- 1 swilkins csx 0 Nov 24 06:55 hello_world
+    [swilkins@xf23id1-srv1 ~/Example]$ umask 0023
+    [swilkins@xf23id1-srv1 ~/Example]$ touch hello_world_again
+    [swilkins@xf23id1-srv1 ~/Example]$ ls -l
+    total 0
+    -rw-r----- 1 swilkins csx 0 Nov 24 06:55 goodbye_world
+    -rw-rw---- 1 swilkins csx 0 Nov 24 06:55 hello_world
+    -rw-r--r-- 1 swilkins csx 0 Nov 24 06:58 hello_world_again
+
+To set the umask for every session the command should be added to your
+``.bashrc`` file. CSX Team members should add the following to their ``.bashrc``:
+
+.. code-block:: bash
+
+    umask 0027
 
 
 Bash Shell Setup
