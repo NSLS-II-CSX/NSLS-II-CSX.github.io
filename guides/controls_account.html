@@ -188,7 +188,10 @@ fi
 <h2>Groups and Permissions<a class="headerlink" href="#groups-and-permissions" title="Permalink to this headline">¶</a></h2>
 <p>UNIX uses the <strong>umask</strong> to define how (new) files permissions are set. This can
 be set on a per-user basis using the <code class="docutils literal"><span class="pre">umask</span></code> command to set the default (allowed)
-permissions. The <code class="docutils literal"><span class="pre">umask</span></code> command uses the <a class="reference external" href="https://en.wikipedia.org/wiki/Chmod">octal file notation</a> the same as <code class="docutils literal"><span class="pre">chmod</span></code></p>
+permissions. The <code class="docutils literal"><span class="pre">umask</span></code> command uses the <a class="reference external" href="https://en.wikipedia.org/wiki/Chmod">octal file notation</a> the same as <code class="docutils literal"><span class="pre">chmod</span></code>. To set the default permissions to group and group read/write and restrict permissions to everyone else add the following line to <code class="docutils literal"><span class="pre">.bashrc</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>umask 0007
+</pre></div>
+</div>
 </div>
 </div>
 

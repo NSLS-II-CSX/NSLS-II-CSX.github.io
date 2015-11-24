@@ -33,7 +33,11 @@ Groups and Permissions
 
 UNIX uses the **umask** to define how (new) files permissions are set. This can
 be set on a per-user basis using the ``umask`` command to set the default (allowed) 
-permissions. The ``umask`` command uses the `octal file notation`_ the same as ``chmod`` 
+permissions. The ``umask`` command uses the `octal file notation`_ the same as ``chmod``. To set the default permissions to group and group read/write and restrict permissions to everyone else add the following line to ``.bashrc``::
+
+    umask 0007
+
+
 
 
 
