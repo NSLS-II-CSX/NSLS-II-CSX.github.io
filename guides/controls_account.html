@@ -185,6 +185,53 @@ directory <em>other</em> has the execute bit set for only the user and group to
 restrict listing to only the user and members of the csx group.</p>
 <p>To set file permissions, UNIX uses the <em>octal</em> representation of file
 permissions, with 4 digits representing the special, user, group and other.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="62%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Octal digit</th>
+<th class="head"><strong>chmod</strong> Permissions</th>
+<th class="head"><strong>umask</strong> Permissions</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>any permission may be set</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>setting of execute permission is prohibited</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>setting of write permission is prohibited</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>setting of write and execute permission is prohibited</td>
+<td>This is also</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>setting of read permission is prohibited</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>5</td>
+<td>setting of read and execute permission is prohibited</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>6</td>
+<td>setting of read and write permission is prohibited</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td>all permissions are prohibited from being set</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
 <p>The file permissions can be changed using the <code class="docutils literal"><span class="pre">chmod</span></code> command with the
 permissions specified in an octal format and can be applied <em>recursively</em> using
 the <code class="docutils literal"><span class="pre">-R</span></code> option. For example:</p>
