@@ -4,4 +4,8 @@ UNIX Account Setup
 Bash Shell Setup
 ----------------
 
+The BASH shell is initialized by two main files `.bashrc` and `.bash_profile`.
+These are executed by the shell differently depending on how the shell is
+executed. This is often a source of confusion. These files are summarized below:
 
+* `.bashrc` : This is run by **interactive** shells
