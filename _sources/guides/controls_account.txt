@@ -29,8 +29,8 @@ restrict listing to only the user and members of the csx group.
 
 To set file permissions, UNIX uses the *octal* representation of file
 permissions, with 4 digits representing the special, user, group and other.
-These permissions are outlined in the table :ref:`octal-table <octal file
-permissions>`
+These permissions are outlined in the table :ref:`<octal file
+permissions <octal-table>`
 
 .. _octal-table:
 
