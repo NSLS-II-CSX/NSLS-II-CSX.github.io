@@ -28,9 +28,12 @@ directory *other* has the execute bit set for only the user and group to
 restrict listing to only the user and members of the csx group.
 
 To set file permissions, UNIX uses the *octal* representation of file
-permissions, with 4 digits representing the special, user, group and other. These permissions are outlined in the table :ref:`octal_table <octal file permissions>`
+permissions, with 4 digits representing the special, user, group and other.
+These permissions are outlined in the table :ref:`octal-table <octal file
+permissions>`
 
-.. _octal_table:
+.. _octal-table:
+
 .. table:: Octal file permissions for ``chmod`` and ``umask``
 
     =========== ==================================== ==================================================== 
