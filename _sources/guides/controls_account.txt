@@ -32,5 +32,9 @@ Groups and Permissions
 ----------------------
 
 UNIX uses the **umask** to define how (new) files permissions are set. This can
-be set on a per-user basis using the ``umask`` command to set the default
-permissions. The users 
+be set on a per-user basis using the ``umask`` command to set the default (allowed) 
+permissions. The ``umask`` command uses the `octal file notation`_ the same as ``chmod`` 
+
+
+
+.. _`octal file notation`: https://en.wikipedia.org/wiki/Chmod
