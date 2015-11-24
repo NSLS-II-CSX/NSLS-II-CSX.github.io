@@ -183,10 +183,20 @@ are read/write permitted for both the user (swilkins) and any members of the
 csx group. Any other users cannot read or write the files. Note that the
 directory <em>other</em> has the execute bit set for only the user and group to
 restrict listing to only the user and members of the csx group.</p>
+<p>To set file permissions, UNIX uses the <em>octal</em> representation of file
+permissions, with 4 digits representing the special, user, group and other.</p>
+<p>0   any permission may be set
+1   setting of execute permission is prohibited
+2   setting of write permission is prohibited
+3   setting of write and execute permission is prohibited
+4   setting of read permission is prohibited
+5   setting of read and execute permission is prohibited
+6   setting of read and write permission is prohibited
+7   all permissions are prohibited from being set</p>
 <p>The file permissions can be changed using the <code class="docutils literal"><span class="pre">chmod</span></code> command with the
 permissions specified in an octal format and can be applied <em>recursively</em> using
 the <code class="docutils literal"><span class="pre">-R</span></code> option. For example:</p>
-<div class="highlight-bash"><div class="highlight"><pre>[swilkins@xf23id1-srv1 ~/Presentations]$ ls -l
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv1 ~/Presentations]$ ls -l
 total 24M
 -rw-rw---- 1 swilkins csx  22M Mar  5  2014 csx.pdf
 -rw-rw---- 1 swilkins csx 1.2M Mar  3  2014 csx.ppt
