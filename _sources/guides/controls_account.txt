@@ -41,6 +41,7 @@ Octal digit **chmod** Permissions **umask** Permissions
 5   setting of read and execute permission is prohibited
 6   setting of read and write permission is prohibited
 7   all permissions are prohibited from being set
+=========== ===================== =====================
 
 The file permissions can be changed using the ``chmod`` command with the
 permissions specified in an octal format and can be applied *recursively* using
