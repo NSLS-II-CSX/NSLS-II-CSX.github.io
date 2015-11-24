@@ -18,10 +18,16 @@ The permission flags can be seen by the ``ls -l`` command::
     -rw-rw---- 1 swilkins csx 1.2M Mar  3  2014 csx.ppt
     drwxrwx--- 2 swilkins csx    6 Nov 24 06:15 other
 
-where in the example above the files are read/write permitted for both the user
-(swilkins) and any members of the csx group. Any other users cannot read or
-write the files. Note that the directory *other* has the execute bit set for only
-the user and group to restrict listing to only the user and members of the csx group.
+The first field is a set of 10 permission flags. The first flag is the *file
+type*. For regular files it is not set (-). Directories are indicated by *d*
+and links by *l*. The remaining 9 flags are 3 groups of 3 for read (r) / write
+(w) / execute (x) for the user, group and other. In the example above the files
+are read/write permitted for both the user (swilkins) and any members of the
+csx group. Any other users cannot read or write the files. Note that the
+directory *other* has the execute bit set for only the user and group to
+restrict listing to only the user and members of the csx group.
+
+The file permissions can be changed using the ``chmod`` command. 
 
 UNIX uses the **umask** to define how (new) files permissions are set. This can
 be set on a per-user basis using the ``umask`` command to set the default (allowed) 

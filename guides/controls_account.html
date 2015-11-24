@@ -175,10 +175,15 @@ total 24M
 drwxrwx--- 2 swilkins csx    6 Nov 24 06:15 other
 </pre></div>
 </div>
-<p>where in the example above the files are read/write permitted for both the user
-(swilkins) and any members of the csx group. Any other users cannot read or
-write the files. Note that the directory <em>other</em> has the execute bit set for only
-the user and group to restrict listing to only the user and members of the csx group.</p>
+<p>The first field is a set of 10 permission flags. The first flag is the <em>file
+type</em>. For regular files it is not set (-). Directories are indicated by <em>d</em>
+and links by <em>l</em>. The remaining 9 flags are 3 groups of 3 for read (r) / write
+(w) / execute (x) for the user, group and other. In the example above the files
+are read/write permitted for both the user (swilkins) and any members of the
+csx group. Any other users cannot read or write the files. Note that the
+directory <em>other</em> has the execute bit set for only the user and group to
+restrict listing to only the user and members of the csx group.</p>
+<p>The file permissions can be changed using the <code class="docutils literal"><span class="pre">chmod</span></code> command.</p>
 <p>UNIX uses the <strong>umask</strong> to define how (new) files permissions are set. This can
 be set on a per-user basis using the <code class="docutils literal"><span class="pre">umask</span></code> command to set the default (allowed)
 permissions. The <code class="docutils literal"><span class="pre">umask</span></code> command uses the <a class="reference external" href="https://en.wikipedia.org/wiki/Chmod">octal representation</a> the same as
