@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>UNIX Primer and Account Setup &mdash; NSLS-II CSX Beamline Docs 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="NSLS-II CSX Beamline Docs 0.1 documentation" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          NSLS-II CSX Beamline Docs</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="csx-1/index.html">CSX-1 (23-ID-1) Beamline Doccumentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csx-1/index.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/help.html">HELP!! The %$^$#&#64;% just crashed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/account_setup.html">Controls Account Setup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/conda_env.html">Installing a Personal Conda Environment</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">UNIX Primer and Account Setup</a><ul>
+<li><a class="reference internal" href="#file-permissions">File Permissions</a></li>
+<li><a class="reference internal" href="#bash-shell-setup">Bash Shell Setup</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/unix.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">UNIX Primer and Account Setup</a><ul>
+<li><a class="reference internal" href="#file-permissions">File Permissions</a></li>
+<li><a class="reference internal" href="#bash-shell-setup">Bash Shell Setup</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="sourcelink">
+  <a href="_sources/unix.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="unix-primer-and-account-setup">
+<h1>UNIX Primer and Account Setup<a class="headerlink" href="#unix-primer-and-account-setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="file-permissions">
+<h2>File Permissions<a class="headerlink" href="#file-permissions" title="Permalink to this headline">¶</a></h2>
+<p>In a unix system every file (and directory) has an owner, an associated
+group, and a set of permission flags that specify separate read, write,
+and execute permissions for the <em>user</em> (owner), <em>group</em>, and <em>other</em>.
+<em>other</em> is also sometimes known as <em>world</em> permissions, and applies to
+all users who can login to the system.</p>
+<p>The permission flags can be seen by the <code class="docutils literal"><span class="pre">ls</span> <span class="pre">-l</span></code> command:</p>
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv1 ~/Presentations]$ ls -l
+total 24M
+-rw-rw---- 1 swilkins csx  22M Mar  5  2014 csx.pdf
+-rw-rw---- 1 swilkins csx 1.2M Mar  3  2014 csx.ppt
+drwxrwx--- 2 swilkins csx    6 Nov 24 06:15 other
+</pre></div>
+</div>
+<p>The first field is a set of 10 permission flags. The first flag is the <em>file
+type</em>. For regular files it is not set (-). Directories are indicated by <em>d</em>
+and links by <em>l</em>. The remaining 9 flags are 3 groups of 3 for read (r) / write
+(w) / execute (x) for the user, group and other. In the example above the files
+are read/write permitted for both the user (swilkins) and any members of the
+csx group. Any other users cannot read or write the files. Note that the
+directory <em>other</em> has the execute bit set for only the user and group to
+restrict listing to only the user and members of the csx group.</p>
+<p>To set file permissions, UNIX uses the <em>octal</em> representation of file
+permissions, with 4 digits representing the special, user, group and other.
+These permissions are outlined in the table <a class="reference internal" href="#octal-table"><span>octal file permissions</span></a></p>
+<table border="1" class="docutils" id="id1">
+<span id="octal-table"></span><caption><span class="caption-text">Octal file permissions for <code class="docutils literal"><span class="pre">chmod</span></code> and <code class="docutils literal"><span class="pre">umask</span></code></span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="11%" />
+<col width="36%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Octal digit</th>
+<th class="head"><code class="docutils literal"><span class="pre">chmod</span></code> Permissions</th>
+<th class="head"><code class="docutils literal"><span class="pre">umask</span></code> Permissions</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>No permissions</td>
+<td>Any permission may be set</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>Execute permission only</td>
+<td>Setting of execute permission is prohibited</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>Write permission only</td>
+<td>Setting of write permission is prohibited</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>Write and execute permissions</td>
+<td>Setting of write and execute permission is prohibited</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>Read permission only</td>
+<td>Setting of read permission is prohibited</td>
+</tr>
+<tr class="row-odd"><td>5</td>
+<td>Read and execute permissions</td>
+<td>Setting of read and execute permission is prohibited</td>
+</tr>
+<tr class="row-even"><td>6</td>
+<td>Read and write permissions</td>
+<td>Setting of read and write permission is prohibited</td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td>Read, write and execute permissions</td>
+<td>All permissions are prohibited from being set</td>
+</tr>
+</tbody>
+</table>
+<p>The file permissions can be changed using the <code class="docutils literal"><span class="pre">chmod</span></code> command with the
+permissions specified in an octal format and can be applied <em>recursively</em> using
+the <code class="docutils literal"><span class="pre">-R</span></code> option. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv1 ~/Presentations]$ ls -l
+total 24M
+-rw-rw---- 1 swilkins csx  22M Mar  5  2014 csx.pdf
+-rw-rw---- 1 swilkins csx 1.2M Mar  3  2014 csx.ppt
+drwxrwx--- 2 swilkins csx    6 Nov 24 06:15 other
+[swilkins@xf23id1-srv1 ~/Presentations]$ chmod 700 other
+[swilkins@xf23id1-srv1 ~/Presentations]$ ls -l
+total 24M
+-rw-rw---- 1 swilkins csx  22M Mar  5  2014 csx.pdf
+-rw-rw---- 1 swilkins csx 1.2M Mar  3  2014 csx.ppt
+drwx------ 2 swilkins csx    6 Nov 24 06:15 other
+[swilkins@xf23id1-srv1 ~/Presentations]$
+</pre></div>
+</div>
+<p>UNIX uses the <strong>umask</strong> to define how (new or default) files permissions are
+set. This can be set on a per-user basis using the <code class="docutils literal"><span class="pre">umask</span></code> command to set the
+default (allowed) permissions. The <code class="docutils literal"><span class="pre">umask</span></code> command uses the <a class="reference internal" href="#octal-table"><span>octal
+representation</span></a> the same as <code class="docutils literal"><span class="pre">chmod</span></code> to define permissions and
+should have the <em>restricted</em> permissions set - i.e. the inverse of what you
+want the files to be.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">umask </span><span class="m">0227</span>      <span class="c"># allow user rwx group r-x and other r-x      (-rwxr-xr-x)</span>
+<span class="nv">$ </span><span class="nb">umask </span><span class="m">0027</span>      <span class="c"># allow user rwx group r-x and restrict other (-rwxr-x---)</span>
+<span class="nv">$ </span><span class="nb">umask </span><span class="m">0007</span>      <span class="c"># allow group and user rwx and restrict other (-rwxrwx---)</span>
+<span class="nv">$ </span><span class="nb">umask </span><span class="m">0077</span>      <span class="c"># allow only user rwx                         (-rwx------)</span>
+</pre></div>
+</div>
+<p>The following example illustrates the use of the <code class="docutils literal"><span class="pre">umask</span></code> command:</p>
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv1 ~/Example]$ umask
+0007
+[swilkins@xf23id1-srv1 ~/Example]$ touch hello_world
+[swilkins@xf23id1-srv1 ~/Example]$ ls -l
+total 0
+-rw-rw---- 1 swilkins csx 0 Nov 24 06:55 hello_world
+[swilkins@xf23id1-srv1 ~/Example]$ umask 0027
+[swilkins@xf23id1-srv1 ~/Example]$ touch goodbye_world
+[swilkins@xf23id1-srv1 ~/Example]$ ls -l
+total 0
+-rw-r----- 1 swilkins csx 0 Nov 24 06:55 goodbye_world
+-rw-rw---- 1 swilkins csx 0 Nov 24 06:55 hello_world
+[swilkins@xf23id1-srv1 ~/Example]$ umask 0023
+[swilkins@xf23id1-srv1 ~/Example]$ touch hello_world_again
+[swilkins@xf23id1-srv1 ~/Example]$ ls -l
+total 0
+-rw-r----- 1 swilkins csx 0 Nov 24 06:55 goodbye_world
+-rw-rw---- 1 swilkins csx 0 Nov 24 06:55 hello_world
+-rw-r--r-- 1 swilkins csx 0 Nov 24 06:58 hello_world_again
+</pre></div>
+</div>
+<p>To set the <em>umask</em> for every session the command should be added to your
+<code class="docutils literal"><span class="pre">.bashrc</span></code> file. CSX Team members should add the following to their <code class="docutils literal"><span class="pre">.bashrc</span></code>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">umask </span>0027
+</pre></div>
+</div>
+</div>
+<div class="section" id="bash-shell-setup">
+<h2>Bash Shell Setup<a class="headerlink" href="#bash-shell-setup" title="Permalink to this headline">¶</a></h2>
+<p>The BASH shell is initialized by two main files <code class="docutils literal"><span class="pre">.bashrc</span></code> and <code class="docutils literal"><span class="pre">.bash_profile</span></code>.
+These are executed by the shell differently depending on how the shell is
+executed. This is often a source of confusion. These files are summarized below:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">.bashrc</span></code> : This is run by <em>interactive</em> shells. These are shells that are
+connected to a terminal (or pseudo-terminal) such as a <cite>xterm</cite> running under
+a windowing system.</li>
+<li><code class="docutils literal"><span class="pre">.bash_profile</span></code> : This is run by <em>login</em> shells. These are shells
+that are started when you login from another host or you login from the text
+terminal on a local machine.</li>
+</ul>
+<p>BASH is also different from other shells in that <code class="docutils literal"><span class="pre">.bashrc</span></code> and <code class="docutils literal"><span class="pre">.bash_profile</span></code>
+are <em>mutually exclusive</em> (i.e. only one is run on the shell startup). To get
+round this problem, most people place teh following in the <code class="docutils literal"><span class="pre">.bash_profile</span></code> so
+that the shell is initialized the same way for both <em>interactive</em> and <em>login</em>
+shells:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="k">if</span> <span class="o">[</span> -f ~/.bashrc <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">source</span> ~/.bashrc
+<span class="k">fi</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Stuart B. Wilkins.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

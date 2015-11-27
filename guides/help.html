@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>HELP!! The %$^$#@% just crashed &mdash; NSLS-II CSX Beamline Docs 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="NSLS-II CSX Beamline Docs 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Controls Account Setup Guide" href="account_setup.html" />
+    <link rel="prev" title="Fast CCD Detector" href="../csx-1/endstation/fastccd.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          NSLS-II CSX Beamline Docs</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../csx-1/index.html">CSX-1 (23-ID-1) Beamline Doccumentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csx-1/index.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">HELP!! The %$^$#&#64;% just crashed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="account_setup.html">Controls Account Setup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conda_env.html">Installing a Personal Conda Environment</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">HELP!! The %$^$#&#64;% just crashed</a><ul>
+<li><a class="reference internal" href="#managing-iocs">Managing IOCs</a></li>
+<li><a class="reference internal" href="#olog-glassfish-server">OLog Glassfish Server</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../csx-1/endstation/fastccd.html" title="Previous Chapter: Fast CCD Detector"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Fast CCD Dete...</span>
+    </a>
+  </li>
+  <li>
+    <a href="account_setup.html" title="Next Chapter: Controls Account Setup Guide"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Controls Acco... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/guides/help.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+  <li>
+    <a href="../csx-1/endstation/fastccd.html" title="Previous Chapter: Fast CCD Detector"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Fast CCD Dete...</span>
+    </a>
+  </li>
+  <li>
+    <a href="account_setup.html" title="Next Chapter: Controls Account Setup Guide"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Controls Acco... &raquo;</span>
+    </a>
+  </li><ul>
+<li><a class="reference internal" href="#">HELP!! The %$^$#&#64;% just crashed</a><ul>
+<li><a class="reference internal" href="#managing-iocs">Managing IOCs</a></li>
+<li><a class="reference internal" href="#olog-glassfish-server">OLog Glassfish Server</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="sourcelink">
+  <a href="../_sources/guides/help.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="help-the-just-crashed">
+<h1>HELP!! The %$^$#&#64;% just crashed<a class="headerlink" href="#help-the-just-crashed" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="managing-iocs">
+<h2>Managing IOCs<a class="headerlink" href="#managing-iocs" title="Permalink to this headline">¶</a></h2>
+<p>Soft IOCs are managed through the <code class="docutils literal"><span class="pre">manage-iocs</span></code> script.  To obtain a list of
+softiocs running on a NSLS-II computer use the command <code class="docutils literal"><span class="pre">manage-iocs</span> <span class="pre">report</span></code>
+an example is shown below for <code class="docutils literal"><span class="pre">xf23id1-ioc3</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-ioc3 ~]$ manage-iocs report
+nBASE            | IOC             | USER            |  PORT | EXEC
+/epics/iocs     | apcupsd         | root            |  5000 | /epics/iocs/apcupsd/st.cmd
+/epics/iocs     | cam-diag1       | softioc         |  4202 | /epics/iocs/cam-diag1/st.cmd
+/epics/iocs     | cam-diag6       | softioc         |  4300 | /epics/iocs/cam-diag6/st.cmd
+/epics/iocs     | cam-dif1        | softioc         |  4204 | /epics/iocs/cam-dif1/st.cmd
+/epics/iocs     | cam-dif2        | softioc         |  4205 | /epics/iocs/cam-dif2/st.cmd
+/epics/iocs     | cam-dif3        | softioc         |  4206 | /epics/iocs/cam-dif3/st.cmd
+/epics/iocs     | cam-dif-beam    | softioc         |  4201 | /epics/iocs/cam-dif-beam/st.cmd
+/epics/iocs     | ct-eps          | softioc         |  4002 | /epics/iocs/ct-eps/st.cmd
+/epics/iocs     | es-dg645        | softioc         |  5013 | /epics/iocs/es-dg645/st.cmd
+/epics/iocs     | es-K2611        | softioc         |  4302 | /epics/iocs/es-K2611/st.cmd
+/epics/iocs     | es-tctrl1       | softioc         |  5010 | /epics/iocs/es-tctrl1/st.cmd
+/epics/iocs     | es-vortex       | softioc         |  4301 | /epics/iocs/es-vortex/st.cmd
+/epics/iocs     | mc11            | softioc         |  5001 | /epics/iocs/mc11/st.cmd
+/epics/iocs     | mc12            | softioc         |  5002 | /epics/iocs/mc12/st.cmd
+/epics/iocs     | mc13            | softioc         |  5003 | /epics/iocs/mc13/st.cmd
+/epics/iocs     | omegaM4061      | softioc         |  5012 | /epics/iocs/omegaM4061/st.cmd
+/epics/iocs     | simdetector     | softioc         |  4203 | /epics/iocs/simdetector/st.cmd
+/epics/iocs     | simmotor        | softioc         |  8001 | /epics/iocs/simmotor/st.cmd
+/epics/iocs     | timestamp       | softioc         |  6001 | /epics/iocs/timestamp/st.cmd
+/epics/iocs     | va-bakeout-01   | softioc         |  4001 | /epics/iocs/va-bakeout-01/st.cmd
+/epics/iocs     | zebra           | softioc         |  5011 | /epics/iocs/zebra/st.cmd
+</pre></div>
+</div>
+<p>To connect to the IOC console, telnet to localhost at the port that is shown in
+the table. For example to connect to the <code class="docutils literal"><span class="pre">mc12</span></code> console issue the command:</p>
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-ioc3 ~]$ telnet localhost 5002
+Trying ::1...
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is &#39;^]&#39;.
+@@@ Welcome to procServ (procServ Process Server 2.6.0)
+@@@ Use ^X to kill the child, auto restart is ON, use ^T to toggle auto restart
+@@@ procServ server PID: 10584
+@@@ Server startup directory: /epics/iocs/mc12
+@@@ Child startup directory: /epics/iocs/mc12
+@@@ Child &quot;mc12&quot; started as: /epics/iocs/mc12/st.cmd
+@@@ Child &quot;mc12&quot; PID: 28044
+@@@ procServ server started at: Tue Oct 20 17:35:25 2015
+@@@ Child &quot;mc12&quot; started at: Fri Nov 13 12:49:49 2015
+@@@ 0 user(s) and 0 logger(s) connected (plus you)
+</pre></div>
+</div>
+<p>In order to reboot the IOC, type <code class="docutils literal"><span class="pre">[CTRL]</span> <span class="pre">+</span> <span class="pre">X</span></code>. To leave the console type
+<code class="docutils literal"><span class="pre">[CTRL]</span> <span class="pre">+</span> <span class="pre">]</span></code> and type <code class="docutils literal"><span class="pre">close</span></code> at the <code class="docutils literal"><span class="pre">telnet&gt;</span></code> prompt</p>
+<p>To start all IOCs configured on the system issue the command <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">manage-iocs</span>
+<span class="pre">startall</span></code> and if needed to stop all IOCs issue the command <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">manage-iocs</span>
+<span class="pre">stopall</span></code></p>
+</div>
+<div class="section" id="olog-glassfish-server">
+<h2>OLog Glassfish Server<a class="headerlink" href="#olog-glassfish-server" title="Permalink to this headline">¶</a></h2>
+<p>To reboot the glassfish server on <code class="docutils literal"><span class="pre">xf23id-ca.cs.nsls2.local</span></code> execute:</p>
+<div class="highlight-python"><div class="highlight"><pre>swilkins@xf23id-ca:~$sudo su - glassfish
+glassfish@xf23id-ca:~$cd glassfish3/bin/
+glassfish@xf23id-ca:~/glassfish3/bin$ ./asadmin stop-domain domain1
+glassfish@xf23id-ca:~/glassfish3/bin$ ./asadmin stop-domain domain2
+glassfish@xf23id-ca:~/glassfish3/bin$ ./asadmin start-domain domain1
+glassfish@xf23id-ca:~/glassfish3/bin$ ./asadmin start-domain domain2
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Stuart B. Wilkins.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
