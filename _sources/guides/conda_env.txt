@@ -69,5 +69,13 @@ point to the path of python in your home directory conda environment.
 ``display_name`` should be a nice name for this kernel, and the ``host`` is the
 computer on which the kernel should run. 
 
+If all works OK, the new kernel shouls show up in the kernel list on notebook.nsls2.bnl.gov
+
+.. figure:: notebook-window-1.png
+
+
+.. figure:: notebook-window-2.png
+
+
 .. _conda.pydata.org: http://conda.pydata.org/miniconda.html
 .. _conda_download: https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
