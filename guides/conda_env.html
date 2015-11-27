@@ -208,7 +208,9 @@ create a kernal file in your <code class="docutils literal"><span class="pre">.p
 (analysis)[swilkins@xf23id1-srv2 ~/.ipython/kernels]$ mkdir my-analysis-kernel
 </pre></div>
 </div>
-<p>Now create a <em>kernel json file</em> to let the notebook server know how to run this kernel. Create a file <code class="docutils literal"><span class="pre">kernel.json</span></code> with your favorite text editor such as:</p>
+<p>Now create a <em>kernel json file</em> to let the notebook server know how to run this
+kernel. Create a file <code class="docutils literal"><span class="pre">kernel.json</span></code> in the directory <code class="docutils literal"><span class="pre">my-analysis-kernel</span></code>
+with your favorite text editor such as:</p>
 <div class="highlight-json"><div class="highlight"><pre><span class="p">{</span><span class="nt">&quot;argv&quot;</span><span class="p">:[</span><span class="s2">&quot;/home/swilkins/miniconda3/envs/analysis/bin/python3.5&quot;</span><span class="p">,</span>
         <span class="s2">&quot;-m&quot;</span><span class="p">,</span> <span class="s2">&quot;IPython.kernel&quot;</span><span class="p">,</span> <span class="s2">&quot;-f&quot;</span><span class="p">,</span> <span class="s2">&quot;{connection_file}&quot;</span><span class="p">],</span>
   <span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="s2">&quot;xf23id1-srv2 - Analysis Conda Env&quot;</span><span class="p">,</span>
@@ -224,9 +226,11 @@ computer on which the kernel should run.</p>
 <div class="figure">
 <img alt="../_images/notebook-window-1.png" src="../_images/notebook-window-1.png" />
 </div>
+<p>Running a new notebook from that option will now run a kernel in the new conda environment:</p>
 <div class="figure">
 <img alt="../_images/notebook-window-2.png" src="../_images/notebook-window-2.png" />
 </div>
+<p>Congratulations!!</p>
 </div>
 </div>
 

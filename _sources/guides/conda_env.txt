@@ -54,7 +54,9 @@ create a kernal file in your ``.python/kernel`` directory (where
     (analysis)[swilkins@xf23id1-srv2 ~]$ cd ~/.ipython/kernels/
     (analysis)[swilkins@xf23id1-srv2 ~/.ipython/kernels]$ mkdir my-analysis-kernel
 
-Now create a *kernel json file* to let the notebook server know how to run this kernel. Create a file ``kernel.json`` with your favorite text editor such as:
+Now create a *kernel json file* to let the notebook server know how to run this
+kernel. Create a file ``kernel.json`` in the directory ``my-analysis-kernel``
+with your favorite text editor such as:
 
 .. code-block:: json
 
@@ -73,9 +75,11 @@ If all works OK, the new kernel shouls show up in the kernel list on notebook.ns
 
 .. figure:: notebook-window-1.png
 
+Running a new notebook from that option will now run a kernel in the new conda environment:
 
 .. figure:: notebook-window-2.png
 
+Congratulations!! 
 
 .. _conda.pydata.org: http://conda.pydata.org/miniconda.html
 .. _conda_download: https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
