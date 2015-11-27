@@ -169,6 +169,17 @@ answering all the default questions:</p>
 ./Miniconda3-latest-Linux-x86_64.sh
 </pre></div>
 </div>
+<p>Once miniconda is installed, configure conda to use the NSLS-II anaconda cloud server:</p>
+<div class="highlight-python"><div class="highlight"><pre>conda install anaconda-client conda-build --yes
+conda config --add channels anaconda
+conda config --add channels latest
+conda config --add create_default_packages pip
+conda config --add create_default_packages anaconda-client
+anaconda config --set url https://conda.nsls2.bnl.gov/api
+conda config --remove channels defaults --force
+conda update --all --yes
+</pre></div>
+</div>
 </div>
 </div>
 
