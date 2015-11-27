@@ -26,6 +26,9 @@ To enable the path, now source your ``.bashrc`` file::
 
     [swilkins@xf23id1-srv2 ~/Downloads]$ source ~/.bashrc
 
+Installing a Custom Conda Environment
+-------------------------------------
+
 Once miniconda is installed and in the path, configure conda to use the NSLS-II
 anaconda cloud server::
     
@@ -46,6 +49,9 @@ doing your analysis. To create and activate the environment type::
     [swilkins@xf23id1-srv2 ~/Downloads]$ source activate analysis
     (analysis)[swilkins@xf23id1-srv2 ~/Downloads]$ conda install dataportal
     (analysis)[swilkins@xf23id1-srv2 ~/Downloads]$ conda install ipython-notebook
+
+Installing a Custom Notebook Kernel
+-----------------------------------
 
 To get your custom environment to work with the notebook server, you have to
 create a kernal file in your ``.python/kernel`` directory (where

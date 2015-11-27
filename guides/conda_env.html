@@ -87,6 +87,8 @@
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Installing a Personal Conda Environment</a><ul>
 <li><a class="reference internal" href="#installing-miniconda">Installing Miniconda</a></li>
+<li><a class="reference internal" href="#installing-a-custom-conda-environment">Installing a Custom Conda Environment</a></li>
+<li><a class="reference internal" href="#installing-a-custom-notebook-kernel">Installing a Custom Notebook Kernel</a></li>
 </ul>
 </li>
 </ul>
@@ -138,6 +140,8 @@
   </li><ul>
 <li><a class="reference internal" href="#">Installing a Personal Conda Environment</a><ul>
 <li><a class="reference internal" href="#installing-miniconda">Installing Miniconda</a></li>
+<li><a class="reference internal" href="#installing-a-custom-conda-environment">Installing a Custom Conda Environment</a></li>
+<li><a class="reference internal" href="#installing-a-custom-notebook-kernel">Installing a Custom Notebook Kernel</a></li>
 </ul>
 </li>
 </ul>
@@ -180,6 +184,9 @@ favorite editor and add the following lines.</p>
 <div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv2 ~/Downloads]$ source ~/.bashrc
 </pre></div>
 </div>
+</div>
+<div class="section" id="installing-a-custom-conda-environment">
+<h2>Installing a Custom Conda Environment<a class="headerlink" href="#installing-a-custom-conda-environment" title="Permalink to this headline">¶</a></h2>
 <p>Once miniconda is installed and in the path, configure conda to use the NSLS-II
 anaconda cloud server:</p>
 <div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv2 ~/Downloads]$ conda install anaconda-client conda-build --yes
@@ -201,6 +208,9 @@ doing your analysis. To create and activate the environment type:</p>
 (analysis)[swilkins@xf23id1-srv2 ~/Downloads]$ conda install ipython-notebook
 </pre></div>
 </div>
+</div>
+<div class="section" id="installing-a-custom-notebook-kernel">
+<h2>Installing a Custom Notebook Kernel<a class="headerlink" href="#installing-a-custom-notebook-kernel" title="Permalink to this headline">¶</a></h2>
 <p>To get your custom environment to work with the notebook server, you have to
 create a kernal file in your <code class="docutils literal"><span class="pre">.python/kernel</span></code> directory (where
 <em>my-analysis-kernel</em> can be any name you wish to know this kernel by):</p>
