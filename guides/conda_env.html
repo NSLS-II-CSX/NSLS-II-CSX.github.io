@@ -164,22 +164,62 @@
 <p>Install the latest <em>miniconda</em>. This can be done by downloading the latest
 miniconda binary installer from <a class="reference external" href="http://conda.pydata.org/miniconda.html">conda.pydata.org</a>.</p>
 <p>Once the file is downloaded make the file executable and run the installer and
-answering all the default questions:</p>
-<div class="highlight-python"><div class="highlight"><pre>chmod u+x Miniconda3-latest-Linux-x86_64.sh
-./Miniconda3-latest-Linux-x86_64.sh
+answering all the default questions. However <strong>DO NOT</strong> let the installer change your <code class="docutils literal"><span class="pre">.bashrc</span></code> file.:</p>
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv2 ~/Downloads]$ chmod u+x Miniconda3-latest-Linux-x86_64.sh
+[swilkins@xf23id1-srv2 ~/Downloads]$ ./Miniconda3-latest-Linux-x86_64.sh
 </pre></div>
 </div>
-<p>Once miniconda is installed, configure conda to use the NSLS-II anaconda cloud server:</p>
-<div class="highlight-python"><div class="highlight"><pre>conda install anaconda-client conda-build --yes
-conda config --add channels anaconda
-conda config --add channels latest
-conda config --add create_default_packages pip
-conda config --add create_default_packages anaconda-client
-anaconda config --set url https://conda.nsls2.bnl.gov/api
-conda config --remove channels defaults --force
-conda update --all --yes
+<p>To add the <em>miniconda</em> to yor path, edit your <code class="docutils literal"><span class="pre">.bashrc</span></code> file with your
+favorite editor and add the following lines.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="k">if</span> <span class="o">[</span> -e <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/miniconda3&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/miniconda3/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
 </pre></div>
 </div>
+<p>To enable the path, now source your <code class="docutils literal"><span class="pre">.bashrc</span></code> file:</p>
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv2 ~/Downloads]$ source ~/.bashrc
+</pre></div>
+</div>
+<p>Once miniconda is installed and in the path, configure conda to use the NSLS-II
+anaconda cloud server:</p>
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv2 ~/Downloads]$ conda install anaconda-client conda-build --yes
+[swilkins@xf23id1-srv2 ~/Downloads]$ conda config --add channels anaconda
+[swilkins@xf23id1-srv2 ~/Downloads]$ conda config --add channels latest
+[swilkins@xf23id1-srv2 ~/Downloads]$ conda config --add create_default_packages pip
+[swilkins@xf23id1-srv2 ~/Downloads]$ conda config --add create_default_packages anaconda-client
+[swilkins@xf23id1-srv2 ~/Downloads]$ anaconda config --set url https://conda.nsls2.bnl.gov/api
+[swilkins@xf23id1-srv2 ~/Downloads]$ conda config --remove channels defaults --force
+[swilkins@xf23id1-srv2 ~/Downloads]$ conda update --all --yes
+</pre></div>
+</div>
+<p>Congratulations! You now have a personal installation of <em>miniconda</em> connected
+to the NSLS-II anaconda cloud server. Now you can create a new environment for
+doing your analysis. To create and activate the environment type:</p>
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv2 ~/Downloads]$ conda create -n analysis python=3.5
+[swilkins@xf23id1-srv2 ~/Downloads]$ source activate analysis
+(analysis)[swilkins@xf23id1-srv2 ~/Downloads]$ conda install dataportal
+(analysis)[swilkins@xf23id1-srv2 ~/Downloads]$ conda install ipython-notebook
+</pre></div>
+</div>
+<p>To get your custom environment to work with the notebook server, you have to
+create a kernal file in your <code class="docutils literal"><span class="pre">.python/kernel</span></code> directory (where
+<em>my-analysis-kernel</em> can be any name you wish to know this kernel by):</p>
+<div class="highlight-python"><div class="highlight"><pre>(analysis)[swilkins@xf23id1-srv2 ~]$ cd ~/.ipython/kernels/
+(analysis)[swilkins@xf23id1-srv2 ~/.ipython/kernels]$ mkdir my-analysis-kernel
+</pre></div>
+</div>
+<p>Now create a <em>kernel json file</em> to let the notebook server know how to run this kernel. Create a file <code class="docutils literal"><span class="pre">kernel.json</span></code> with your favorite text editor such as:</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span><span class="nt">&quot;argv&quot;</span><span class="p">:[</span><span class="s2">&quot;/home/swilkins/miniconda3/envs/analysis/bin/python3.5&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;-m&quot;</span><span class="p">,</span> <span class="s2">&quot;IPython.kernel&quot;</span><span class="p">,</span> <span class="s2">&quot;-f&quot;</span><span class="p">,</span> <span class="s2">&quot;{connection_file}&quot;</span><span class="p">],</span>
+  <span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="s2">&quot;xf23id1-srv2 - Analysis Conda Env&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="s2">&quot;xf23id1-srv2&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Where the path <code class="docutils literal"><span class="pre">/home/swilkins/miniconda3/envs/analysis/bin/python3.5</span></code> should
+point to the path of python in your home directory conda environment.
+<code class="docutils literal"><span class="pre">display_name</span></code> should be a nice name for this kernel, and the <code class="docutils literal"><span class="pre">host</span></code> is the
+computer on which the kernel should run.</p>
 </div>
 </div>
 
