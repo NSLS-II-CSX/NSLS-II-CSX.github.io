@@ -227,7 +227,6 @@
 </tbody>
 </table>
 </div>
-<hr class="docutils" />
 <div class="section" id="editing-a-file">
 <h2>Editing a File<a class="headerlink" href="#editing-a-file" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -254,7 +253,6 @@
 </tbody>
 </table>
 </div>
-<hr class="docutils" />
 <div class="section" id="inserting-text">
 <h2>Inserting Text<a class="headerlink" href="#inserting-text" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -363,7 +361,6 @@
 </tbody>
 </table>
 </div>
-<hr class="docutils" />
 <div class="section" id="changing-or-replacing-text">
 <h2>Changing (or Replacing) Text<a class="headerlink" href="#changing-or-replacing-text" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -390,7 +387,6 @@
 </tbody>
 </table>
 </div>
-<hr class="docutils" />
 <div class="section" id="substituting">
 <h2>Substituting<a class="headerlink" href="#substituting" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -427,7 +423,6 @@
 </pre></div>
 </div>
 </div>
-<hr class="docutils" />
 <div class="section" id="copying-and-moving-text">
 <h2>Copying and Moving Text<a class="headerlink" href="#copying-and-moving-text" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -490,7 +485,6 @@
 </tbody>
 </table>
 </div>
-<hr class="docutils" />
 <div class="section" id="undo-redo-repeat">
 <h2>Undo/Redo/Repeat<a class="headerlink" href="#undo-redo-repeat" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -520,7 +514,6 @@
 </tbody>
 </table>
 </div>
-<hr class="docutils" />
 <div class="section" id="moving-around">
 <h2>Moving Around<a class="headerlink" href="#moving-around" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python"><div class="highlight"><pre>Basic motion commands:
@@ -530,130 +523,165 @@
         j
 </pre></div>
 </div>
-<p>h or</p>
-<p>[count] characters to the left (exclusive).</p>
-<dl class="docutils">
+<table border="1" class="docutils">
+<colgroup>
+<col width="5%" />
+<col width="95%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>h or</td>
+<td>[count] characters to the left (exclusive).</td>
+</tr>
+<tr class="row-even"><td><dl class="first last docutils">
 <dt>l or</dt>
 <dd>or</dd>
 </dl>
-<p>[count] characters to the right (exclusive).</p>
-<dl class="docutils">
+</td>
+<td>[count] characters to the right (exclusive).</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
 <dt>k or</dt>
 <dd>or
 CTRL-P</dd>
 </dl>
-<p>[count] lines upward</p>
-<dl class="docutils">
+</td>
+<td>[count] lines upward</td>
+</tr>
+<tr class="row-even"><td><dl class="first last docutils">
 <dt>j or</dt>
 <dd>or
 CTRL-J or
 or
 CTRL-N</dd>
 </dl>
-<p>[count] lines downward (linewise).</p>
-<p>0</p>
-<p>To the first character of the line (exclusive).</p>
-<p>&lt;Home&gt;</p>
-<p>To the first character of the line (exclusive).</p>
-<p>^</p>
-<p>To the first non-blank character of the line</p>
-<dl class="docutils">
+</td>
+<td>[count] lines downward (linewise).</td>
+</tr>
+<tr class="row-odd"><td>0</td>
+<td>To the first character of the line (exclusive).</td>
+</tr>
+<tr class="row-even"><td>&lt;Home&gt;</td>
+<td>To the first character of the line (exclusive).</td>
+</tr>
+<tr class="row-odd"><td>^</td>
+<td>To the first non-blank character of the line</td>
+</tr>
+<tr class="row-even"><td><dl class="first last docutils">
 <dt>$ or</dt>
 <dd>&lt;End&gt;</dd>
 </dl>
-<p>To the end of the line and [count - 1] lines downward</p>
-<dl class="docutils">
+</td>
+<td>To the end of the line and [count - 1] lines downward</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
 <dt>g0 or</dt>
 <dd>g&lt;Home&gt;</dd>
 </dl>
-<p>When lines wrap (&#8216;wrap on): To the first character of the screen line
-(exclusive). Differs from &#8220;0&#8221; when a line is wider than the screen. When
-lines don&#8217;t wrap (&#8216;wrap&#8217; off): To the leftmost character of the current
-line that is on the screen. Differs from &#8220;0&#8221; when the first character of
-the line is not on the screen.</p>
-<p>g^</p>
-<p>When lines wrap (&#8216;wrap&#8217; on): To the first non-blank character of the
-screen line (exclusive). Differs from &#8220;^&#8221; when a line is wider than the
-screen. When lines don&#8217;t wrap (&#8216;wrap&#8217; off): To the leftmost non-blank
-character of the current line that is on the screen. Differs from &#8220;^&#8221;
-when the first non-blank character of the line is not on the screen.</p>
-<dl class="docutils">
+</td>
+<td>When lines wrap (&#8216;wrap on): To the first character of the screen line (exclusive). Differs from &#8220;0&#8221; when a line is wider than the screen. When lines don&#8217;t wrap (&#8216;wrap&#8217; off): To the leftmost character of the current line that is on the screen. Differs from &#8220;0&#8221; when the first character of the line is not on the screen.</td>
+</tr>
+<tr class="row-even"><td>g^</td>
+<td>When lines wrap (&#8216;wrap&#8217; on): To the first non-blank character of the screen line (exclusive). Differs from &#8220;^&#8221; when a line is wider than the screen. When lines don&#8217;t wrap (&#8216;wrap&#8217; off): To the leftmost non-blank character of the current line that is on the screen. Differs from &#8220;^&#8221; when the first non-blank character of the line is not on the screen.</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
 <dt>g$ or</dt>
 <dd>g&lt;End&amp;gr;</dd>
 </dl>
-<p>When lines wrap (&#8216;wrap&#8217; on): To the last character of the screen line
-and [count - 1] screen lines downward (inclusive). Differs from &#8220;$&#8221; when
-a line is wider than the screen. When lines don&#8217;t wrap (&#8216;wrap&#8217; off): To
-the rightmost character of the current line that is visible on the
-screen. Differs from &#8220;$&#8221; when the last character of the line is not on
-the screen or when a count is used.</p>
-<p>f{char}</p>
-<p>To [count]&#8217;th occurrence of {char} to the right. The cursor is placed on
-{char} (inclusive).</p>
-<p>F{char}</p>
-<p>To the [count]&#8217;th occurrence of {char} to the left. The cursor is placed
-on {char} (inclusive).</p>
-<p>t{char}</p>
-<p>Till before [count]&#8217;th occurrence of {char} to the right. The cursor is
-placed on the character left of {char} (inclusive).</p>
-<p>T{char}</p>
-<p>Till after [count]&#8217;th occurrence of {char} to the left. The cursor is
-placed on the character right of {char} (inclusive).</p>
-<p>;</p>
-<p>Repeat latest f, t, F or T [count] times.</p>
-<p>,</p>
-<p>Repeat latest f, t, F or T in opposite direction [count] times.</p>
-<ul class="simple">
+</td>
+<td>When lines wrap (&#8216;wrap&#8217; on): To the last character of the screen line and [count - 1] screen lines downward (inclusive). Differs from &#8220;$&#8221; when a line is wider than the screen. When lines don&#8217;t wrap (&#8216;wrap&#8217; off): To the rightmost character of the current line that is visible on the screen. Differs from &#8220;$&#8221; when the last character of the line is not on the screen or when a count is used.</td>
+</tr>
+<tr class="row-even"><td>f{char}</td>
+<td>To [count]&#8217;th occurrence of {char} to the right. The cursor is placed on {char} (inclusive).</td>
+</tr>
+<tr class="row-odd"><td>F{char}</td>
+<td>To the [count]&#8217;th occurrence of {char} to the left. The cursor is placed on {char} (inclusive).</td>
+</tr>
+<tr class="row-even"><td>t{char}</td>
+<td>Till before [count]&#8217;th occurrence of {char} to the right. The cursor is placed on the character left of {char} (inclusive).</td>
+</tr>
+<tr class="row-odd"><td>T{char}</td>
+<td>Till after [count]&#8217;th occurrence of {char} to the left. The cursor is placed on the character right of {char} (inclusive).</td>
+</tr>
+<tr class="row-even"><td>;</td>
+<td>Repeat latest f, t, F or T [count] times.</td>
+</tr>
+<tr class="row-odd"><td>,</td>
+<td>Repeat latest f, t, F or T in opposite direction [count] times.</td>
+</tr>
+<tr class="row-even"><td><ul class="first last simple">
 <li>&lt;minus&gt;</li>
 </ul>
-<p>[count] lines upward, on the first non-blank character (linewise).</p>
-<ul class="simple">
+</td>
+<td>[count] lines upward, on the first non-blank character (linewise).</td>
+</tr>
+<tr class="row-odd"><td><ul class="first simple">
 <li>or</li>
 </ul>
-<blockquote>
+<blockquote class="last">
 <div>CTRL-M or
 &lt;CR&gt;</div></blockquote>
-<p>[count] lines downward, on the first non-blank character (linewise).</p>
-<p>_ &lt;underscore&gt;</p>
-<p>[count] - 1 lines downward, on the first non-blank character (linewise).</p>
-<dl class="docutils">
+</td>
+<td>[count] lines downward, on the first non-blank character (linewise).</td>
+</tr>
+<tr class="row-even"><td>_ &lt;underscore&gt;</td>
+<td>[count] - 1 lines downward, on the first non-blank character (linewise).</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
 <dt>&lt;C-End&gt; or</dt>
 <dd>G</dd>
 </dl>
-<p>Goto line [count], default last line, on the first non-blank character.</p>
-<dl class="docutils">
+</td>
+<td>Goto line [count], default last line, on the first non-blank character.</td>
+</tr>
+<tr class="row-even"><td><dl class="first last docutils">
 <dt>&lt;C-Home&gt; or</dt>
 <dd>gg</dd>
 </dl>
-<p>Goto line [count], default first line, on the first non-blank character.</p>
-<dl class="docutils">
+</td>
+<td>Goto line [count], default first line, on the first non-blank character.</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
 <dt>&lt;S-Right&gt; or</dt>
 <dd>w</dd>
 </dl>
-<p>[count] words forward</p>
-<dl class="docutils">
+</td>
+<td>[count] words forward</td>
+</tr>
+<tr class="row-even"><td><dl class="first last docutils">
 <dt>&lt;C-Right&gt; or</dt>
 <dd>W</dd>
 </dl>
-<p>[count] WORDS forward</p>
-<p>e</p>
-<p>Forward to the end of word [count]</p>
-<p>E</p>
-<p>Forward to the end of WORD [count]</p>
-<dl class="docutils">
+</td>
+<td>[count] WORDS forward</td>
+</tr>
+<tr class="row-odd"><td>e</td>
+<td>Forward to the end of word [count]</td>
+</tr>
+<tr class="row-even"><td>E</td>
+<td>Forward to the end of WORD [count]</td>
+</tr>
+<tr class="row-odd"><td><dl class="first last docutils">
 <dt>&lt;S-Left&gt; or</dt>
 <dd>b</dd>
 </dl>
-<p>[count] words backward</p>
-<dl class="docutils">
+</td>
+<td>[count] words backward</td>
+</tr>
+<tr class="row-even"><td><dl class="first last docutils">
 <dt>&lt;C-Left&gt; or</dt>
 <dd>B</dd>
 </dl>
-<p>[count] WORDS backward</p>
-<p>ge</p>
-<p>Backward to the end of word [count]</p>
-<p>gE</p>
-<p>Backward to the end of WORD [count]</p>
+</td>
+<td>[count] WORDS backward</td>
+</tr>
+<tr class="row-odd"><td>ge</td>
+<td>Backward to the end of word [count]</td>
+</tr>
+<tr class="row-even"><td>gE</td>
+<td>Backward to the end of WORD [count]</td>
+</tr>
+</tbody>
+</table>
 <p>These commands move over words or WORDS.</p>
 <p>A word consists of a sequence of letters, digits and underscores, or a
 sequence of other non-blank characters, separated with white space
@@ -714,7 +742,6 @@ white space. An empty line is also considered to be a word and a WORD.</p>
 </tbody>
 </table>
 </div>
-<hr class="docutils" />
 <div class="section" id="marks">
 <h2>Marks<a class="headerlink" href="#marks" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -760,7 +787,6 @@ white space. An empty line is also considered to be a word and a WORD.</p>
 </tbody>
 </table>
 </div>
-<hr class="docutils" />
 <div class="section" id="searching">
 <h2>Searching<a class="headerlink" href="#searching" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -802,7 +828,6 @@ white space. An empty line is also considered to be a word and a WORD.</p>
 </tbody>
 </table>
 </div>
-<hr class="docutils" />
 <div class="section" id="selecting-text-visual-mode">
 <h2>Selecting Text (Visual Mode)<a class="headerlink" href="#selecting-text-visual-mode" title="Permalink to this headline">¶</a></h2>
 <p>To select text, enter visual mode with one of the commands below, and
@@ -859,9 +884,6 @@ interested in. Then, use some command on the text.</p>
 </tr>
 </tbody>
 </table>
-<hr class="docutils" />
-<p><a class="reference external" href="http://www.catb.org/hacker-emblem/">|image0|</a></p>
-<p>Daniel Gryniewicz / <a class="reference external" href="mailto:dang&#37;&#52;&#48;fprintf&#46;net">dang<span>&#64;</span>fprintf<span>&#46;</span>net</a></p>
 </div>
 </div>
 
