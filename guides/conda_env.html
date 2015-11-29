@@ -86,6 +86,7 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Installing a Personal Conda Environment</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#installing-miniconda">Installing Miniconda</a></li>
 <li><a class="reference internal" href="#installing-a-custom-conda-environment">Installing a Custom Conda Environment</a></li>
 <li><a class="reference internal" href="#installing-a-custom-notebook-kernel">Installing a Custom Notebook Kernel</a></li>
@@ -139,6 +140,7 @@
     </a>
   </li><ul>
 <li><a class="reference internal" href="#">Installing a Personal Conda Environment</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#installing-miniconda">Installing Miniconda</a></li>
 <li><a class="reference internal" href="#installing-a-custom-conda-environment">Installing a Custom Conda Environment</a></li>
 <li><a class="reference internal" href="#installing-a-custom-notebook-kernel">Installing a Custom Notebook Kernel</a></li>
@@ -163,24 +165,51 @@
       
   <div class="section" id="installing-a-personal-conda-environment">
 <h1>Installing a Personal Conda Environment<a class="headerlink" href="#installing-a-personal-conda-environment" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This guide covers installing the conda packaging system <em>miniconda</em> into your
+own space. This has a number of advantages, including full controll on package
+versions. Due to the large nature of the files, it is suggested not to install
+into your home directory if you are using NFS home directories. At CSX conda
+should be installed on the GPFS file system in the directory
+<code class="docutils literal"><span class="pre">/GPFS/xf23id/users/&lt;uid&gt;</span></code> where <code class="docutils literal"><span class="pre">&lt;uid&gt;</span></code> is your user ID.</p>
+</div>
 <div class="section" id="installing-miniconda">
 <h2>Installing Miniconda<a class="headerlink" href="#installing-miniconda" title="Permalink to this headline">¶</a></h2>
 <p>Install the latest <em>miniconda</em>. This can be done by downloading the latest
 miniconda binary installer from <a class="reference external" href="http://conda.pydata.org/miniconda.html">conda.pydata.org</a>.</p>
-<p>Once the file is downloaded make the file executable and run the installer and
-answering all the default questions. However <strong>DO NOT</strong> let the installer change your <code class="docutils literal"><span class="pre">.bashrc</span></code> file.:</p>
+<p>Once the file is downloaded make the file executable and run the installer.
+<strong>DO NOT</strong> let the installer change your <code class="docutils literal"><span class="pre">.bashrc</span></code> file.:</p>
 <div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv2 ~/Downloads]$ chmod u+x Miniconda3-latest-Linux-x86_64.sh
 [swilkins@xf23id1-srv2 ~/Downloads]$ ./Miniconda3-latest-Linux-x86_64.sh
 </pre></div>
 </div>
-<p>To add the <em>miniconda</em> to yor path, edit your <code class="docutils literal"><span class="pre">.bashrc</span></code> file with your
-favorite editor and add the following lines.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="k">if</span> <span class="o">[</span> -e <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/miniconda3&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/miniconda3/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<p>When prompted, enter the GPFS path for the install location, for example:</p>
+<div class="highlight-python"><div class="highlight"><pre>Do you approve the license terms? [yes|no]
+[no] &gt;&gt;&gt; yes
+
+Miniconda3 will now be installed into this location:
+/home/swilkins/miniconda3
+
+  - Press ENTER to confirm the location
+  - Press CTRL-C to abort the installation
+  - Or specify a different location below
+
+[/home/swilkins/miniconda3] &gt;&gt;&gt; /GPFS/xf23id/users/swilkins/miniconda3
+PREFIX=/GPFS/xf23id/users/swilkins/miniconda3
+
+To add the *miniconda* to yor path, edit your ``.bashrc`` file with your
+favorite editor and add the following lines.
+</pre></div>
+</div>
+<p>Once the installer has finished, modify your <code class="docutils literal"><span class="pre">.bashrc</span></code> file:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="k">if</span> <span class="o">[</span> -e <span class="s2">&quot;/GPFS/xf23id/users/swilkins/miniconda3&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/GPFS/xf23id/users/swilkins/miniconda3/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
 <span class="k">fi</span>
 </pre></div>
 </div>
-<p>To enable the path, now source your <code class="docutils literal"><span class="pre">.bashrc</span></code> file:</p>
+<p>Substituting <code class="docutils literal"><span class="pre">swilkins</span></code> for your user ID. To enable the path, now source your
+<code class="docutils literal"><span class="pre">.bashrc</span></code> file:</p>
 <div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv2 ~/Downloads]$ source ~/.bashrc
 </pre></div>
 </div>
