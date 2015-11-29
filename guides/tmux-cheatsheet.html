@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>tmux shortcuts &amp; cheatsheet &mdash; NSLS-II CSX Beamline Docs 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="NSLS-II CSX Beamline Docs 0.1 documentation" href="../index.html" />
+    <link rel="up" title="Guides and Tutorials" href="index.html" />
+    <link rel="prev" title="Vim Commands Cheat Sheet" href="vim-cheatsheet.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          NSLS-II CSX Beamline Docs</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../csx-1/index.html">CSX-1 (23-ID-1) Beamline Doccumentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csx-1/index.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Guides and Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">tmux shortcuts &amp; cheatsheet</a><ul>
+<li><a class="reference internal" href="#sessions">Sessions</a></li>
+<li><a class="reference internal" href="#windows-tabs">Windows (tabs)</a></li>
+<li><a class="reference internal" href="#panes-splits">Panes (splits)</a></li>
+<li><a class="reference internal" href="#sync-panes">Sync Panes</a></li>
+<li><a class="reference internal" href="#resizing-panes">Resizing Panes</a></li>
+<li><a class="reference internal" href="#copy-mode">Copy mode:</a></li>
+<li><a class="reference internal" href="#misc">Misc</a></li>
+<li><a class="reference internal" href="#configurations-options">Configurations Options:</a></li>
+<li><a class="reference internal" href="#resources">Resources:</a></li>
+<li><a class="reference internal" href="#thanks">Thanks</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="vim-cheatsheet.html" title="Previous Chapter: Vim Commands Cheat Sheet"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Vim Commands ...</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/guides/tmux-cheatsheet.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+  <li>
+    <a href="vim-cheatsheet.html" title="Previous Chapter: Vim Commands Cheat Sheet"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Vim Commands ...</span>
+    </a>
+  </li><ul>
+<li><a class="reference internal" href="#">tmux shortcuts &amp; cheatsheet</a><ul>
+<li><a class="reference internal" href="#sessions">Sessions</a></li>
+<li><a class="reference internal" href="#windows-tabs">Windows (tabs)</a></li>
+<li><a class="reference internal" href="#panes-splits">Panes (splits)</a></li>
+<li><a class="reference internal" href="#sync-panes">Sync Panes</a></li>
+<li><a class="reference internal" href="#resizing-panes">Resizing Panes</a></li>
+<li><a class="reference internal" href="#copy-mode">Copy mode:</a></li>
+<li><a class="reference internal" href="#misc">Misc</a></li>
+<li><a class="reference internal" href="#configurations-options">Configurations Options:</a></li>
+<li><a class="reference internal" href="#resources">Resources:</a></li>
+<li><a class="reference internal" href="#thanks">Thanks</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="sourcelink">
+  <a href="../_sources/guides/tmux-cheatsheet.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="tmux-shortcuts-cheatsheet">
+<h1>tmux shortcuts &amp; cheatsheet<a class="headerlink" href="#tmux-shortcuts-cheatsheet" title="Permalink to this headline">¶</a></h1>
+<p>start new:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">tmux</span>
+</pre></div>
+</div>
+<p>start new with session name:</p>
+<div class="highlight-python"><div class="highlight"><pre>tmux new -s myname
+</pre></div>
+</div>
+<p>attach:</p>
+<div class="highlight-python"><div class="highlight"><pre>tmux a  #  (or at, or attach)
+</pre></div>
+</div>
+<p>attach to named:</p>
+<div class="highlight-python"><div class="highlight"><pre>tmux a -t myname
+</pre></div>
+</div>
+<p>list sessions:</p>
+<div class="highlight-python"><div class="highlight"><pre>tmux ls
+</pre></div>
+</div>
+<p>kill session:</p>
+<div class="highlight-python"><div class="highlight"><pre>tmux kill-session -t myname
+</pre></div>
+</div>
+<p>Kill all the tmux sessions:</p>
+<div class="highlight-python"><div class="highlight"><pre>tmux ls | grep : | cut -d. -f1 | awk &#39;{print substr($1, 0, length($1)-1)}&#39; | xargs kill
+</pre></div>
+</div>
+<p>In tmux, hit the prefix <code class="docutils literal"><span class="pre">ctrl+b</span></code> (my modified prefix is ctrl+a) and
+then:</p>
+<div class="section" id="sessions">
+<h2>Sessions<a class="headerlink" href="#sessions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>:new&lt;CR&gt;  new session
+s  list sessions
+$  name session
+</pre></div>
+</div>
+</div>
+<div class="section" id="windows-tabs">
+<h2>Windows (tabs)<a class="headerlink" href="#windows-tabs" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>c  create window
+w  list windows
+n  next window
+p  previous window
+f  find window
+,  name window
+&amp;  kill window
+</pre></div>
+</div>
+</div>
+<div class="section" id="panes-splits">
+<h2>Panes (splits)<a class="headerlink" href="#panes-splits" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>%  vertical split
+&quot;  horizontal split
+
+o        swap panes
+q        show pane numbers
+x        kill pane
++        break pane into window (e.g. to select text by mouse to copy)
+-        restore pane from window
+&lt;space&gt;  toggle between layouts
+q        (Show pane numbers, when the numbers show up type the key to goto that pane)
+{        (Move the current pane left)
+}        (Move the current pane right)
+z        toggle pane zoom
+</pre></div>
+</div>
+</div>
+<div class="section" id="sync-panes">
+<h2>Sync Panes<a class="headerlink" href="#sync-panes" title="Permalink to this headline">¶</a></h2>
+<p>You can do this by switching to the appropriate window, typing your Tmux
+prefix (commonly Ctrl-B or Ctrl-A) and then a colon to bring up a Tmux
+command line, and typing:</p>
+<div class="highlight-python"><div class="highlight"><pre>:setw synchronize-panes
+</pre></div>
+</div>
+<p>You can optionally add on or off to specify which state you want;
+otherwise the option is simply toggled. This option is specific to one
+window, so it won&#8217;t change the way your other sessions or windows
+operate. When you&#8217;re done, toggle it off again by repeating the command.
+<a class="reference external" href="http://blog.sanctum.geek.nz/sync-tmux-panes/">tip source</a></p>
+</div>
+<div class="section" id="resizing-panes">
+<h2>Resizing Panes<a class="headerlink" href="#resizing-panes" title="Permalink to this headline">¶</a></h2>
+<p>You can also resize panes if you don&#8217;t like the layout defaults. I
+personally rarely need to do this, though it&#8217;s handy to know how. Here
+is the basic syntax to resize panes:</p>
+<div class="highlight-python"><div class="highlight"><pre>PREFIX : resize-pane -D (Resizes the current pane down)
+PREFIX : resize-pane -U (Resizes the current pane upward)
+PREFIX : resize-pane -L (Resizes the current pane left)
+PREFIX : resize-pane -R (Resizes the current pane right)
+PREFIX : resize-pane -D 20 (Resizes the current pane down by 20 cells)
+PREFIX : resize-pane -U 20 (Resizes the current pane upward by 20 cells)
+PREFIX : resize-pane -L 20 (Resizes the current pane left by 20 cells)
+PREFIX : resize-pane -R 20 (Resizes the current pane right by 20 cells)
+PREFIX : resize-pane -t 2 20 (Resizes the pane with the id of 2 down by 20 cells)
+PREFIX : resize-pane -t -L 20 (Resizes the pane with the id of 2 left by 20 cells)
+</pre></div>
+</div>
+</div>
+<div class="section" id="copy-mode">
+<h2>Copy mode:<a class="headerlink" href="#copy-mode" title="Permalink to this headline">¶</a></h2>
+<p>Pressing PREFIX [ places us in Copy mode. We can then use our movement
+keys to move our cursor around the screen. By default, the arrow keys
+work. we set our configuration file to use Vim keys for moving between
+windows and resizing panes so we wouldn’t have to take our hands off the
+home row. tmux has a vi mode for working with the buffer as well. To
+enable it, add this line to .tmux.conf:</p>
+<div class="highlight-python"><div class="highlight"><pre>setw -g mode-keys vi
+</pre></div>
+</div>
+<p>With this option set, we can use h, j, k, and l to move around our
+buffer.</p>
+<p>To get out of Copy mode, we just press the ENTER key. Moving around one
+character at a time isn&#8217;t very efficient. Since we enabled vi mode, we
+can also use some other visible shortcuts to move around the buffer.</p>
+<p>For example, we can use &#8220;w&#8221; to jump to the next word and &#8220;b&#8221; to jump
+back one word. And we can use &#8220;f&#8221;, followed by any character, to jump to
+that character on the same line, and &#8220;F&#8221; to jump backwards on the line.</p>
+<div class="highlight-python"><div class="highlight"><pre>Function                vi             emacs
+Back to indentation     ^              M-m
+Clear selection         Escape         C-g
+Copy selection          Enter          M-w
+Cursor down             j              Down
+Cursor left             h              Left
+Cursor right            l              Right
+Cursor to bottom line   L
+Cursor to middle line   M              M-r
+Cursor to top line      H              M-R
+Cursor up               k              Up
+Delete entire line      d              C-u
+Delete to end of line   D              C-k
+End of line             $              C-e
+Goto line               :              g
+Half page down          C-d            M-Down
+Half page up            C-u            M-Up
+Next page               C-f            Page down
+Next word               w              M-f
+Paste buffer            p              C-y
+Previous page           C-b            Page up
+Previous word           b              M-b
+Quit mode               q              Escape
+Scroll down             C-Down or J    C-Down
+Scroll up               C-Up or K      C-Up
+Search again            n              n
+Search backward         ?              C-r
+Search forward          /              C-s
+Start of line           0              C-a
+Start selection         Space          C-Space
+Transpose chars                        C-t
+</pre></div>
+</div>
+</div>
+<div class="section" id="misc">
+<h2>Misc<a class="headerlink" href="#misc" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>d  detach
+t  big clock
+?  list shortcuts
+:  prompt
+</pre></div>
+</div>
+</div>
+<div class="section" id="configurations-options">
+<h2>Configurations Options:<a class="headerlink" href="#configurations-options" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre># Mouse support - set to on if you want to use the mouse
+* setw -g mode-mouse off
+* set -g mouse-select-pane off
+* set -g mouse-resize-pane off
+* set -g mouse-select-window off
+
+# Set the default terminal mode to 256color mode
+set -g default-terminal &quot;screen-256color&quot;
+
+# enable activity alerts
+setw -g monitor-activity on
+set -g visual-activity on
+
+# Center the window list
+set -g status-justify centre
+
+# Maximize and restore a pane
+unbind Up bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t tmp
+unbind Down
+bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
+</pre></div>
+</div>
+</div>
+<div class="section" id="resources">
+<h2>Resources:<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://pragprog.com/book/bhtmux/tmux">tmux: Productive Mouse-Free
+Development</a></li>
+<li><a class="reference external" href="http://superuser.com/questions/343572/tmux-how-do-i-reorder-my-windows">How to reorder
+windows</a></li>
+</ul>
+</div>
+<div class="section" id="thanks">
+<h2>Thanks<a class="headerlink" href="#thanks" title="Permalink to this headline">¶</a></h2>
+<p>Thanks to the <a class="reference external" href="https://gist.github.com/MohamedAlaa/2961058#file-tmux-cheatsheet-markdown">origional creator</a> of this cheatsheet.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Stuart B. Wilkins.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
