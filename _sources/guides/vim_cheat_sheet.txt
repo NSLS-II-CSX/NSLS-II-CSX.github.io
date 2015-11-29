@@ -1,6 +1,8 @@
 Vim Commands Cheat Sheet
 ========================
 
+For the origional please go `here <http://www.fprintf.net/vimCheatSheet.html>`_.
+
 How to Exit
 -----------
 
