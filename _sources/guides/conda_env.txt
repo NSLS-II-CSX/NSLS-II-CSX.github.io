@@ -11,6 +11,14 @@ into your home directory if you are using NFS home directories. At CSX conda
 should be installed on the GPFS file system in the directory
 ``/GPFS/xf23id/users/<uid>`` where ``<uid>`` is your user ID. 
 
+To create a directory on the **GPFS** system, do the following::
+
+   [swilkins@23id1-srv2 ~]$ sudo mkdir /GPFS/xf23id/users/<uid>
+   [swilkins@23id1-srv2 ~]$ sudo chown <uid> /GPFS/xf23id/users/<uid>
+   [swilkins@23id1-srv2 ~]$ sudo chmod 750 /GPFS/xf23id/users/<uid>
+
+Where ``<uid>`` is your userid.
+
 Installing Miniconda
 --------------------
 
@@ -38,10 +46,8 @@ When prompted, enter the GPFS path for the install location, for example: ::
     [/home/swilkins/miniconda3] >>> /GPFS/xf23id/users/swilkins/miniconda3
     PREFIX=/GPFS/xf23id/users/swilkins/miniconda3
     
-    To add the *miniconda* to yor path, edit your ``.bashrc`` file with your
-    favorite editor and add the following lines.
-
-Once the installer has finished, modify your ``.bashrc`` file:
+To add the *miniconda* to yor path, edit your ``.bashrc`` file with your
+favorite editor and add the following lines.
 
 .. code-block:: bash
    

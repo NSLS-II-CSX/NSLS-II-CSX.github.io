@@ -173,6 +173,13 @@ versions. Due to the large nature of the files, it is suggested not to install
 into your home directory if you are using NFS home directories. At CSX conda
 should be installed on the GPFS file system in the directory
 <code class="docutils literal"><span class="pre">/GPFS/xf23id/users/&lt;uid&gt;</span></code> where <code class="docutils literal"><span class="pre">&lt;uid&gt;</span></code> is your user ID.</p>
+<p>To create a directory on the <strong>GPFS</strong> system, do the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@23id1-srv2 ~]$ sudo mkdir /GPFS/xf23id/users/&lt;uid&gt;
+[swilkins@23id1-srv2 ~]$ sudo chown &lt;uid&gt; /GPFS/xf23id/users/&lt;uid&gt;
+[swilkins@23id1-srv2 ~]$ sudo chmod 750 /GPFS/xf23id/users/&lt;uid&gt;
+</pre></div>
+</div>
+<p>Where <code class="docutils literal"><span class="pre">&lt;uid&gt;</span></code> is your userid.</p>
 </div>
 <div class="section" id="installing-miniconda">
 <h2>Installing Miniconda<a class="headerlink" href="#installing-miniconda" title="Permalink to this headline">¶</a></h2>
@@ -197,12 +204,10 @@ Miniconda3 will now be installed into this location:
 
 [/home/swilkins/miniconda3] &gt;&gt;&gt; /GPFS/xf23id/users/swilkins/miniconda3
 PREFIX=/GPFS/xf23id/users/swilkins/miniconda3
-
-To add the *miniconda* to yor path, edit your ``.bashrc`` file with your
-favorite editor and add the following lines.
 </pre></div>
 </div>
-<p>Once the installer has finished, modify your <code class="docutils literal"><span class="pre">.bashrc</span></code> file:</p>
+<p>To add the <em>miniconda</em> to yor path, edit your <code class="docutils literal"><span class="pre">.bashrc</span></code> file with your
+favorite editor and add the following lines.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="k">if</span> <span class="o">[</span> -e <span class="s2">&quot;/GPFS/xf23id/users/swilkins/miniconda3&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
     <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/GPFS/xf23id/users/swilkins/miniconda3/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
 <span class="k">fi</span>
