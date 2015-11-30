@@ -88,6 +88,11 @@
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Controls Account Setup Guide</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#fixing-permissions">Fixing Permissions</a></li>
+<li><a class="reference internal" href="#setting-up-an-ssh-key">Setting up an SSH Key</a><ul>
+<li><a class="reference internal" href="#create-the-rsa-key-pair">Create the RSA Key Pair</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -147,6 +152,11 @@
   </li><ul>
 <li><a class="reference internal" href="#">Controls Account Setup Guide</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#fixing-permissions">Fixing Permissions</a></li>
+<li><a class="reference internal" href="#setting-up-an-ssh-key">Setting up an SSH Key</a><ul>
+<li><a class="reference internal" href="#create-the-rsa-key-pair">Create the RSA Key Pair</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -173,11 +183,75 @@
 <p>NSLS-II controls accounts allow access to all computers at CSX. Once a new
 account has been created, the following is suggested to get the account working
 correctly.</p>
+</div>
+<div class="section" id="fixing-permissions">
+<h2>Fixing Permissions<a class="headerlink" href="#fixing-permissions" title="Permalink to this headline">¶</a></h2>
 <p>Firstly, all accounts are created with global read permissions. If this is OK
 by you then skip the next step. However, if you want to restict access to files
 in your home directory then do the following:</p>
 <div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv2 ~ ]$ chmod o-rwx,g-w+rx,u+rwx /home/&lt;uid&gt;
 </pre></div>
+</div>
+</div>
+<div class="section" id="setting-up-an-ssh-key">
+<h2>Setting up an SSH Key<a class="headerlink" href="#setting-up-an-ssh-key" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-the-rsa-key-pair">
+<h3>Create the RSA Key Pair<a class="headerlink" href="#create-the-rsa-key-pair" title="Permalink to this headline">¶</a></h3>
+<p>The first step is to create an SSH key pair in your home directory:</p>
+<div class="highlight-python"><div class="highlight"><pre>ssh-keygen -t rsa
+</pre></div>
+</div>
+<p>the <code class="docutils literal"><span class="pre">ssh-keygen</span></code> command will ask you a few questions:</p>
+<div class="highlight-python"><div class="highlight"><pre>Enter file in which to save the key (/home/demo/.ssh/id_rsa):
+</pre></div>
+</div>
+<p>You can press enter here, saving the file to the user home (in this case, the
+user is called demo).</p>
+<div class="highlight-python"><div class="highlight"><pre>Enter passphrase (empty for no passphrase):
+</pre></div>
+</div>
+<p>It&#8217;s up to you whether you want to use a passphrase. Entering a passphrase does have its benefits: the security of a key, no matter how encrypted, still depends on the fact that it is not visible to anyone else. Should a passphrase-protected private key fall into an unauthorized users possession, they will be unable to log in to its associated accounts until they figure out the passphrase, buying the hacked user some extra time. The only downside, of course, to having a passphrase, is then having to type it in each time you use the Key Pair.</p>
+<p>The entire key generation process looks like this:</p>
+<p>ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/demo/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/demo/.ssh/id_rsa.
+Your public key has been saved in /home/demo/.ssh/id_rsa.pub.
+The key fingerprint is:
+4a:dd:0a:c6:35:4e:3f:ed:27:38:8c:74:44:4d:93:67 demo&#64;a
+The key&#8217;s randomart image is:
++&#8211;[ RSA 2048]&#8212;-+
+|          .oo.   |
+|         .  o.E  |
+|        + .  o   |
+|     . = = .     |
+|      = S = .    |
+|     o + = +     |
+|      . o + o .  |
+|           . o   |
+|                 |
++&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+
+The public key is now located in /home/demo/.ssh/id_rsa.pub The private key (identification) is now located in /home/demo/.ssh/id_rsa</p>
+<p>Step Three—Copy the Public Key
+Once the key pair is generated, it&#8217;s time to place the public key on the virtual server that we want to use.</p>
+<p>You can copy the public key into the new machine&#8217;s authorized_keys file with the ssh-copy-id command. Make sure to replace the example username and IP address below.</p>
+<p>ssh-copy-id <a class="reference external" href="mailto:user&#37;&#52;&#48;123&#46;45&#46;56&#46;78">user<span>&#64;</span>123<span>&#46;</span>45<span>&#46;</span>56<span>&#46;</span>78</a>
+Alternatively, you can paste in the keys using SSH:</p>
+<p>cat ~/.ssh/id_rsa.pub | ssh <a class="reference external" href="mailto:user&#37;&#52;&#48;123&#46;45&#46;56&#46;78">user<span>&#64;</span>123<span>&#46;</span>45<span>&#46;</span>56<span>&#46;</span>78</a> &#8220;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt;  ~/.ssh/authorized_keys&#8221;
+No matter which command you chose, you should see something like:</p>
+<p>The authenticity of host &#8216;12.34.56.78 (12.34.56.78)&#8217; can&#8217;t be established.
+RSA key fingerprint is b1:2d:33:67:ce:35:4d:5f:f3:a8:cd:c0:c4:48:86:12.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added &#8216;12.34.56.78&#8217; (RSA) to the list of known hosts.
+user&#64;12.34.56.78&#8217;s password:
+Now try logging into the machine, with &#8220;ssh &#8216;user&#64;12.34.56.78&#8217;&#8221;, and check in:</p>
+<blockquote>
+<div><p>~/.ssh/authorized_keys</p>
+<p>to make sure we haven&#8217;t added extra keys that you weren&#8217;t expecting.
+Now you can go ahead and log into <a class="reference external" href="mailto:user&#37;&#52;&#48;12&#46;34&#46;56&#46;78">user<span>&#64;</span>12<span>&#46;</span>34<span>&#46;</span>56<span>&#46;</span>78</a> and you will not be prompted for a password. However, if you set a passphrase, you will be asked to enter the passphrase at that time (and whenever else you log in in the future).</p>
+</div></blockquote>
 </div>
 </div>
 </div>
