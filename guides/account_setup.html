@@ -91,6 +91,7 @@
 <li><a class="reference internal" href="#fixing-permissions">Fixing Permissions</a></li>
 <li><a class="reference internal" href="#setting-up-an-ssh-key">Setting up an SSH Key</a><ul>
 <li><a class="reference internal" href="#create-the-rsa-key-pair">Create the RSA Key Pair</a></li>
+<li><a class="reference internal" href="#copy-the-public-key">Copy the Public Key</a></li>
 </ul>
 </li>
 </ul>
@@ -155,6 +156,7 @@
 <li><a class="reference internal" href="#fixing-permissions">Fixing Permissions</a></li>
 <li><a class="reference internal" href="#setting-up-an-ssh-key">Setting up an SSH Key</a><ul>
 <li><a class="reference internal" href="#create-the-rsa-key-pair">Create the RSA Key Pair</a></li>
+<li><a class="reference internal" href="#copy-the-public-key">Copy the Public Key</a></li>
 </ul>
 </li>
 </ul>
@@ -210,9 +212,13 @@ user is called demo).</p>
 <div class="highlight-python"><div class="highlight"><pre>Enter passphrase (empty for no passphrase):
 </pre></div>
 </div>
-<p>It&#8217;s up to you whether you want to use a passphrase. Entering a passphrase does have its benefits: the security of a key, no matter how encrypted, still depends on the fact that it is not visible to anyone else. Should a passphrase-protected private key fall into an unauthorized users possession, they will be unable to log in to its associated accounts until they figure out the passphrase, buying the hacked user some extra time. The only downside, of course, to having a passphrase, is then having to type it in each time you use the Key Pair.</p>
+<p>You should enter a passphrase. The security of a key, no matter how encrypted,
+still depends on the fact that it is not visible to anyone else. Should a
+passphrase-protected private key fall into an unauthorized users possession,
+they will be unable to log in to its associated accounts until they figure out
+the passphrase.</p>
 <p>The entire key generation process looks like this:</p>
-<p>ssh-keygen -t rsa
+<div class="highlight-python"><div class="highlight"><pre>ssh-keygen -t rsa
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/demo/.ssh/id_rsa):
 Enter passphrase (empty for no passphrase):
@@ -220,9 +226,9 @@ Enter same passphrase again:
 Your identification has been saved in /home/demo/.ssh/id_rsa.
 Your public key has been saved in /home/demo/.ssh/id_rsa.pub.
 The key fingerprint is:
-4a:dd:0a:c6:35:4e:3f:ed:27:38:8c:74:44:4d:93:67 demo&#64;a
-The key&#8217;s randomart image is:
-+&#8211;[ RSA 2048]&#8212;-+
+4a:dd:0a:c6:35:4e:3f:ed:27:38:8c:74:44:4d:93:67 demo@a
+The key&#39;s randomart image is:
++--[ RSA 2048]----+
 |          .oo.   |
 |         .  o.E  |
 |        + .  o   |
@@ -232,26 +238,34 @@ The key&#8217;s randomart image is:
 |      . o + o .  |
 |           . o   |
 |                 |
-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+
-The public key is now located in /home/demo/.ssh/id_rsa.pub The private key (identification) is now located in /home/demo/.ssh/id_rsa</p>
-<p>Step Three—Copy the Public Key
-Once the key pair is generated, it&#8217;s time to place the public key on the virtual server that we want to use.</p>
-<p>You can copy the public key into the new machine&#8217;s authorized_keys file with the ssh-copy-id command. Make sure to replace the example username and IP address below.</p>
-<p>ssh-copy-id <a class="reference external" href="mailto:user&#37;&#52;&#48;123&#46;45&#46;56&#46;78">user<span>&#64;</span>123<span>&#46;</span>45<span>&#46;</span>56<span>&#46;</span>78</a>
-Alternatively, you can paste in the keys using SSH:</p>
++-----------------+
+The public key is now located in /home/demo/.ssh/id_rsa.pub The private key (identification) is now located in /home/demo/.ssh/id_rsa
+</pre></div>
+</div>
+</div>
+<div class="section" id="copy-the-public-key">
+<h3>Copy the Public Key<a class="headerlink" href="#copy-the-public-key" title="Permalink to this headline">¶</a></h3>
+<p>Once the key pair is generated, you can now install it on the controls system
+to allow access. This can be done with the <code class="docutils literal"><span class="pre">ssh-copy-id</span></code> command:</p>
+<div class="highlight-python"><div class="highlight"><pre>ssh-copy-id user@123.45.56.78
+</pre></div>
+</div>
+<p>Alternatively, you can paste in the keys using SSH:</p>
 <p>cat ~/.ssh/id_rsa.pub | ssh <a class="reference external" href="mailto:user&#37;&#52;&#48;123&#46;45&#46;56&#46;78">user<span>&#64;</span>123<span>&#46;</span>45<span>&#46;</span>56<span>&#46;</span>78</a> &#8220;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt;  ~/.ssh/authorized_keys&#8221;
 No matter which command you chose, you should see something like:</p>
-<p>The authenticity of host &#8216;12.34.56.78 (12.34.56.78)&#8217; can&#8217;t be established.
+<div class="highlight-python"><div class="highlight"><pre>The authenticity of host &#39;12.34.56.78 (12.34.56.78)&#39; can&#39;t be established.
 RSA key fingerprint is b1:2d:33:67:ce:35:4d:5f:f3:a8:cd:c0:c4:48:86:12.
 Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added &#8216;12.34.56.78&#8217; (RSA) to the list of known hosts.
-user&#64;12.34.56.78&#8217;s password:
-Now try logging into the machine, with &#8220;ssh &#8216;user&#64;12.34.56.78&#8217;&#8221;, and check in:</p>
-<blockquote>
-<div><p>~/.ssh/authorized_keys</p>
-<p>to make sure we haven&#8217;t added extra keys that you weren&#8217;t expecting.
-Now you can go ahead and log into <a class="reference external" href="mailto:user&#37;&#52;&#48;12&#46;34&#46;56&#46;78">user<span>&#64;</span>12<span>&#46;</span>34<span>&#46;</span>56<span>&#46;</span>78</a> and you will not be prompted for a password. However, if you set a passphrase, you will be asked to enter the passphrase at that time (and whenever else you log in in the future).</p>
-</div></blockquote>
+Warning: Permanently added &#39;12.34.56.78&#39; (RSA) to the list of known hosts.
+user@12.34.56.78&#39;s password:
+Now try logging into the machine, with &quot;ssh &#39;user@12.34.56.78&#39;&quot;, and check in:
+
+  ~/.ssh/authorized_keys
+
+  to make sure we haven&#39;t added extra keys that you weren&#39;t expecting.
+  Now you can go ahead and log into user@12.34.56.78 and you will not be prompted for a password. However, if you set a passphrase, you will be asked to enter the passphrase at that time (and whenever else you log in in the future).
+</pre></div>
+</div>
 </div>
 </div>
 </div>
