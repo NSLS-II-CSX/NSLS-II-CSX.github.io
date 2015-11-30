@@ -31,6 +31,7 @@
     <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="NSLS-II CSX Beamline Docs 0.1 documentation" href="../index.html" />
+    <link rel="up" title="Guides and Tutorials" href="index.html" />
     <link rel="next" title="Installing a Personal Conda Environment" href="conda_env.html" />
     <link rel="prev" title="HELP!! The %$^$#@% just crashed" href="help.html" />
 <meta charset='utf-8'>
@@ -70,10 +71,8 @@
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../csx-1/index.html">CSX-1 (23-ID-1) Beamline Doccumentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../csx-1/index.html#indices-and-tables">Indices and tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="help.html">HELP!! The %$^$#&#64;% just crashed</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Controls Account Setup Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conda_env.html">Installing a Personal Conda Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vim_cheat_sheet.html">Vim Commands Cheat Sheet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Guides and Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </ul>
 </li>
@@ -171,7 +170,15 @@
 <h1>Controls Account Setup Guide<a class="headerlink" href="#controls-account-setup-guide" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>NSLS-II controls accounts allow access to all computers at CSX</p>
+<p>NSLS-II controls accounts allow access to all computers at CSX. Once a new
+account has been created, the following is suggested to get the account working
+correctly.</p>
+<p>Firstly, all accounts are created with global read permissions. If this is OK
+by you then skip the next step. However, if you want to restict access to files
+in your home directory then do the following:</p>
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv2 ~ ]$ chmod o-rwx,g-w+rx,u+rwx /home/&lt;uid&gt;
+</pre></div>
+</div>
 </div>
 </div>
 

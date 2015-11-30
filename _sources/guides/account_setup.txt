@@ -4,4 +4,12 @@ Controls Account Setup Guide
 Introduction
 ------------
 
-NSLS-II controls accounts allow access to all computers at CSX 
+NSLS-II controls accounts allow access to all computers at CSX. Once a new
+account has been created, the following is suggested to get the account working
+correctly. 
+
+Firstly, all accounts are created with global read permissions. If this is OK
+by you then skip the next step. However, if you want to restict access to files
+in your home directory then do the following: ::
+
+    [swilkins@xf23id1-srv2 ~ ]$ chmod o-rwx,g-w+rx,u+rwx /home/<uid>
