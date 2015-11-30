@@ -183,7 +183,25 @@ example.</p>
 <h2>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">¶</a></h2>
 <p>To install at CSX, it is prefertable to install in the GPFS system in your
 userspace. To do this:</p>
-<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv2 ~]$ git clone https://github.com/NSLS-II-CSX/linuxbrew.git ~/.linuxbrew
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv2 ~]$ git clone https://github.com/NSLS-II-CSX/linuxbrew.git \
+    /GPFS/xf23id/users/&lt;uid&gt;/linuxbrew
+</pre></div>
+</div>
+<p>where <code class="docutils literal"><span class="pre">&lt;id&gt;</span></code> should be substituted for your username. Now edit your
+<code class="docutils literal"><span class="pre">.bashrc</span></code> file and add the following:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="k">if</span> <span class="o">[</span> -e <span class="s2">&quot;/GPFS/xf23id/users/&lt;id&gt;/linuxbrew&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/GPFS/xf23id/users/&lt;id&gt;/linuxbrew/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+    <span class="nb">export </span><span class="nv">MANPATH</span><span class="o">=</span><span class="s2">&quot;/GPFS/xf23id/users/&lt;id&gt;/linuxbrew/share/man:</span><span class="nv">$MANPATH</span><span class="s2">&quot;</span>
+    <span class="nb">export </span><span class="nv">INFOPATH</span><span class="o">=</span><span class="s2">&quot;/GPFS/xf23id/users/&lt;id&gt;/linuxbrew/share/info:</span><span class="nv">$INFOPATH</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>where as before <code class="docutils literal"><span class="pre">&lt;id&gt;</span></code> should be replaced with your username. You are now
+ready to install some useful programs. As a suggestion, the following are useful:</p>
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv2 ~]$ brew install openssl
+[swilkins@xf23id1-srv2 ~]$ brew install git
+[swilkins@xf23id1-srv2 ~]$ brew install gist
+[swilkins@xf23id1-srv2 ~]$ brew install tmux
 </pre></div>
 </div>
 </div>
