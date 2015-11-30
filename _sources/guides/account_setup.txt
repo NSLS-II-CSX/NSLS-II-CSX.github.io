@@ -73,21 +73,41 @@ Copy the Public Key
 Once the key pair is generated, you can now install it on the controls system
 to allow access. This can be done with the ``ssh-copy-id`` command: ::
 
-    ssh-copy-id user@123.45.56.78
+    ssh-copy-id user@box64-2
 
-Alternatively, you can paste in the keys using SSH:
+where ``user`` is your username. If sucsessful, You should see something like: ::
 
-cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
-No matter which command you chose, you should see something like: ::
-
-    The authenticity of host '12.34.56.78 (12.34.56.78)' can't be established.
-    RSA key fingerprint is b1:2d:33:67:ce:35:4d:5f:f3:a8:cd:c0:c4:48:86:12.
-    Are you sure you want to continue connecting (yes/no)? yes
-    Warning: Permanently added '12.34.56.78' (RSA) to the list of known hosts.
-    user@12.34.56.78's password: 
-    Now try logging into the machine, with "ssh 'user@12.34.56.78'", and check in:
+    [swilkins@xf23id1-srv2 ~/Scratch ]$ ssh-copy-id swilkins@box64-2
+    ********************************************************************************
+    *                                                                              *
+    *                                NOTICE TO USERS                               *
+    *                                                                              *
+    *     This is a Federal computer system (and/or it is directly connected       *
+    *      to a BNL local network system) and is the property of the United        *
+    *    States Government. It is for authorized use only. Users (authorized or    *
+    *      unauthorized) have no explicit or implicit expectation of privacy.      *
+    *                                                                              *
+    *      Any or all uses of this system and all files on this system may be      *
+    *      intercepted, monitored, recorded, copied, audited, inspected, and       *
+    *         disclosed to authorized site, Department of Energy, and law          *
+    *       enforcement personnel, as well as authorized officials of other        *
+    *       agencies, both domestic and foreign. By using this system, the         *
+    *     user consents to such interception, monitoring, recording, copying,      *
+    *          auditing, inspection, and disclosure at the discretion of           *
+    *              authorized site or Department of Energy personnel.              *
+    *                                                                              *
+    *   Unauthorized or improper use of this system may result in administrative   *
+    *    disciplinary action and civil and criminal penalties. By continuing to    *
+    *      use this system you indicate your awareness of and consent to these     *
+    *     terms and conditions of use. LOG OFF IMMEDIATELY if you do not agree     *
+    *                  to the conditions stated in this warning.                   *
+    *                                                                              *
+    ********************************************************************************
+    Now try logging into the machine, with "ssh 'swilkins@box64-2'", and check in:
 
       ~/.ssh/authorized_keys
 
-      to make sure we haven't added extra keys that you weren't expecting.
-      Now you can go ahead and log into user@12.34.56.78 and you will not be prompted for a password. However, if you set a passphrase, you will be asked to enter the passphrase at that time (and whenever else you log in in the future).
+    to make sure we haven't added extra keys that you weren't expecting.
+
+Now you are done ... you should be able to login using SSH kets now.
+

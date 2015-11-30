@@ -247,25 +247,44 @@ The public key is now located in /home/demo/.ssh/id_rsa.pub The private key (ide
 <h3>Copy the Public Key<a class="headerlink" href="#copy-the-public-key" title="Permalink to this headline">¶</a></h3>
 <p>Once the key pair is generated, you can now install it on the controls system
 to allow access. This can be done with the <code class="docutils literal"><span class="pre">ssh-copy-id</span></code> command:</p>
-<div class="highlight-python"><div class="highlight"><pre>ssh-copy-id user@123.45.56.78
+<div class="highlight-python"><div class="highlight"><pre>ssh-copy-id user@box64-2
 </pre></div>
 </div>
-<p>Alternatively, you can paste in the keys using SSH:</p>
-<p>cat ~/.ssh/id_rsa.pub | ssh <a class="reference external" href="mailto:user&#37;&#52;&#48;123&#46;45&#46;56&#46;78">user<span>&#64;</span>123<span>&#46;</span>45<span>&#46;</span>56<span>&#46;</span>78</a> &#8220;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt;  ~/.ssh/authorized_keys&#8221;
-No matter which command you chose, you should see something like:</p>
-<div class="highlight-python"><div class="highlight"><pre>The authenticity of host &#39;12.34.56.78 (12.34.56.78)&#39; can&#39;t be established.
-RSA key fingerprint is b1:2d:33:67:ce:35:4d:5f:f3:a8:cd:c0:c4:48:86:12.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added &#39;12.34.56.78&#39; (RSA) to the list of known hosts.
-user@12.34.56.78&#39;s password:
-Now try logging into the machine, with &quot;ssh &#39;user@12.34.56.78&#39;&quot;, and check in:
+<p>where <code class="docutils literal"><span class="pre">user</span></code> is your username. If sucsessful, You should see something like:</p>
+<div class="highlight-python"><div class="highlight"><pre>[swilkins@xf23id1-srv2 ~/Scratch ]$ ssh-copy-id swilkins@box64-2
+********************************************************************************
+*                                                                              *
+*                                NOTICE TO USERS                               *
+*                                                                              *
+*     This is a Federal computer system (and/or it is directly connected       *
+*      to a BNL local network system) and is the property of the United        *
+*    States Government. It is for authorized use only. Users (authorized or    *
+*      unauthorized) have no explicit or implicit expectation of privacy.      *
+*                                                                              *
+*      Any or all uses of this system and all files on this system may be      *
+*      intercepted, monitored, recorded, copied, audited, inspected, and       *
+*         disclosed to authorized site, Department of Energy, and law          *
+*       enforcement personnel, as well as authorized officials of other        *
+*       agencies, both domestic and foreign. By using this system, the         *
+*     user consents to such interception, monitoring, recording, copying,      *
+*          auditing, inspection, and disclosure at the discretion of           *
+*              authorized site or Department of Energy personnel.              *
+*                                                                              *
+*   Unauthorized or improper use of this system may result in administrative   *
+*    disciplinary action and civil and criminal penalties. By continuing to    *
+*      use this system you indicate your awareness of and consent to these     *
+*     terms and conditions of use. LOG OFF IMMEDIATELY if you do not agree     *
+*                  to the conditions stated in this warning.                   *
+*                                                                              *
+********************************************************************************
+Now try logging into the machine, with &quot;ssh &#39;swilkins@box64-2&#39;&quot;, and check in:
 
   ~/.ssh/authorized_keys
 
-  to make sure we haven&#39;t added extra keys that you weren&#39;t expecting.
-  Now you can go ahead and log into user@12.34.56.78 and you will not be prompted for a password. However, if you set a passphrase, you will be asked to enter the passphrase at that time (and whenever else you log in in the future).
+to make sure we haven&#39;t added extra keys that you weren&#39;t expecting.
 </pre></div>
 </div>
+<p>Now you are done ... you should be able to login using SSH kets now.</p>
 </div>
 </div>
 </div>
