@@ -1,5 +1,6 @@
 CSXTOOLS Doccumentation
 =======================
 
-.. automodule:: csxtools
+.. automodule:: csxtools.image_corr
+
 
