@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>csxtools.image_corr &mdash; NSLS-II CSX Beamline Docs 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="NSLS-II CSX Beamline Docs 0.1 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          NSLS-II CSX Beamline Docs</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../csx-1/index.html">CSX-1 (23-ID-1) Beamline Doccumentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../csx-1/index.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/index.html">Guides and Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/index.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../csxtools/index.html">CSXTOOLS Doccumentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<form action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <h1>Source code for csxtools.image_corr</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
+<span class="kn">import</span> <span class="nn">uuid</span>
+<span class="kn">import</span> <span class="nn">time</span> <span class="kn">as</span> <span class="nn">ttime</span>
+<span class="kn">from</span> <span class="nn">metadatastore.commands</span> <span class="kn">import</span> <span class="n">get_events_generator</span>
+<span class="kn">from</span> <span class="nn">databroker.databroker</span> <span class="kn">import</span> <span class="n">fill_event</span>
+<span class="kn">from</span> <span class="nn">databroker.pivot</span> <span class="kn">import</span> <span class="n">pivot_timeseries</span><span class="p">,</span> <span class="n">zip_events</span><span class="p">,</span> <span class="n">reset_time</span>
+
+
+
+<div class="viewcode-block" id="subtract_background"><a class="viewcode-back" href="../../csxtools/index.html#csxtools.image_corr.subtract_background">[docs]</a><span class="k">def</span> <span class="nf">subtract_background</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">dark_image</span><span class="p">,</span> <span class="n">gain</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">)):</span>
+    <span class="sd">&#39;&#39;&#39;Subtract background images from FastCCD images</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    image : array</span>
+<span class="sd">        Input array of CCD images</span>
+<span class="sd">    dark_image : array</span>
+<span class="sd">        Dark images for the 3 gain settings.</span>
+<span class="sd">    gain : tuple</span>
+<span class="sd">        Gain multipliers for teh 3 gain settings</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">gain_mask_8</span> <span class="o">=</span> <span class="p">(</span><span class="n">image</span> <span class="o">&amp;</span> <span class="mh">0xC000</span><span class="p">)</span> <span class="o">==</span> <span class="mh">0xC000</span>
+    <span class="n">gain_mask_4</span> <span class="o">=</span> <span class="p">(</span><span class="n">image</span> <span class="o">&amp;</span> <span class="mh">0xC000</span><span class="p">)</span> <span class="o">==</span> <span class="mh">0x8000</span>
+    <span class="n">gain_mask_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">image</span> <span class="o">&amp;</span> <span class="mh">0xC000</span><span class="p">)</span> <span class="o">==</span> <span class="mh">0x0000</span>
+    <span class="n">error_mask</span>  <span class="o">=</span> <span class="p">(</span><span class="n">image</span> <span class="o">&amp;</span> <span class="mh">0xC000</span><span class="p">)</span> <span class="o">==</span> <span class="mh">0x2000</span>
+
+    <span class="n">image</span> <span class="o">=</span> <span class="n">image</span> <span class="o">&amp;</span> <span class="mh">0x1FFF</span>
+
+    <span class="n">cor_image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span>
+    <span class="n">cor_image</span> <span class="o">-=</span> <span class="n">gain_mask_8</span> <span class="o">*</span> <span class="n">dark_image</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">cor_image</span> <span class="o">-=</span> <span class="n">gain_mask_4</span> <span class="o">*</span> <span class="n">dark_image</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">cor_image</span> <span class="o">-=</span> <span class="n">gain_mask_1</span> <span class="o">*</span> <span class="n">dark_image</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">gain_image</span> <span class="o">=</span> <span class="p">(</span><span class="n">gain_mask_8</span> <span class="o">*</span> <span class="n">gain</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">gain_image</span> <span class="o">+=</span> <span class="p">(</span><span class="n">gain_mask_4</span> <span class="o">*</span> <span class="n">gain</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">gain_image</span> <span class="o">+=</span> <span class="p">(</span><span class="n">gain_mask_1</span> <span class="o">*</span> <span class="n">gain</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">cor_image</span> <span class="o">*</span> <span class="n">gain_image</span><span class="p">),</span> <span class="n">gain_image</span><span class="p">,</span> <span class="n">error_mask</span>
+</div>
+<span class="k">def</span> <span class="nf">correct_events</span><span class="p">(</span><span class="n">evs</span><span class="p">,</span> <span class="n">data_key</span><span class="p">,</span> <span class="n">dark_images</span><span class="p">,</span> <span class="n">drop_raw</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="n">out_data_key</span> <span class="o">=</span> <span class="n">data_key</span> <span class="o">+</span> <span class="s">&#39;_corrected&#39;</span>
+    <span class="n">ev0</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">evs</span><span class="p">)</span>
+    <span class="n">new_desc</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">ev0</span><span class="p">[</span><span class="s">&#39;descriptor&#39;</span><span class="p">])</span>
+    <span class="n">new_desc</span><span class="p">[</span><span class="s">&#39;data_keys&#39;</span><span class="p">][</span><span class="n">out_data_key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">new_desc</span><span class="p">[</span><span class="s">&#39;data_keys&#39;</span><span class="p">][</span><span class="n">data_key</span><span class="p">])</span>
+    <span class="n">new_desc</span><span class="p">[</span><span class="s">&#39;data_keys&#39;</span><span class="p">][</span><span class="n">out_data_key</span><span class="p">][</span><span class="s">&#39;source&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;subtract_background&#39;</span>
+    <span class="n">new_desc</span><span class="p">[</span><span class="s">&#39;uid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">drop_raw</span><span class="p">:</span>
+        <span class="n">new_desc</span><span class="p">[</span><span class="s">&#39;data_keys&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">data_key</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">ev</span> <span class="ow">in</span> <span class="n">chain</span><span class="p">((</span><span class="n">ev0</span><span class="p">,</span> <span class="p">),</span> <span class="n">evs</span><span class="p">):</span>
+        <span class="n">new_ev</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;uid&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()),</span>
+                 <span class="s">&#39;time&#39;</span><span class="p">:</span> <span class="n">ttime</span><span class="o">.</span><span class="n">time</span><span class="p">(),</span>
+                 <span class="s">&#39;descriptor&#39;</span><span class="p">:</span> <span class="n">new_desc</span><span class="p">,</span>
+                 <span class="s">&#39;seq_no&#39;</span><span class="p">:</span> <span class="n">ev</span><span class="p">[</span><span class="s">&#39;seq_no&#39;</span><span class="p">],</span>
+                 <span class="s">&#39;data&#39;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="n">ev</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">]),</span>
+                 <span class="s">&#39;timestamps&#39;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="n">ev</span><span class="p">[</span><span class="s">&#39;timestamps&#39;</span><span class="p">])}</span>
+        <span class="n">corr</span><span class="p">,</span> <span class="n">gain_img</span><span class="p">,</span> <span class="n">err_mask</span> <span class="o">=</span> <span class="n">subtract_background</span><span class="p">(</span><span class="n">ev</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">][</span><span class="n">data_key</span><span class="p">],</span> <span class="n">dark_images</span><span class="p">)</span>
+        <span class="n">new_ev</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">][</span><span class="n">out_data_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">corr</span>
+        <span class="n">new_ev</span><span class="p">[</span><span class="s">&#39;timestamps&#39;</span><span class="p">][</span><span class="n">out_data_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">ttime</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">drop_raw</span><span class="p">:</span>
+            <span class="n">new_ev</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">data_key</span><span class="p">)</span>
+            <span class="n">new_ev</span><span class="p">[</span><span class="s">&#39;timestamps&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">data_key</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="n">new_ev</span>
+
+
+<span class="k">def</span> <span class="nf">clean_images</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">pivot_key</span><span class="p">,</span> <span class="n">timesource_key</span><span class="p">,</span> <span class="n">dark_images</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">static_keys</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">static_keys</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">static_keys</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;sx&#39;</span><span class="p">,</span> <span class="s">&#39;sy&#39;</span><span class="p">,</span> <span class="s">&#39;temp_a&#39;</span><span class="p">,</span> <span class="s">&#39;temp_b&#39;</span><span class="p">,</span> <span class="s">&#39;sz&#39;</span><span class="p">]</span>
+    <span class="c"># sort out which descriptor has the key we want to pivot on</span>
+    <span class="n">pv_desc</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">header</span><span class="p">[</span><span class="s">&#39;descriptors&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">pivot_key</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;data_keys&#39;</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c"># sort out which descriptor has the key that we want to zip with to get time stamps</span>
+    <span class="n">ts_desc</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">header</span><span class="p">[</span><span class="s">&#39;descriptors&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">timesource_key</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;data_keys&#39;</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">ts_events</span> <span class="o">=</span> <span class="n">get_events_generator</span><span class="p">(</span><span class="n">ts_desc</span><span class="p">)</span>
+    <span class="n">pv_events</span> <span class="o">=</span> <span class="n">get_events_generator</span><span class="p">(</span><span class="n">pv_desc</span><span class="p">)</span>
+    <span class="c"># fill_event works in place, sillyness to work around that</span>
+    <span class="n">pv_events</span> <span class="o">=</span> <span class="p">((</span><span class="n">ev</span><span class="p">,</span> <span class="n">fill_event</span><span class="p">(</span><span class="n">ev</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">ev</span> <span class="ow">in</span> <span class="n">pv_events</span><span class="p">)</span>
+    <span class="n">pivoted_events</span> <span class="o">=</span> <span class="n">pivot_timeseries</span><span class="p">(</span><span class="n">pv_events</span><span class="p">,</span> <span class="p">[</span><span class="n">pivot_key</span><span class="p">],</span> <span class="n">static_keys</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">dark_images</span><span class="p">:</span>
+        <span class="n">pivoted_events</span> <span class="o">=</span> <span class="n">correct_events</span><span class="p">(</span><span class="n">pivoted_events</span><span class="p">,</span> <span class="n">pivot_key</span><span class="p">,</span> <span class="n">dark_images</span><span class="p">)</span>
+    <span class="n">merged_events</span> <span class="o">=</span> <span class="n">zip_events</span><span class="p">(</span><span class="n">pivoted_events</span><span class="p">,</span> <span class="n">ts_events</span><span class="p">)</span>
+    <span class="n">out_ev</span> <span class="o">=</span> <span class="n">reset_time</span><span class="p">(</span><span class="n">merged_events</span><span class="p">,</span> <span class="n">timesource_key</span><span class="p">)</span>
+    <span class="k">yield from</span> <span class="n">out_ev</span>
+
+<span class="k">def</span> <span class="nf">extract_darkfield</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">dark_key</span><span class="p">):</span>
+    <span class="n">cam_desc</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">header</span><span class="p">[</span><span class="s">&#39;descriptors&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">dark_key</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="s">&#39;data_keys&#39;</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">events</span> <span class="o">=</span> <span class="n">get_events_generator</span><span class="p">(</span><span class="n">cam_desc</span><span class="p">)</span>
+    <span class="n">events</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(((</span><span class="n">ev</span><span class="p">,</span> <span class="n">fill_event</span><span class="p">(</span><span class="n">ev</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">ev</span> <span class="ow">in</span> <span class="n">events</span><span class="p">))</span>
+    <span class="n">event</span> <span class="o">=</span> <span class="n">events</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ims</span> <span class="o">=</span> <span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">][</span><span class="n">dark_key</span><span class="p">]</span> <span class="o">&lt;&lt;</span><span class="mi">2</span><span class="p">)</span> <span class="o">&gt;&gt;</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">ims</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Stuart B. Wilkins.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
