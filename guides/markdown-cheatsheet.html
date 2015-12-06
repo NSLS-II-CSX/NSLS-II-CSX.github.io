@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Typography &mdash; NSLS-II CSX Beamline Docs 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="NSLS-II CSX Beamline Docs 0.1 documentation" href="../index.html" />
+    <link rel="up" title="Guides and Tutorials" href="index.html" />
+    <link rel="next" title="Vim Commands Cheat Sheet" href="vim-cheatsheet.html" />
+    <link rel="prev" title="UNIX Primer and Account Setup" href="unix.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          NSLS-II CSX Beamline Docs</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../csx-1/index.html">CSX-1 (23-ID-1) Beamline Doccumentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csx-1/index.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Guides and Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../csxtools/index.html">CSXTOOLS Doccumentation</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Typography</a><ul>
+<li><a class="reference internal" href="#headings">Headings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#h1-heading">h1 Heading</a><ul>
+<li><a class="reference internal" href="#h2-heading">h2 Heading</a><ul>
+<li><a class="reference internal" href="#h3-heading">h3 Heading</a><ul>
+<li><a class="reference internal" href="#h4-heading">h4 Heading</a><ul>
+<li><a class="reference internal" href="#h5-heading">h5 Heading</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#horizontal-rules">Horizontal Rules</a></li>
+<li><a class="reference internal" href="#body-copy">Body Copy</a></li>
+<li><a class="reference internal" href="#emphasis">Emphasis</a><ul>
+<li><a class="reference internal" href="#bold">Bold</a></li>
+<li><a class="reference internal" href="#italics">Italics</a></li>
+<li><a class="reference internal" href="#strikethrough">strikethrough</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#blockquotes">Blockquotes</a></li>
+<li><a class="reference internal" href="#lists">Lists</a><ul>
+<li><a class="reference internal" href="#unordered">Unordered</a></li>
+<li><a class="reference internal" href="#ordered">Ordered</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#code">Code</a><ul>
+<li><a class="reference internal" href="#inline-code">Inline code</a></li>
+<li><a class="reference internal" href="#indented-code">Indented code</a></li>
+<li><a class="reference internal" href="#block-code-fences">Block code &#8220;fences&#8221;</a></li>
+<li><a class="reference internal" href="#syntax-highlighting">Syntax highlighting</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tables">Tables</a><ul>
+<li><a class="reference internal" href="#right-aligned-text">Right aligned text</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#links">Links</a><ul>
+<li><a class="reference internal" href="#basic-link">Basic link</a></li>
+<li><a class="reference internal" href="#add-a-title">Add a title</a></li>
+<li><a class="reference internal" href="#named-anchors">Named Anchors</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chapter-2">Chapter 2</a></li>
+<li><a class="reference internal" href="#chapter-3">Chapter 3</a></li>
+<li><a class="reference internal" href="#images">Images</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="unix.html" title="Previous Chapter: UNIX Primer and Account Setup"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; UNIX Primer a...</span>
+    </a>
+  </li>
+  <li>
+    <a href="vim-cheatsheet.html" title="Next Chapter: Vim Commands Cheat Sheet"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Vim Commands ... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/guides/markdown-cheatsheet.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+  <li>
+    <a href="unix.html" title="Previous Chapter: UNIX Primer and Account Setup"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; UNIX Primer a...</span>
+    </a>
+  </li>
+  <li>
+    <a href="vim-cheatsheet.html" title="Next Chapter: Vim Commands Cheat Sheet"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Vim Commands ... &raquo;</span>
+    </a>
+  </li><ul>
+<li><a class="reference internal" href="#">Typography</a><ul>
+<li><a class="reference internal" href="#headings">Headings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#h1-heading">h1 Heading</a><ul>
+<li><a class="reference internal" href="#h2-heading">h2 Heading</a><ul>
+<li><a class="reference internal" href="#h3-heading">h3 Heading</a><ul>
+<li><a class="reference internal" href="#h4-heading">h4 Heading</a><ul>
+<li><a class="reference internal" href="#h5-heading">h5 Heading</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#horizontal-rules">Horizontal Rules</a></li>
+<li><a class="reference internal" href="#body-copy">Body Copy</a></li>
+<li><a class="reference internal" href="#emphasis">Emphasis</a><ul>
+<li><a class="reference internal" href="#bold">Bold</a></li>
+<li><a class="reference internal" href="#italics">Italics</a></li>
+<li><a class="reference internal" href="#strikethrough">strikethrough</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#blockquotes">Blockquotes</a></li>
+<li><a class="reference internal" href="#lists">Lists</a><ul>
+<li><a class="reference internal" href="#unordered">Unordered</a></li>
+<li><a class="reference internal" href="#ordered">Ordered</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#code">Code</a><ul>
+<li><a class="reference internal" href="#inline-code">Inline code</a></li>
+<li><a class="reference internal" href="#indented-code">Indented code</a></li>
+<li><a class="reference internal" href="#block-code-fences">Block code &#8220;fences&#8221;</a></li>
+<li><a class="reference internal" href="#syntax-highlighting">Syntax highlighting</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tables">Tables</a><ul>
+<li><a class="reference internal" href="#right-aligned-text">Right aligned text</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#links">Links</a><ul>
+<li><a class="reference internal" href="#basic-link">Basic link</a></li>
+<li><a class="reference internal" href="#add-a-title">Add a title</a></li>
+<li><a class="reference internal" href="#named-anchors">Named Anchors</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chapter-2">Chapter 2</a></li>
+<li><a class="reference internal" href="#chapter-3">Chapter 3</a></li>
+<li><a class="reference internal" href="#images">Images</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="sourcelink">
+  <a href="../_sources/guides/markdown-cheatsheet.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="typography">
+<h1>Typography<a class="headerlink" href="#typography" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="headings">
+<h2>Headings<a class="headerlink" href="#headings" title="Permalink to this headline">¶</a></h2>
+<p>Headings from <code class="docutils literal"><span class="pre">h1</span></code> through <code class="docutils literal"><span class="pre">h6</span></code> are constructed with a <code class="docutils literal"><span class="pre">#</span></code> for
+each level:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># h1 Heading</span>
+<span class="c">## h2 Heading</span>
+<span class="c">### h3 Heading</span>
+<span class="c">#### h4 Heading</span>
+<span class="c">##### h5 Heading</span>
+<span class="c">###### h6 Heading</span>
+</pre></div>
+</div>
+<p>Renders to:</p>
+</div>
+</div>
+<div class="section" id="h1-heading">
+<h1>h1 Heading<a class="headerlink" href="#h1-heading" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="h2-heading">
+<h2>h2 Heading<a class="headerlink" href="#h2-heading" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="h3-heading">
+<h3>h3 Heading<a class="headerlink" href="#h3-heading" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="h4-heading">
+<h4>h4 Heading<a class="headerlink" href="#h4-heading" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="h5-heading">
+<h5>h5 Heading<a class="headerlink" href="#h5-heading" title="Permalink to this headline">¶</a></h5>
+<p>h6 Heading</p>
+<p>HTML:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;h1&gt;h1 Heading&lt;/h1&gt;
+&lt;h2&gt;h2 Heading&lt;/h2&gt;
+&lt;h3&gt;h3 Heading&lt;/h3&gt;
+&lt;h4&gt;h4 Heading&lt;/h4&gt;
+&lt;h5&gt;h5 Heading&lt;/h5&gt;
+&lt;h6&gt;h6 Heading&lt;/h6&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="horizontal-rules">
+<h2>Horizontal Rules<a class="headerlink" href="#horizontal-rules" title="Permalink to this headline">¶</a></h2>
+<p>The HTML <code class="docutils literal"><span class="pre">&lt;hr&gt;</span></code> element is for creating a &#8220;thematic break&#8221; between
+paragraph-level elements. In markdown, you can create a <code class="docutils literal"><span class="pre">&lt;hr&gt;</span></code> with
+any of the following:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">___</span></code>: three consecutive underscores</li>
+<li><code class="docutils literal"><span class="pre">---</span></code>: three consecutive dashes</li>
+<li><code class="docutils literal"><span class="pre">***</span></code>: three consecutive asterisks</li>
+</ul>
+<p>renders to:</p>
+<hr class="docutils" />
+<hr class="docutils" />
+</div>
+<hr class="docutils" />
+<div class="section" id="body-copy">
+<h2>Body Copy<a class="headerlink" href="#body-copy" title="Permalink to this headline">¶</a></h2>
+<p>Body copy written as normal, plain text will be wrapped with <code class="docutils literal"><span class="pre">&lt;p&gt;&lt;/p&gt;</span></code>
+tags in the rendered HTML.</p>
+<p>So this body copy:</p>
+<p><code class="docutils literal"><span class="pre">markdown</span> <span class="pre">Lorem</span> <span class="pre">ipsum</span> <span class="pre">dolor</span> <span class="pre">sit</span> <span class="pre">amet,</span> <span class="pre">graecis</span> <span class="pre">denique</span> <span class="pre">ei</span> <span class="pre">vel,</span> <span class="pre">at</span> <span class="pre">duo</span> <span class="pre">primis</span> <span class="pre">mandamus.</span> <span class="pre">Et</span> <span class="pre">legere</span> <span class="pre">ocurreret</span> <span class="pre">pri,</span> <span class="pre">animal</span> <span class="pre">tacimates</span> <span class="pre">complectitur</span> <span class="pre">ad</span> <span class="pre">cum.</span> <span class="pre">Cu</span> <span class="pre">eum</span> <span class="pre">inermis</span> <span class="pre">inimicus</span> <span class="pre">efficiendi.</span> <span class="pre">Labore</span> <span class="pre">officiis</span> <span class="pre">his</span> <span class="pre">ex,</span> <span class="pre">soluta</span> <span class="pre">officiis</span> <span class="pre">concludaturque</span> <span class="pre">ei</span> <span class="pre">qui,</span> <span class="pre">vide</span> <span class="pre">sensibus</span> <span class="pre">vim</span> <span class="pre">ad.</span></code>
+renders to this HTML:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;p&gt;Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.&lt;/p&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="emphasis">
+<h2>Emphasis<a class="headerlink" href="#emphasis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bold">
+<h3>Bold<a class="headerlink" href="#bold" title="Permalink to this headline">¶</a></h3>
+<p>For emphasizing a snippet of text with a heavier font-weight.</p>
+<p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
+<p><code class="docutils literal"><span class="pre">markdown</span> <span class="pre">**rendered</span> <span class="pre">as</span> <span class="pre">bold</span> <span class="pre">text**</span></code> renders to:</p>
+<p><strong>rendered as bold text</strong></p>
+<p>and this HTML</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;strong&gt;rendered as bold text&lt;/strong&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="italics">
+<h3>Italics<a class="headerlink" href="#italics" title="Permalink to this headline">¶</a></h3>
+<p>For emphasizing a snippet of text with italics.</p>
+<p>The following snippet of text is <em>rendered as italicized text</em>.</p>
+<div class="highlight-python"><div class="highlight"><pre>_rendered as italicized text_
+</pre></div>
+</div>
+<p>renders to:</p>
+<p><em>rendered as italicized text</em></p>
+<p>and this HTML:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;em&gt;rendered as italicized text&lt;/em&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="strikethrough">
+<h3>strikethrough<a class="headerlink" href="#strikethrough" title="Permalink to this headline">¶</a></h3>
+<p>In GFM you can do strickthroughs.</p>
+<p><code class="docutils literal"><span class="pre">markdown</span> <span class="pre">~~Strike</span> <span class="pre">through</span> <span class="pre">this</span> <span class="pre">text.~~</span></code> Which renders to:</p>
+<p>[STRIKEOUT:Strike through this text.]</p>
+</div>
+</div>
+<div class="section" id="blockquotes">
+<h2>Blockquotes<a class="headerlink" href="#blockquotes" title="Permalink to this headline">¶</a></h2>
+<p>For quoting blocks of content from another source within your document.</p>
+<p>Add <code class="docutils literal"><span class="pre">&gt;</span></code> before any text you want to quote.</p>
+<div class="highlight-python"><div class="highlight"><pre>Add `&gt;` before any text you want to quote.
+</pre></div>
+</div>
+<p>Renders to:</p>
+<blockquote>
+<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+posuere erat a ante.</div></blockquote>
+<p>and this HTML:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;blockquote&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;
+&lt;/blockquote&gt;
+</pre></div>
+</div>
+<p>Blockquotes can also be nested:</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
+Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
+&gt;&gt; Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor
+odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
+&gt;&gt;&gt; Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
+Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
+</pre></div>
+</div>
+<p>Renders to:</p>
+<blockquote>
+<div>Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
+Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi. &gt; Sed
+adipiscing elit vitae augue consectetur a gravida nunc vehicula.
+Donec auctor odio non est accumsan facilisis. Aliquam id turpis in
+dolor tincidunt mollis ac eu diam. &gt;&gt; Donec massa lacus, ultricies a
+ullamcorper in, fermentum sed augue. Nunc augue augue, aliquam non
+hendrerit ac, commodo vel nisi.</div></blockquote>
+</div>
+<div class="section" id="lists">
+<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="unordered">
+<h3>Unordered<a class="headerlink" href="#unordered" title="Permalink to this headline">¶</a></h3>
+<p>A list of items in which the order of the items does not explicitly
+matter.</p>
+<p>You may use any of the following symbols to denote bullets for each list
+item:</p>
+<div class="highlight-python"><div class="highlight"><pre>* valid bullet
+- valid bullet
++ valid bullet
+</pre></div>
+</div>
+<p>For example</p>
+<p><code class="docutils literal"><span class="pre">markdown</span> <span class="pre">+</span> <span class="pre">Lorem</span> <span class="pre">ipsum</span> <span class="pre">dolor</span> <span class="pre">sit</span> <span class="pre">amet</span> <span class="pre">+</span> <span class="pre">Consectetur</span> <span class="pre">adipiscing</span> <span class="pre">elit</span> <span class="pre">+</span> <span class="pre">Integer</span> <span class="pre">molestie</span> <span class="pre">lorem</span> <span class="pre">at</span> <span class="pre">massa</span> <span class="pre">+</span> <span class="pre">Facilisis</span> <span class="pre">in</span> <span class="pre">pretium</span> <span class="pre">nisl</span> <span class="pre">aliquet</span> <span class="pre">+</span> <span class="pre">Nulla</span> <span class="pre">volutpat</span> <span class="pre">aliquam</span> <span class="pre">velit</span>&nbsp;&nbsp; <span class="pre">-</span> <span class="pre">Phasellus</span> <span class="pre">iaculis</span> <span class="pre">neque</span>&nbsp;&nbsp; <span class="pre">-</span> <span class="pre">Purus</span> <span class="pre">sodales</span> <span class="pre">ultricies</span>&nbsp;&nbsp; <span class="pre">-</span> <span class="pre">Vestibulum</span> <span class="pre">laoreet</span> <span class="pre">porttitor</span> <span class="pre">sem</span>&nbsp;&nbsp; <span class="pre">-</span> <span class="pre">Ac</span> <span class="pre">tristique</span> <span class="pre">libero</span> <span class="pre">volutpat</span> <span class="pre">at</span> <span class="pre">+</span> <span class="pre">Faucibus</span> <span class="pre">porta</span> <span class="pre">lacus</span> <span class="pre">fringilla</span> <span class="pre">vel</span> <span class="pre">+</span> <span class="pre">Aenean</span> <span class="pre">sit</span> <span class="pre">amet</span> <span class="pre">erat</span> <span class="pre">nunc</span> <span class="pre">+</span> <span class="pre">Eget</span> <span class="pre">porttitor</span> <span class="pre">lorem</span></code>
+Renders to:</p>
+<ul class="simple">
+<li>Lorem ipsum dolor sit amet</li>
+<li>Consectetur adipiscing elit</li>
+<li>Integer molestie lorem at massa</li>
+<li>Facilisis in pretium nisl aliquet</li>
+<li>Nulla volutpat aliquam velit</li>
+<li>Phasellus iaculis neque</li>
+<li>Purus sodales ultricies</li>
+<li>Vestibulum laoreet porttitor sem</li>
+<li>Ac tristique libero volutpat at</li>
+<li>Faucibus porta lacus fringilla vel</li>
+<li>Aenean sit amet erat nunc</li>
+<li>Eget porttitor lorem</li>
+</ul>
+<p>And this HTML</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;ul&gt;
+  &lt;li&gt;Lorem ipsum dolor sit amet&lt;/li&gt;
+  &lt;li&gt;Consectetur adipiscing elit&lt;/li&gt;
+  &lt;li&gt;Integer molestie lorem at massa&lt;/li&gt;
+  &lt;li&gt;Facilisis in pretium nisl aliquet&lt;/li&gt;
+  &lt;li&gt;Nulla volutpat aliquam velit
+    &lt;ul&gt;
+      &lt;li&gt;Phasellus iaculis neque&lt;/li&gt;
+      &lt;li&gt;Purus sodales ultricies&lt;/li&gt;
+      &lt;li&gt;Vestibulum laoreet porttitor sem&lt;/li&gt;
+      &lt;li&gt;Ac tristique libero volutpat at&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Faucibus porta lacus fringilla vel&lt;/li&gt;
+  &lt;li&gt;Aenean sit amet erat nunc&lt;/li&gt;
+  &lt;li&gt;Eget porttitor lorem&lt;/li&gt;
+&lt;/ul&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="ordered">
+<h3>Ordered<a class="headerlink" href="#ordered" title="Permalink to this headline">¶</a></h3>
+<p>A list of items in which the order of items does explicitly matter.</p>
+<p><code class="docutils literal"><span class="pre">markdown</span> <span class="pre">1.</span> <span class="pre">Lorem</span> <span class="pre">ipsum</span> <span class="pre">dolor</span> <span class="pre">sit</span> <span class="pre">amet</span> <span class="pre">2.</span> <span class="pre">Consectetur</span> <span class="pre">adipiscing</span> <span class="pre">elit</span> <span class="pre">3.</span> <span class="pre">Integer</span> <span class="pre">molestie</span> <span class="pre">lorem</span> <span class="pre">at</span> <span class="pre">massa</span> <span class="pre">4.</span> <span class="pre">Facilisis</span> <span class="pre">in</span> <span class="pre">pretium</span> <span class="pre">nisl</span> <span class="pre">aliquet</span> <span class="pre">5.</span> <span class="pre">Nulla</span> <span class="pre">volutpat</span> <span class="pre">aliquam</span> <span class="pre">velit</span> <span class="pre">6.</span> <span class="pre">Faucibus</span> <span class="pre">porta</span> <span class="pre">lacus</span> <span class="pre">fringilla</span> <span class="pre">vel</span> <span class="pre">7.</span> <span class="pre">Aenean</span> <span class="pre">sit</span> <span class="pre">amet</span> <span class="pre">erat</span> <span class="pre">nunc</span> <span class="pre">8.</span> <span class="pre">Eget</span> <span class="pre">porttitor</span> <span class="pre">lorem</span></code>
+Renders to:</p>
+<ol class="arabic simple">
+<li>Lorem ipsum dolor sit amet</li>
+<li>Consectetur adipiscing elit</li>
+<li>Integer molestie lorem at massa</li>
+<li>Facilisis in pretium nisl aliquet</li>
+<li>Nulla volutpat aliquam velit</li>
+<li>Faucibus porta lacus fringilla vel</li>
+<li>Aenean sit amet erat nunc</li>
+<li>Eget porttitor lorem</li>
+</ol>
+<p>And this HTML:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;ol&gt;
+  &lt;li&gt;Lorem ipsum dolor sit amet&lt;/li&gt;
+  &lt;li&gt;Consectetur adipiscing elit&lt;/li&gt;
+  &lt;li&gt;Integer molestie lorem at massa&lt;/li&gt;
+  &lt;li&gt;Facilisis in pretium nisl aliquet&lt;/li&gt;
+  &lt;li&gt;Nulla volutpat aliquam velit&lt;/li&gt;
+  &lt;li&gt;Faucibus porta lacus fringilla vel&lt;/li&gt;
+  &lt;li&gt;Aenean sit amet erat nunc&lt;/li&gt;
+  &lt;li&gt;Eget porttitor lorem&lt;/li&gt;
+&lt;/ol&gt;
+</pre></div>
+</div>
+<p><strong>TIP</strong>: If you just use <code class="docutils literal"><span class="pre">1.</span></code> for each number, GitHub will
+automatically number each item. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>1. Lorem ipsum dolor sit amet
+1. Consectetur adipiscing elit
+1. Integer molestie lorem at massa
+1. Facilisis in pretium nisl aliquet
+1. Nulla volutpat aliquam velit
+1. Faucibus porta lacus fringilla vel
+1. Aenean sit amet erat nunc
+1. Eget porttitor lorem
+</pre></div>
+</div>
+<p>Renders to:</p>
+<ol class="arabic simple">
+<li>Lorem ipsum dolor sit amet</li>
+<li>Consectetur adipiscing elit</li>
+<li>Integer molestie lorem at massa</li>
+<li>Facilisis in pretium nisl aliquet</li>
+<li>Nulla volutpat aliquam velit</li>
+<li>Faucibus porta lacus fringilla vel</li>
+<li>Aenean sit amet erat nunc</li>
+<li>Eget porttitor lorem</li>
+</ol>
+</div>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inline-code">
+<h3>Inline code<a class="headerlink" href="#inline-code" title="Permalink to this headline">¶</a></h3>
+<p>Wrap inline snippets of code with <code class="docutils literal"><span class="pre">`</span></code>.</p>
+<p>For example, <code class="docutils literal"><span class="pre">&lt;section&gt;&lt;/section&gt;</span></code> should be wrapped as &#8220;inline&#8221;.</p>
+<div class="highlight-python"><div class="highlight"><pre>For example, `&lt;section&gt;&lt;/section&gt;` should be wrapped as &quot;inline&quot;.
+</pre></div>
+</div>
+</div>
+<div class="section" id="indented-code">
+<h3>Indented code<a class="headerlink" href="#indented-code" title="Permalink to this headline">¶</a></h3>
+<p>Or indent several lines of code by at least four spaces, as in:</p>
+<div class="highlight-python"><div class="highlight"><pre>// Some comments
+line 1 of code
+line 2 of code
+line 3 of code
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>// Some comments
+line 1 of code
+line 2 of code
+line 3 of code
+</pre></div>
+</div>
+</div>
+<div class="section" id="block-code-fences">
+<h3>Block code &#8220;fences&#8221;<a class="headerlink" href="#block-code-fences" title="Permalink to this headline">¶</a></h3>
+<p>Use &#8220;fences&#8221; <code class="docutils literal"><span class="pre">```</span></code> to block in multiple lines of code.</p>
+<pre>
+``` html
+Sample text here...
+```
+</pre><div class="highlight-python"><div class="highlight"><pre>Sample text here...
+</pre></div>
+</div>
+<p>HTML:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;pre&gt;
+  &lt;p&gt;Sample text here...&lt;/p&gt;
+&lt;/pre&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntax-highlighting">
+<h3>Syntax highlighting<a class="headerlink" href="#syntax-highlighting" title="Permalink to this headline">¶</a></h3>
+<p>GFM, or &#8220;GitHub Flavored Markdown&#8221; also supports syntax highlighting. To
+activate it, simply add the file extension of the language you want to
+use directly after the first code &#8220;fence&#8221;, <code class="docutils literal"><span class="pre">`</span></code> js``, and syntax
+highlighting will automatically be applied in the rendered HTML. For
+example, to apply syntax highlighting to JavaScript code:</p>
+<pre>
+``` javascript
+grunt.initConfig({
+  assemble: {
+    options: {
+      assets: 'docs/assets',
+      data: 'src/data/*.{json,yml}',
+      helpers: 'src/custom-helpers.js',
+      partials: ['src/partials/**/*.{hbs,md}']
+    },
+    pages: {
+      options: {
+        layout: 'default.hbs'
+      },
+      files: {
+        './': ['src/templates/pages/index.hbs']
+      }
+    }
+  }
+};
+```
+</pre><p>Renders to:</p>
+<div class="highlight-python"><div class="highlight"><pre>grunt.initConfig({
+  assemble: {
+    options: {
+      assets: &#39;docs/assets&#39;,
+      data: &#39;src/data/*.{json,yml}&#39;,
+      helpers: &#39;src/custom-helpers.js&#39;,
+      partials: [&#39;src/partials/**/*.{hbs,md}&#39;]
+    },
+    pages: {
+      options: {
+        layout: &#39;default.hbs&#39;
+      },
+      files: {
+        &#39;./&#39;: [&#39;src/templates/pages/index.hbs&#39;]
+      }
+    }
+  }
+};
+</pre></div>
+</div>
+<p>And this complicated HTML:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nx&quot;&gt;grunt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initConfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;assemble&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;assets&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;docs/assets&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;src/data/*.{json,yml}&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;helpers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;src/custom-helpers.js&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;partials&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;src/partials/**/*.{hbs,md}&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;default.hbs&#39;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;&#39;./&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;src/templates/pages/index.hbs&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tables">
+<h2>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h2>
+<p>Tables are created by adding pipes as dividers between each cell, and by
+adding a line of dashes (also separated by bars) beneath the header.
+Note that the pipes do not need to be vertically aligned.</p>
+<div class="highlight-python"><div class="highlight"><pre>| Option | Description |
+| ------ | ----------- |
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
+</pre></div>
+</div>
+<p>Renders to:</p>
+<p>| Option | Description | | &#8212;&#8212; | &#8212;&#8212;&#8212;&#8211; | | data | path
+to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is
+the default. | | ext | extension to be used for dest files. |</p>
+<p>And this HTML:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Option&lt;/th&gt;
+    &lt;th&gt;Description&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;data&lt;/td&gt;
+    &lt;td&gt;path to data files to supply the data that will be passed into templates.&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;engine&lt;/td&gt;
+    &lt;td&gt;engine to be used for processing templates. Handlebars is the default.&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;ext&lt;/td&gt;
+    &lt;td&gt;extension to be used for dest files.&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre></div>
+</div>
+<div class="section" id="right-aligned-text">
+<h3>Right aligned text<a class="headerlink" href="#right-aligned-text" title="Permalink to this headline">¶</a></h3>
+<p>Adding a colon on the right side of the dashes below any heading will
+right align text for that column.</p>
+<div class="highlight-python"><div class="highlight"><pre>| Option | Description |
+| ------:| -----------:|
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
+</pre></div>
+</div>
+<p>| Option | Description | | &#8212;&#8212;:| &#8212;&#8212;&#8212;&#8211;:| | data | path
+to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is
+the default. | | ext | extension to be used for dest files. |</p>
+</div>
+</div>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="basic-link">
+<h3>Basic link<a class="headerlink" href="#basic-link" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>[Assemble](http://assemble.io)
+</pre></div>
+</div>
+<p>Renders to (hover over the link, there is no tooltip):</p>
+<p><a class="reference external" href="http://assemble.io">Assemble</a></p>
+<p>HTML:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;a href=&quot;http://assemble.io&quot;&gt;Assemble&lt;/a&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-a-title">
+<h3>Add a title<a class="headerlink" href="#add-a-title" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>[Upstage](https://github.com/upstage/ &quot;Visit Upstage!&quot;)
+</pre></div>
+</div>
+<p>Renders to (hover over the link, there should be a tooltip):</p>
+<p><a class="reference external" href="https://github.com/upstage/">Upstage</a></p>
+<p>HTML:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;a href=&quot;https://github.com/upstage/&quot; title=&quot;Visit Upstage!&quot;&gt;Upstage&lt;/a&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="named-anchors">
+<h3>Named Anchors<a class="headerlink" href="#named-anchors" title="Permalink to this headline">¶</a></h3>
+<p>Named anchors enable you to jump to the specified anchor point on the
+same page. For example, each of these chapters:</p>
+<p><code class="docutils literal"><span class="pre">markdown</span> <span class="pre">#</span> <span class="pre">Table</span> <span class="pre">of</span> <span class="pre">Contents</span>&nbsp;&nbsp; <span class="pre">*</span> <span class="pre">[Chapter</span> <span class="pre">1](#chapter-1)</span>&nbsp;&nbsp; <span class="pre">*</span> <span class="pre">[Chapter</span> <span class="pre">2](#chapter-2)</span>&nbsp;&nbsp; <span class="pre">*</span> <span class="pre">[Chapter</span> <span class="pre">3](#chapter-3)</span></code>
+will jump to these sections:</p>
+<p>```markdown ## Chapter 1 Content for chapter one.</p>
+</div>
+</div>
+<div class="section" id="chapter-2">
+<h2>Chapter 2<a class="headerlink" href="#chapter-2" title="Permalink to this headline">¶</a></h2>
+<p>Content for chapter one.</p>
+</div>
+<div class="section" id="chapter-3">
+<h2>Chapter 3<a class="headerlink" href="#chapter-3" title="Permalink to this headline">¶</a></h2>
+<p>Content for chapter one. ``` <strong>NOTE</strong> that specific placement of the
+anchor tag seems to be arbitrary. They are placed inline here since it
+seems to be unobtrusive, and it works.</p>
+</div>
+<div class="section" id="images">
+<h2>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
+<p>Images have a similar syntax to links but include a preceding
+exclamation point.</p>
+<p><code class="docutils literal"><span class="pre">markdown</span> <span class="pre">![Minion](http://octodex.github.com/images/minion.png)</span></code>
+<img alt="Minion" src="http://octodex.github.com/images/minion.png" /></p>
+<p>or
+<code class="docutils literal"><span class="pre">markdown</span> <span class="pre">![Alt</span> <span class="pre">text](http://octodex.github.com/images/stormtroopocat.jpg</span> <span class="pre">&quot;The</span> <span class="pre">Stormtroopocat&quot;)</span></code>
+<a href="#id1"><span class="problematic" id="id2">|Alt text|</span></a></p>
+<p>Like links, Images also have a footnote style syntax</p>
+<p><code class="docutils literal"><span class="pre">markdown</span> <span class="pre">![Alt</span> <span class="pre">text][id]</span></code> <a href="#id3"><span class="problematic" id="id4">|image2|</span></a></p>
+<p>With a reference later in the document defining the URL location:</p>
+<div class="highlight-python"><div class="highlight"><pre>[id]: http://octodex.github.com/images/dojocat.jpg  &quot;The Dojocat&quot;
+</pre></div>
+</div>
+<p>text| image:: <a class="reference external" href="http://octodex.github.com/images/stormtroopocat.jpg">http://octodex.github.com/images/stormtroopocat.jpg</a>
+.. <a href="#id5"><span class="problematic" id="id6">|image2|</span></a> image:: <a class="reference external" href="http://octodex.github.com/images/dojocat.jpg">http://octodex.github.com/images/dojocat.jpg</a></p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Stuart B. Wilkins.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
