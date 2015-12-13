@@ -54,7 +54,7 @@ These pages are the doccumentation of the CSX beamlines (`23-ID-1
 <https://www.bnl.gov/ps/beamlines/beamline.php?b=CSX-2>`_) at the `NSLS-II
 <http://www.bnl.gov/ps>`_.
 
-Chat to the beamline staff 
+Chat to the beamline staff on gitter .....
 
 .. image:: https://badges.gitter.im/Join%20Chat.svg
     :target: https://gitter.im/NSLS-II-CSX
@@ -72,7 +72,7 @@ Chat to the beamline staff
    <h2>Contents</h2>
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    
    csx-1/index
    guides/index
