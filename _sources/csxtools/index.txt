@@ -5,18 +5,26 @@ Utilities
 ---------
 
 .. automodule:: csxtools.utils
+    :members:
+
 
 FastCCD Routines
 ----------------
 
 .. automodule:: csxtools.fastccd
+    :members:
+
 
 Image Processing Routines
 -------------------------
 
-.. automodle:: csxtools.image
+.. automodule:: csxtools.image
+    :members:
+
 
 IPython Notebook Routines
 -------------------------
 
 .. automodule:: csxtools.ipynb
+    :members:
+
