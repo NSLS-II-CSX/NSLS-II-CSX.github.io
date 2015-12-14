@@ -16,3 +16,7 @@ Image Processing Routines
 
 .. automodle:: csxtools.image
 
+IPython Notebook Routines
+-------------------------
+
+.. automodule:: csxtools.ipynb
