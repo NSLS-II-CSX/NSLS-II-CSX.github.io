@@ -156,9 +156,11 @@
     <span class="n">interact</span><span class="p">(</span><span class="n">view_frame</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">vmin</span><span class="o">=</span><span class="n">minmax</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">minmax</span><span class="p">)</span>
 
 </div>
-<span class="k">def</span> <span class="nf">image_stack_to_movie</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+<div class="viewcode-block" id="image_stack_to_movie"><a class="viewcode-back" href="../../../csxtools/index.html#csxtools.ipynb.animation.image_stack_to_movie">[docs]</a><span class="k">def</span> <span class="nf">image_stack_to_movie</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
                          <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s">&#39;CMRmap&#39;</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convert image stack to movie and show in notebook.</span>
 
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">frames</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
         <span class="n">frames</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
@@ -185,7 +187,7 @@
     <span class="c"># return anim.to_html5_video()</span>
     <span class="k">return</span> <span class="n">HTML</span><span class="p">(</span><span class="n">_anim_to_html</span><span class="p">(</span><span class="n">anim</span><span class="p">,</span> <span class="n">fps</span><span class="p">))</span>
 
-
+</div>
 <span class="k">def</span> <span class="nf">_anim_to_html</span><span class="p">(</span><span class="n">anim</span><span class="p">,</span> <span class="n">fps</span><span class="p">):</span>
     <span class="n">VIDEO_TAG</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;&lt;video autoplay loop controls&gt;</span>
 <span class="s">    &lt;source src=&quot;data:video/x-m4v;base64,{0}&quot; type=&quot;video/mp4&quot;&gt;</span>
