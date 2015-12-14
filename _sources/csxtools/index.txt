@@ -1,7 +1,18 @@
 CSXTOOLS Doccumentation
 =======================
 
-.. automodule:: csxtools.image_corr
-    :members: subtract_background
+Utilities
+---------
 
+.. automodule:: csxtools.utils
+
+FastCCD Routines
+----------------
+
+.. automodule:: csxtools.fastccd
+
+Image Processing Routines
+-------------------------
+
+.. automodle:: csxtools.image
 
