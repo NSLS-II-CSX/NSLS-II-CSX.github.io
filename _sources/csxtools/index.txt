@@ -17,8 +17,8 @@ beamline at NSLS-II, (CSX, 23-ID)
 .. image:: https://coveralls.io/repos/NSLS-II-CSX/csxtools/badge.svg?branch=master&service=github
     :target: https://coveralls.io/github/NSLS-II-CSX/csxtools?branch=master
 
-
 To chat to the CSX team:
+
 .. raw:: html
 
     <script async defer src="https://csxnsls-ii-slackbadge.herokuapp.com/slackin.js"> </script>
