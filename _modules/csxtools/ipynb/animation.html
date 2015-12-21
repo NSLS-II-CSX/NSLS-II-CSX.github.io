@@ -118,16 +118,27 @@
 <span class="kn">import</span> <span class="nn">base64</span>
 
 
-<div class="viewcode-block" id="show_image_stack"><a class="viewcode-back" href="../../../csxtools/index.html#csxtools.ipynb.animation.show_image_stack">[docs]</a><span class="k">def</span> <span class="nf">show_image_stack</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">minmax</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">&#39;CMRmap&#39;</span><span class="p">,</span>
-                     <span class="n">title</span><span class="o">=</span><span class="s">r&#39;Intensty [ADU]&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">)):</span>
+<div class="viewcode-block" id="show_image_stack"><a class="viewcode-back" href="../../../csxtools/ipynb.html#csxtools.ipynb.animation.show_image_stack">[docs]</a><span class="k">def</span> <span class="nf">show_image_stack</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">minmax</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">&#39;CMRmap&#39;</span><span class="p">,</span>
+                     <span class="n">zlabel</span><span class="o">=</span><span class="s">r&#39;Intensty [ADU]&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">)):</span>
     <span class="sd">&quot;&quot;&quot;Show an Interactive Image Stack in an IPython Notebook</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
+<span class="sd">    images : array_like</span>
+<span class="sd">        Stack of images of shape (N, y, x) where N is the number of images</span>
+<span class="sd">        to show.</span>
+<span class="sd">    minmax : tuple</span>
+<span class="sd">        Value for the minimum and maximum of the stack in the form</span>
+<span class="sd">        ``(min, max)``</span>
+<span class="sd">    fontsize : int</span>
+<span class="sd">        Fontsize for axis labels.</span>
+<span class="sd">    cmap : string</span>
+<span class="sd">        Colormap to use for image (from matplotlib)</span>
+<span class="sd">    zlabel : string</span>
+<span class="sd">        Axis label for the color bar (z-axis)</span>
+<span class="sd">    figsize : tuple</span>
+<span class="sd">        Figure size (from matplotlib)</span>
 
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    ``ipywidgets.interact`` object</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -141,7 +152,7 @@
 
         <span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
         <span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
-        <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">fontsize</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="n">zlabel</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">fontsize</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s">&#39;bold&#39;</span><span class="p">)</span>
 
         <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Frame {} Min = {} Max = {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">),</span>
                      <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s">&#39;bold&#39;</span><span class="p">)</span>
@@ -156,9 +167,26 @@
     <span class="n">interact</span><span class="p">(</span><span class="n">view_frame</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">vmin</span><span class="o">=</span><span class="n">minmax</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">minmax</span><span class="p">)</span>
 
 </div>
-<div class="viewcode-block" id="image_stack_to_movie"><a class="viewcode-back" href="../../../csxtools/index.html#csxtools.ipynb.animation.image_stack_to_movie">[docs]</a><span class="k">def</span> <span class="nf">image_stack_to_movie</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+<div class="viewcode-block" id="image_stack_to_movie"><a class="viewcode-back" href="../../../csxtools/ipynb.html#csxtools.ipynb.animation.image_stack_to_movie">[docs]</a><span class="k">def</span> <span class="nf">image_stack_to_movie</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
                          <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s">&#39;CMRmap&#39;</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Convert image stack to movie and show in notebook.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    images : array_like</span>
+<span class="sd">        Stack of images to show as a movie of shape (N, y, x).</span>
+<span class="sd">    frames : int</span>
+<span class="sd">        Number of frames to process</span>
+<span class="sd">    vmin : number</span>
+<span class="sd">        Minimum value to display for ``imshow``</span>
+<span class="sd">    vmax : number</span>
+<span class="sd">        Maximum value to display for ``imshow``</span>
+<span class="sd">    figsize : tuple</span>
+<span class="sd">        Figure size for each frame</span>
+<span class="sd">    cmap : string</span>
+<span class="sd">        Colormap to use for plotting image</span>
+<span class="sd">    fps : int</span>
+<span class="sd">        Framerate for created movie</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">frames</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>

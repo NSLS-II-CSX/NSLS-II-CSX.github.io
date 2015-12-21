@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>CSXTOOLS Doccumentation &mdash; NSLS-II CSX Beamline Docs 0.1 documentation</title>
+    <title>FastCCD Routines &mdash; NSLS-II CSX Beamline Docs 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -30,8 +30,9 @@
     <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="NSLS-II CSX Beamline Docs 0.1 documentation" href="../index.html" />
-    <link rel="next" title="Image Processing Routines" href="image.html" />
-    <link rel="prev" title="tmux shortcuts &amp; cheatsheet" href="../guides/tmux-cheatsheet.html" />
+    <link rel="up" title="CSXTOOLS Doccumentation" href="index.html" />
+    <link rel="next" title="Utilities" href="utilities.html" />
+    <link rel="prev" title="Image Processing Routines" href="image.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -69,7 +70,7 @@
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../csx-1/index.html">CSX-1 (23-ID-1) Beamline Doccumentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Guides and Tutorials</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">CSXTOOLS Doccumentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">CSXTOOLS Doccumentation</a></li>
 </ul>
 </ul>
 </li>
@@ -83,10 +84,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">CSXTOOLS Doccumentation</a><ul>
-<li><a class="reference internal" href="#contents">Contents</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">FastCCD Routines</a></li>
 </ul>
 </ul>
 </li>
@@ -116,25 +114,41 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="csxtools-doccumentation">
-<h1>CSXTOOLS Doccumentation<a class="headerlink" href="#csxtools-doccumentation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="contents">
-<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="image.html">Image Processing Routines</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="image.html#module-csxtools.image.transform">API Reference</a></li>
+  <div class="section" id="module-csxtools.fastccd.images">
+<span id="fastccd-routines"></span><h1>FastCCD Routines<a class="headerlink" href="#module-csxtools.fastccd.images" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="csxtools.fastccd.images.correct_images">
+<code class="descclassname">csxtools.fastccd.images.</code><code class="descname">correct_images</code><span class="sig-paren">(</span><em>images</em>, <em>dark=None</em>, <em>flat=None</em>, <em>gain=(1</em>, <em>4</em>, <em>8)</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/csxtools/fastccd/images.html#correct_images"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#csxtools.fastccd.images.correct_images" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subtract backgrond and gain correct images</p>
+<p>This routine subtrtacts the backgrond and corrects the images
+for the multigain FastCCD ADC.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>in</strong> (<em>array_like</em>) &#8211; Input array of images to correct of shape (N, y, x)  where N is the
+number of images and x and y are the image size.</li>
+<li><strong>dark</strong> (<em>array_like, optional</em>) &#8211; Input array of dark images. This should be of shape (3, y, x).
+dark[0] is the gain 8 (most sensitive setting) dark image with
+dark[2] being the gain 1 (least sensitive) dark image.</li>
+<li><strong>flat</strong> (<em>array_like, optional</em>) &#8211; Input array for the flatfield correction. This should be of shape
+(y, x)</li>
+<li><strong>gain</strong> (<em>tuple, optional</em>) &#8211; These are the gain multiplication factors for the three different
+gain settings</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="fastccd.html">FastCCD Routines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ipynb.html">IPython Notebook Routines</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ipynb.html#module-csxtools.ipynb.animation">API Reference</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Array of corrected images of shape (N, y, x)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array_like</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 
 
@@ -150,7 +164,7 @@
         <br/>
         
 <div id="sourcelink">
-  <a href="../_sources/csxtools/index.txt"
+  <a href="../_sources/csxtools/fastccd.txt"
      rel="nofollow">Source</a>
 </div>
       
