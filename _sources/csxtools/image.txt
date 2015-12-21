@@ -4,6 +4,6 @@ Image Processing Routines
 API Reference
 -------------
 
-.. automodule:: csxtools.image.transform
+.. automodule:: csxtools.image
     :members:
 

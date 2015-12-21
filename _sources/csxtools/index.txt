@@ -9,6 +9,6 @@ Contents
 
    image
    fastccd
-   utilities
+   utils
    ipynb
 

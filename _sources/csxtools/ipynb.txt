@@ -4,6 +4,6 @@ IPython Notebook Routines
 API Reference
 -------------
 
-.. automodule:: csxtools.ipynb.animation
+.. automodule:: csxtools.ipynb
     :members:
 
