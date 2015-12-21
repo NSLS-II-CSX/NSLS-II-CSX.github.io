@@ -1,14 +1,22 @@
 CSXTOOLS Doccumentation
 =======================
 
+Introduction
+------------
+
+Python library for tools to be used at the Coherent Soft X-ray scattering 
+beamline at NSLS-II, (CSX, 23-ID)
+
+
+.. image:: https://csxnsls-ii-slackbadge.herokuapp.com/badge.svg
+    :target: https://csxnsls-ii.slack.com/messages/csxtools 
+
 .. image:: https://travis-ci.org/NSLS-II-CSX/csxtools.svg?branch=master
     :target: https://travis-ci.org/NSLS-II-CSX/csxtools
 
 .. image:: https://coveralls.io/repos/NSLS-II-CSX/csxtools/badge.svg?branch=master&service=github
     :target: https://coveralls.io/github/NSLS-II-CSX/csxtools?branch=master
 
-Python library for tools to be used at the Coherent Soft X-ray scattering 
-beamline at NSLS-II, (CSX, 23-ID)
 
 To chat to the CSX team:
 .. raw:: html
