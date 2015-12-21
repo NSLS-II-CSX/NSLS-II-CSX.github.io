@@ -11,7 +11,6 @@ Python library for tools to be used at the Coherent Soft X-ray scattering
 beamline at NSLS-II, (CSX, 23-ID)
 
 To chat to the CSX team:
-
 .. raw:: html
 
     <script async defer src="https://csxnsls-ii-slackbadge.herokuapp.com/slackin.js"> </script>
