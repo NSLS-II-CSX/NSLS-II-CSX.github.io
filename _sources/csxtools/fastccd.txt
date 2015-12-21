@@ -4,6 +4,6 @@ FastCCD Routines
 API Reference
 -------------
 
-.. automodule:: csxtools.fastccd.images
+.. automodule:: csxtools.fastccd
     :members:
 
