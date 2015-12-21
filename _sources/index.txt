@@ -1,75 +1,14 @@
-.. raw:: html
-
-    <style type="text/css">
-    .thumbnail {{
-        position: relative;
-        float: left;
-        margin: 10px;
-        width: 180px;
-        height: 200px;
-    }}
-
-    .thumbnail img {{
-        position: absolute;
-        display: inline;
-        left: 0;
-        width: 170px;
-        height: 170px;
-    }}
-
-    </style>
-
 The CSX Beamline at NSLS-II Documentation!
 ==========================================
-
-.. raw:: html
-
-    <div style="clear: both"></div>
-    <div class="container-fluid hidden-xs hidden-sm">
-      <div class="row">
-        <div class="col-md-2 thumbnail">
-        </div>
-        <div class="col-md-2 thumbnail">
-        </div>
-        <div class="col-md-2 thumbnail">
-        </div>
-        <div class="col-md-2 thumbnail">
-        </div>
-        <div class="col-md-2 thumbnail">
-        </div>
-        <div class="col-md-2 thumbnail">
-        </div>
-      </div>
-    </div>
-    <br>
-
-.. raw:: html
-
-   <div class="container-fluid">
-   <div class="row">
-   <div class="col-md-6">
-
 These pages are the doccumentation of the CSX beamlines (`23-ID-1
 <https://www.bnl.gov/ps/beamlines/beamline.php?b=CSX-1>`_ and `23-ID-2
 <https://www.bnl.gov/ps/beamlines/beamline.php?b=CSX-2>`_) at the `NSLS-II
 <http://www.bnl.gov/ps>`_.
 
-Chat to the beamline staff on gitter .....
-
-.. image:: https://badges.gitter.im/Join%20Chat.svg
-    :target: https://gitter.im/NSLS-II-CSX
-    :alt: Join Chat on Gitter.im
-
 .. figure:: images/csx.jpg
    :alt: CSX Beamline at NSLS-II
 
    CSX Beamlines control area at the NSLS-II
-
-.. raw:: html
-
-   </div>
-   <div class="col-md-6">
-   <h2>Contents</h2>
 
 .. toctree::
    :maxdepth: 1
@@ -82,10 +21,3 @@ Downloads
 ---------
 
 `Download the CSX Documentation as a PDF <pdf-download/NSLS-IICSXBeamlineDocs.pdf>`_
-
-.. raw:: html
-
-   </div>
-   </div>
-   </div>
-
