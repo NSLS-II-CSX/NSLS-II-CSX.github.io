@@ -14,8 +14,7 @@ To chat to the CSX team:
 
 .. raw:: html
 
-    <script async defer src="https://csxnsls-ii-slackbadge.herokuapp.com/slackin.js?large">
-    </script>
+    <script async defer src="https://csxnsls-ii-slackbadge.herokuapp.com/slackin.js"> </script>
 
 Contents
 --------
