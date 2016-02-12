@@ -16,6 +16,7 @@ These pages are the doccumentation of the CSX beamlines (`23-ID-1
    csx-1/index
    guides/index
    csxtools/index
+   notebooks/index
 
 Downloads
 ---------
